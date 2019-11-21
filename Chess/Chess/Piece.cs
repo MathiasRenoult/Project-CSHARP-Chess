@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-    class Piece
+    public class Piece
     {
+        private string color; //Black or White
+
+        public string Color
+        {
+            get { return color; }
+        }
     }
 }

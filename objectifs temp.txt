@@ -1,0 +1,14 @@
+Objectifs temporaires
+
+-Connecter la DB en C#
+-Graphique
+	-Connexion, Menu
+-Métier
+	-Login,Menu,Jeu en lui-même
+
+-Organiser le GitHub
+-Commencer une Doc
+-Faire certains diagramme
+-Créer les tests (d'abord conceptualiser le fonctionnement de ce qu'on va tester)
+
+Login discord: Triximix#8591

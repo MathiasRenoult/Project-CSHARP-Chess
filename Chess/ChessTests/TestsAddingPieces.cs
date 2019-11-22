@@ -13,7 +13,8 @@ namespace ChessTests
              string actualColor = "white";
             double actualX = 4;
             double actualY = 5;
-            Pawn p1 = new Pawn(actualColor,actualX,actualY);
+            bool actualIsChecking = true;
+            Pawn p1 = new Pawn(actualColor,actualX,actualY, actualIsChecking);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -25,7 +26,8 @@ namespace ChessTests
             string actualColor = "black";
             double actualX = 6;
             double actualY = 7;
-            Knight p1 = new Knight(actualColor, actualX, actualY);
+            bool actualIsChecking = false;
+            Knight p1 = new Knight(actualColor, actualX, actualY, actualIsChecking);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -37,7 +39,8 @@ namespace ChessTests
             string actualColor = "black";
             double actualX = 1;
             double actualY = 2;
-            Rook p1 = new Rook(actualColor, actualX, actualY);
+            bool actualIsChecking = false;
+            Rook p1 = new Rook(actualColor, actualX, actualY, actualIsChecking);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -49,7 +52,8 @@ namespace ChessTests
             string actualColor = "black";
             double actualX = 4;
             double actualY = 4;
-            Bishop p1 = new Bishop(actualColor, actualX, actualY);
+            bool actualIsChecking = true;
+            Bishop p1 = new Bishop(actualColor, actualX, actualY, actualIsChecking);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -61,7 +65,8 @@ namespace ChessTests
             string actualColor = "black";
             double actualX = 7;
             double actualY = 7;
-            Queen p1 = new Queen(actualColor, actualX, actualY);
+            bool actualIsChecking = false;
+            Queen p1 = new Queen(actualColor, actualX, actualY,actualIsChecking);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -73,7 +78,8 @@ namespace ChessTests
             string actualColor = "black";
             double actualX = 0;
             double actualY = 4;
-            King p1 = new King(actualColor, actualX, actualY);
+            bool actualIsChecking = true;
+            King p1 = new King(actualColor, actualX, actualY, actualIsChecking);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);

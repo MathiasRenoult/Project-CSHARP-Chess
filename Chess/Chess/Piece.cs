@@ -11,12 +11,14 @@ namespace Chess
         private string color; //Black or White
         private double x; //X coordinates [0-7]
         private double y; //Y coordinates [0-7]
+        private bool isChecking;
 
-        public Piece(string color,double x,double y)
+        public Piece(string color,double x,double y,bool isChecking)
         {
             this.color = color;
             this.x = x;
             this.y = y;
+            this.isChecking = isChecking;
         }
         public string Color
         {
@@ -32,6 +34,11 @@ namespace Chess
         {
             get { return y; }
             set { y = value; }
+        }
+        public bool IsChecking
+        {
+            get { return isChecking; }
+            set { isChecking = value; }
         }
     }
 }

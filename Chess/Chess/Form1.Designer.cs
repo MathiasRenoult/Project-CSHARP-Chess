@@ -49,6 +49,7 @@
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(186, 20);
             this.txtMail.TabIndex = 4;
+            this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
             // 
             // btnLogin
             // 

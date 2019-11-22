@@ -45,5 +45,10 @@ namespace Chess
         {
 
         }
+
+        private void txtMail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

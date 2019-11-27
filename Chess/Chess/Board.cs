@@ -25,10 +25,11 @@ namespace Chess
             {
                 for(j=0;j<size;j++)
                 {
-                    grid[i,j] = new Case(0,0,"black");
+                    Piece standardVoid = new VoidCase("",i,j,false);
+                    grid[i,j] = new Case(standardVoid,0);
                 }
             }
-            Console.WriteLine(grid[1, 2]);
+            this.grid = grid;
         }
         public int Size
         {

@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Board.cs" />
     <Compile Include="Case.cs" />
+    <Compile Include="ConnectToDB.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-    class CreatingUser
+    class Register
     {
-        static void NewUser(string[] args)
+        public static void CreateUser(string mail, string pseudo, string password)
         {
             try
             {
@@ -17,12 +17,7 @@ namespace Chess
                 connDB.OpenConnection();
 
                 //insert a player
-                connDB.AddPlayer("Toto", "toto@blague.ch", "totoAuToilettes", 0, 10);
-
-                //get a specific player
-                string name = connDB.GetPlayerName(1);
-
-                Console.WriteLine("nom : " + name);
+                connDB.AddPlayer(pseudo, mail, password, 0, 0);
 
                 //close connection
                 connDB.CloseConnection();

@@ -1,6 +1,6 @@
 ﻿namespace Chess
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -34,6 +34,7 @@
             this.lblMail = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.btnCreateAccount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -42,14 +43,17 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(186, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "Pa$$w0rd";
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtMail
             // 
+            this.txtMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtMail.Location = new System.Drawing.Point(169, 124);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(186, 20);
             this.txtMail.TabIndex = 4;
-            this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
+            this.txtMail.Text = "mathias.renoult@cpnv.ch";
             // 
             // btnLogin
             // 
@@ -59,7 +63,7 @@
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblMail
             // 
@@ -69,7 +73,6 @@
             this.lblMail.Size = new System.Drawing.Size(67, 13);
             this.lblMail.TabIndex = 7;
             this.lblMail.Text = "Mail Address";
-            this.lblMail.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblPassword
             // 
@@ -89,22 +92,32 @@
             this.lblTitle.Size = new System.Drawing.Size(69, 25);
             this.lblTitle.TabIndex = 9;
             this.lblTitle.Text = "Chess";
-            this.lblTitle.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // Form1
+            // btnCreateAccount
+            // 
+            this.btnCreateAccount.Location = new System.Drawing.Point(12, 197);
+            this.btnCreateAccount.Name = "btnCreateAccount";
+            this.btnCreateAccount.Size = new System.Drawing.Size(104, 23);
+            this.btnCreateAccount.TabIndex = 10;
+            this.btnCreateAccount.Text = "Create account";
+            this.btnCreateAccount.UseVisualStyleBackColor = true;
+            this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 232);
+            this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblMail);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.txtPassword);
-            this.Name = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "LoginForm";
             this.Text = "Chess.exe";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,6 +130,7 @@
         private System.Windows.Forms.Label lblMail;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnCreateAccount;
     }
 }
 

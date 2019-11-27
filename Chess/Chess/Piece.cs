@@ -41,6 +41,6 @@ namespace Chess
             set { isChecking = value; }
         }
 
-        public abstract int CanMoveThere(int x0, int y0, int x1, int y1);
+        public abstract bool CanMoveThere(int x0, int y0, int x1, int y1);
     }
 }

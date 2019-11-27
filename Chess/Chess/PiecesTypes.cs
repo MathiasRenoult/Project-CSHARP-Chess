@@ -12,9 +12,9 @@ namespace Chess
         {
 
         }
-        public override int CanMoveThere(int x0, int y0, int x1, int y1)
+        public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return 0;
+            return false;
         }
     }
     public class Pawn : Piece 
@@ -24,9 +24,9 @@ namespace Chess
             
         }
 
-        public override int CanMoveThere(int x0, int y0, int x1, int y1)
+        public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return 0;
+            return false;
         }
     }
     public class Knight : Piece
@@ -35,9 +35,9 @@ namespace Chess
         {
 
         }
-        public override int CanMoveThere(int x0, int y0, int x1, int y1)
+        public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return 0;
+            return false;
         }
     }
     public class Rook : Piece
@@ -46,9 +46,9 @@ namespace Chess
         {
 
         }
-        public override int CanMoveThere(int x0, int y0, int x1, int y1)
+        public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return 0;
+            return false;
         }
     }
     public class Bishop : Piece
@@ -57,9 +57,9 @@ namespace Chess
         {
 
         }
-        public override int CanMoveThere(int x0, int y0, int x1, int y1)
+        public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return 0;
+            return false;
         }
     }
     public class Queen : Piece
@@ -68,9 +68,9 @@ namespace Chess
         {
 
         }
-        public override int CanMoveThere(int x0, int y0, int x1, int y1)
+        public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return 0;
+            return false;
         }
     }
     public class King : Piece
@@ -80,9 +80,9 @@ namespace Chess
         {
             this.isChecked = isChecked;
         }
-        public override int CanMoveThere(int x0, int y0, int x1, int y1)
+        public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return 0;
+            return false;
         }
     }
 }

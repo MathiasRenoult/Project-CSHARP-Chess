@@ -62,8 +62,11 @@ namespace Chess
             }
             reader.Close();
 
+            // Create a SQL command
+            cmd = connection.CreateCommand();
+
             // SQL request
-            cmd.CommandText = "INSERT INTO Joueur (`pseudo`,`mail`,`password`,`nb_victoire`,`nb_defaite`)VALUES(@pseudo, @mail, @password, @nbVictory, @nbLoss); ";
+            cmd.CommandText = "INSERT INTO Joueur (`pseudo`,`mail`,`password`,`nb_victoire`,`nb_defaite`)VALUES(@pseudo, @mail, @password, @nbVictory, @nbLoss);";
 
             // use of the pseudo string, parameter of the method AddPlayer
             cmd.Parameters.AddWithValue("@pseudo",pseudo);

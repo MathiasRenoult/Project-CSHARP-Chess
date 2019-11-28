@@ -22,19 +22,43 @@ namespace Chess
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            bool acceptedRequest = true;
             mail = txtMail.Text;
             password = txtPassword.Text;
-            if(Login.LoginUser(mail,password))
+
+            if (password == "")
             {
-                GameForm newGameForm = new GameForm();
-                newGameForm.ShowDialog();
-            } 
+                lblError.Text = "You must enter a password";
+                acceptedRequest = false;
+            }
+            if (!IsValidEmail(mail))
+            {
+                lblError.Text = "Your mail address is not valid";
+                acceptedRequest = false;
+            }
+            if (mail == "")
+            {
+                lblError.Text = "You must enter a mail address";
+                acceptedRequest = false;
+            }
+
+            if(acceptedRequest)
+            {
+                if (Login.LoginUser(mail,password))
+                {
+                    GameForm newGameForm = new GameForm();
+                    newGameForm.ShowDialog();
+                } 
+                else
+                {
+                    this.Hide();
+                    LoginForm newLoginForm = new LoginForm();
+                    newLoginForm.ShowDialog();
+                }
+            }
             else
             {
-                this.Hide();
-                LoginForm newLoginForm = new LoginForm();
-                newLoginForm.ShowDialog();
+                lblError.Visible = true;
             }
         }
 
@@ -53,6 +77,19 @@ namespace Chess
             this.Hide();
             RegisterForm newRegisterForm = new RegisterForm();
             newRegisterForm.ShowDialog();   
+        }
+
+        public bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

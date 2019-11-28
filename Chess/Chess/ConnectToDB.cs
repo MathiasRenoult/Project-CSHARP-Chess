@@ -41,10 +41,26 @@ namespace Chess
         /// add a player in the table "players"
         /// </summary>
         /// <param name="pseudo"></param>
-        public void AddPlayer(string pseudo, string mail, string password, int victory, int loss)
+        public bool AddPlayer(string pseudo, string mail, string password, int victory, int loss)
         {
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
+
+            // SQL request
+            cmd.CommandText = "SELECT mail, pseudo FROM joueur WHERE mail = '" + mail +"' OR pseudo = '"+ pseudo +"';";
+
+            // use of the pseudo string, parameter of the method AddPlayer
+            cmd.Parameters.AddWithValue("@pseudo", pseudo);
+            cmd.Parameters.AddWithValue("@mail", mail);
+
+            DbDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                MessageBox.Show("Already existing player ! Change your email or/and your pseudo.");
+                return false;
+            }
+            reader.Close();
 
             // SQL request
             cmd.CommandText = "INSERT INTO Joueur (`pseudo`,`mail`,`password`,`nb_victoire`,`nb_defaite`)VALUES(@pseudo, @mail, @password, @nbVictory, @nbLoss); ";
@@ -59,6 +75,8 @@ namespace Chess
 
             // Execute the SQL command
             cmd.ExecuteNonQuery();
+
+            return true;
         }
 
         /// <summary>

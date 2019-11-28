@@ -39,6 +39,7 @@
             this.lblPseudo = new System.Windows.Forms.Label();
             this.txtPseudo = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.lblError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -74,7 +75,7 @@
             this.btnRegister.Location = new System.Drawing.Point(383, 174);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 12;
+            this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -85,7 +86,7 @@
             this.txtMail.Location = new System.Drawing.Point(170, 98);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(186, 20);
-            this.txtMail.TabIndex = 11;
+            this.txtMail.TabIndex = 1;
             this.txtMail.Text = "mathias.renoult@cpnv.ch";
             // 
             // txtPassword
@@ -93,7 +94,7 @@
             this.txtPassword.Location = new System.Drawing.Point(170, 150);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(186, 20);
-            this.txtPassword.TabIndex = 10;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Pa$$w0rd";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -111,7 +112,7 @@
             this.txtComfirmPassword.Location = new System.Drawing.Point(170, 176);
             this.txtComfirmPassword.Name = "txtComfirmPassword";
             this.txtComfirmPassword.Size = new System.Drawing.Size(186, 20);
-            this.txtComfirmPassword.TabIndex = 16;
+            this.txtComfirmPassword.TabIndex = 3;
             this.txtComfirmPassword.Text = "Pa$$w0rd";
             this.txtComfirmPassword.UseSystemPasswordChar = true;
             // 
@@ -129,7 +130,7 @@
             this.txtPseudo.Location = new System.Drawing.Point(170, 124);
             this.txtPseudo.Name = "txtPseudo";
             this.txtPseudo.Size = new System.Drawing.Size(186, 20);
-            this.txtPseudo.TabIndex = 18;
+            this.txtPseudo.TabIndex = 2;
             this.txtPseudo.Text = "Triximix";
             // 
             // btnCancel
@@ -137,16 +138,30 @@
             this.btnCancel.Location = new System.Drawing.Point(3, 206);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(167, 206);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(59, 13);
+            this.lblError.TabIndex = 21;
+            this.lblError.Text = "default text";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblError.Visible = false;
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 232);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblPseudo);
             this.Controls.Add(this.txtPseudo);
@@ -179,5 +194,6 @@
         private System.Windows.Forms.Label lblPseudo;
         private System.Windows.Forms.TextBox txtPseudo;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblError;
     }
 }

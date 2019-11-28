@@ -8,8 +8,9 @@ namespace Chess
 {
     class Register
     {
-        public static void CreateUser(string mail, string pseudo, string password)
+        public static bool CreateUser(string mail, string pseudo, string password)
         {
+            bool state = false;
             try
             {
                 //init of the connection
@@ -17,15 +18,18 @@ namespace Chess
                 connDB.OpenConnection();
 
                 //insert a player
-                connDB.AddPlayer(pseudo, mail, password, 0, 0);
+                state =  connDB.AddPlayer(pseudo, mail, password, 0, 0);
 
                 //close connection
                 connDB.CloseConnection();
+
+                return state;
             }
             catch (Exception exc)
             {
                 //we display the error message.
                 Console.WriteLine(exc.Message);
+                return state;
             }
             finally
             {

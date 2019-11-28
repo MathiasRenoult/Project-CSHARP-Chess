@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Projet C#" company="" webLink="http://" view-date="2019-11-21" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.8.1" locale="fr_CH">
+<?xml version="1.0" encoding="UTF-8"?><project name="Projet C#" company="" webLink="http://" view-date="2019-11-21" view-index="0" gantt-divider-location="353" resource-divider-location="300" version="2.8.1" locale="fr">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Nom" width="199" order="0"/>
@@ -44,10 +44,11 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Sprint 1" meeting="false" start="2019-11-21" duration="4" complete="0" expand="true"/>
-        <task id="1" name="Sprint 2" meeting="false" start="2019-12-05" duration="4" complete="0" expand="true"/>
-        <task id="3" name="Sprint 3" meeting="false" start="2019-12-19" duration="6" complete="0" expand="true"/>
-        <task id="4" name="Sprint 4" meeting="false" start="2020-01-16" duration="4" complete="0" expand="true"/>
+        <task id="0" name="Sprint 1 (Login et register)" meeting="false" start="2019-11-21" duration="4" complete="0" expand="true"/>
+        <task id="1" name="Sprint 2 (Création du plateau)" meeting="false" start="2019-12-05" duration="4" complete="0" expand="true"/>
+        <task id="3" name="Sprint 3(Création des régles des échec)" meeting="false" start="2019-12-19" duration="6" complete="0" expand="true"/>
+        <task id="4" name="Sprint 4(Implémentation des l'IA)" meeting="false" start="2020-01-16" duration="4" complete="0" expand="true"/>
+        <task id="6" name="Sprint 5(Commencer une partie/reprendre nbvictoire,etc)" color="#8cb6ce" meeting="false" start="2020-01-16" duration="7" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>

@@ -42,7 +42,7 @@
             this.txtPassword.Location = new System.Drawing.Point(169, 150);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(186, 20);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Pa$$w0rd";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -52,7 +52,7 @@
             this.txtMail.Location = new System.Drawing.Point(169, 124);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(186, 20);
-            this.txtMail.TabIndex = 4;
+            this.txtMail.TabIndex = 1;
             this.txtMail.Text = "mathias.renoult@cpnv.ch";
             // 
             // btnLogin
@@ -60,7 +60,7 @@
             this.btnLogin.Location = new System.Drawing.Point(383, 148);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 6;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -98,7 +98,7 @@
             this.btnCreateAccount.Location = new System.Drawing.Point(12, 197);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(104, 23);
-            this.btnCreateAccount.TabIndex = 10;
+            this.btnCreateAccount.TabIndex = 4;
             this.btnCreateAccount.Text = "Create account";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);

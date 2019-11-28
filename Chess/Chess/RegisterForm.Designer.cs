@@ -74,7 +74,7 @@
             this.btnRegister.Location = new System.Drawing.Point(383, 174);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
-            this.btnRegister.TabIndex = 12;
+            this.btnRegister.TabIndex = 5;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -85,7 +85,7 @@
             this.txtMail.Location = new System.Drawing.Point(170, 98);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(186, 20);
-            this.txtMail.TabIndex = 11;
+            this.txtMail.TabIndex = 1;
             this.txtMail.Text = "mathias.renoult@cpnv.ch";
             // 
             // txtPassword
@@ -93,7 +93,7 @@
             this.txtPassword.Location = new System.Drawing.Point(170, 150);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(186, 20);
-            this.txtPassword.TabIndex = 10;
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Pa$$w0rd";
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -111,7 +111,7 @@
             this.txtComfirmPassword.Location = new System.Drawing.Point(170, 176);
             this.txtComfirmPassword.Name = "txtComfirmPassword";
             this.txtComfirmPassword.Size = new System.Drawing.Size(186, 20);
-            this.txtComfirmPassword.TabIndex = 16;
+            this.txtComfirmPassword.TabIndex = 4;
             this.txtComfirmPassword.Text = "Pa$$w0rd";
             this.txtComfirmPassword.UseSystemPasswordChar = true;
             // 
@@ -129,7 +129,7 @@
             this.txtPseudo.Location = new System.Drawing.Point(170, 124);
             this.txtPseudo.Name = "txtPseudo";
             this.txtPseudo.Size = new System.Drawing.Size(186, 20);
-            this.txtPseudo.TabIndex = 18;
+            this.txtPseudo.TabIndex = 2;
             this.txtPseudo.Text = "Triximix";
             // 
             // btnCancel
@@ -137,7 +137,7 @@
             this.btnCancel.Location = new System.Drawing.Point(3, 206);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 20;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

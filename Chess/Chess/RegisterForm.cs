@@ -44,6 +44,11 @@ namespace Chess
             
         }
 
-
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm newLoginForm = new LoginForm();
+            newLoginForm.ShowDialog();
+        }
     }
 }

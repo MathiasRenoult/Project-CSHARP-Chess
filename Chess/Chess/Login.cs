@@ -8,8 +8,9 @@ namespace Chess
 {
     class Login
     {
-        public static void LoginUser(string mail, string password)
+        public static bool LoginUser(string mail, string password)
         {
+            bool state;
             try
             {
                 //init of the connection
@@ -17,19 +18,21 @@ namespace Chess
                 connDB.OpenConnection();
 
                 //insert a player
-                connDB.LoginPlayer(mail,password);
+                state = connDB.LoginPlayer(mail,password);
 
                 //close connection
                 connDB.CloseConnection();
+
+                return state;
             }
             catch (Exception exc)
             {
                 //we display the error message.
                 Console.WriteLine(exc.Message);
+                return false;
             }
             finally
             {
-
             }
         }
 

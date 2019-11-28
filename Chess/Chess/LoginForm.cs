@@ -25,9 +25,17 @@ namespace Chess
             this.Hide();
             mail = txtMail.Text;
             password = txtPassword.Text;
-            Login.LoginUser(mail,password);
-            GameForm newGameForm = new GameForm();
-            newGameForm.ShowDialog();
+            if(Login.LoginUser(mail,password))
+            {
+                GameForm newGameForm = new GameForm();
+                newGameForm.ShowDialog();
+            } 
+            else
+            {
+                this.Hide();
+                LoginForm newLoginForm = new LoginForm();
+                newLoginForm.ShowDialog();
+            }
         }
 
         public string Mail
@@ -44,7 +52,7 @@ namespace Chess
         {
             this.Hide();
             RegisterForm newRegisterForm = new RegisterForm();
-            newRegisterForm.ShowDialog();
+            newRegisterForm.ShowDialog();   
         }
     }
 }

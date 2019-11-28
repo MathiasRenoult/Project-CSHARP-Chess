@@ -5,6 +5,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Chess
 {
@@ -64,7 +65,7 @@ namespace Chess
         /// add a player in the table "players"
         /// </summary>
         /// <param name="pseudo"></param>
-        public void LoginPlayer(string mail, string password)
+        public bool LoginPlayer(string mail, string password)
         {
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
@@ -77,37 +78,41 @@ namespace Chess
             if (reader.HasRows)
             {
                 Console.WriteLine("User " + mail + " exists.");
+                reader.Close();
+
+                cmd.CommandText = "SELECT password FROM joueur;";
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+
+                    if (password == reader.GetString(0))
+                    {
+                        Console.WriteLine("Passwords matches.");
+                        Console.WriteLine("Login complete !");
+                        reader.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Password doesn't match.");
+                        Console.WriteLine("Login failed !");
+                    }
+                }
+                MessageBox.Show("Wrong password !");
+                reader.Close();
+                return false;
             }
             else
             {
-                Console.WriteLine("User " + mail + " doesn't exists.");
+                MessageBox.Show("User " + mail + " doesn't exists.");
+                reader.Close();
+                return false;
             }
 
-            reader.Close();
-
-            cmd.CommandText = "SELECT password FROM joueur;";
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                
-                if (password == reader.GetString(0))
-                {
-                    Console.WriteLine("Passwords matches.");
-                    Console.WriteLine("Login complete !");
-                }
-                else
-                {
-                    Console.WriteLine("Password doesn't match.");
-                    Console.WriteLine("Login failed !");
-                }
-            }
             
 
-            reader.Close();
-
-            // Execute the SQL command
-            cmd.ExecuteNonQuery();
+           
         }
 
         /// <summary>

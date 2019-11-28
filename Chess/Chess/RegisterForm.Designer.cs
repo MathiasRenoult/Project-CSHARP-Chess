@@ -38,6 +38,7 @@
             this.txtComfirmPassword = new System.Windows.Forms.TextBox();
             this.lblPseudo = new System.Windows.Forms.Label();
             this.txtPseudo = new System.Windows.Forms.TextBox();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -131,11 +132,22 @@
             this.txtPseudo.TabIndex = 18;
             this.txtPseudo.Text = "Triximix";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(3, 206);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 20;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 232);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.lblPseudo);
             this.Controls.Add(this.txtPseudo);
             this.Controls.Add(this.lblComfirmPassword);
@@ -147,6 +159,7 @@
             this.Controls.Add(this.txtMail);
             this.Controls.Add(this.txtPassword);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,5 +178,6 @@
         private System.Windows.Forms.TextBox txtComfirmPassword;
         private System.Windows.Forms.Label lblPseudo;
         private System.Windows.Forms.TextBox txtPseudo;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

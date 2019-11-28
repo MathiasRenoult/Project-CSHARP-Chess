@@ -31,6 +31,7 @@ namespace Chess
             }
             this.grid = grid;
         }
+
         public int Size
         {
             get { return size; }

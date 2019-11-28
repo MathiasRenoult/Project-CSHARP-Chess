@@ -37,7 +37,24 @@ namespace Chess
         }
         public override bool CanMoveThere(int x0, int y0, int x1, int y1)
         {
-            return false;
+            if (Math.Abs(x1 - x0) + Math.Abs(y1 - y0) != 3 || Math.Abs(x1 - x0) > 2 || Math.Abs(y1 - y0) > 2)
+            {
+                return false; //Invalid move, Knights can only move in "L" shape
+            }
+
+            if (Board.Grid[x1,y1].WhoIsOnIt == VoidCase)
+            {
+                return 3;
+            }
+            else
+            {
+                if (caseState == 2)
+                {
+                    return 5;
+                }
+                return 0;
+            }
+
         }
     }
     public class Rook : Piece

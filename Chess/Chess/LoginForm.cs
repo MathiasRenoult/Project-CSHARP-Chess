@@ -14,10 +14,12 @@ namespace Chess
     {
         private string mail;
         private string password;
+        private Timer timer1;
 
         public LoginForm()
         {
             InitializeComponent();
+            InitTimer();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -92,9 +94,40 @@ namespace Chess
             }
         }
 
+        public void InitTimer()
+        {
+            timer1 = new Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // in miliseconds
+            timer1.Start();
+        }
+
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
+            cryptatePassword(true);
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            cryptatePassword(false);
+        }
+
+        public void cryptatePassword(bool keyPressed)
+        {
+            int i;
+            string nextString = "", currentString = txtPassword.Text;
+            for (i = 0; i < currentString.Length; i++)
+            {
+                nextString += "*";
+            }
+            if(keyPressed == true && currentString.Length > 0)
+            {
+                
+                   nextString = nextString.Substring(0, nextString.Length-1) + currentString.Substring(currentString.Length - 1, 1);
+            }
+            txtPassword.Text = nextString;
+            txtPassword.Focus();
+            txtPassword.SelectionStart = txtPassword.Text.Length;
         }
     }
 }

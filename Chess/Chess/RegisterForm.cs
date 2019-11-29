@@ -16,10 +16,12 @@ namespace Chess
         private string pseudo;
         private string password;
         private string passwordComfirm;
+        private Timer timer1;
 
         public RegisterForm()
         {
             InitializeComponent();
+            InitTimer();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -106,6 +108,65 @@ namespace Chess
             {
                 return false;
             }
+        }
+
+        public void InitTimer()
+        {
+            timer1 = new Timer();
+            timer1.Tick += new EventHandler(timer1_Tick);
+            timer1.Interval = 1000; // in miliseconds
+            timer1.Start();
+        }
+
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            cryptatePassword(false);
+            cryptateComfirmPassword(false);
+        }
+
+        public void cryptatePassword(bool keyPressed)
+        {
+            int i;
+            string nextString = "", currentString = txtPassword.Text;
+            for (i = 0; i < currentString.Length; i++)
+            {
+                nextString += "*";
+            }
+            if (keyPressed == true && currentString.Length > 0)
+            {
+
+                nextString = nextString.Substring(0, nextString.Length - 1) + currentString.Substring(currentString.Length - 1, 1);
+            }
+            txtPassword.Text = nextString;
+            txtPassword.SelectionStart = txtPassword.Text.Length;
+        }
+
+        public void cryptateComfirmPassword(bool keyPressed)
+        {
+            int i;
+            string nextString = "", currentString = txtComfirmPassword.Text;
+            for (i = 0; i < currentString.Length; i++)
+            {
+                nextString += "*";
+            }
+            if (keyPressed == true && currentString.Length > 0)
+            {
+
+                nextString = nextString.Substring(0, nextString.Length - 1) + currentString.Substring(currentString.Length - 1, 1);
+            }
+            txtComfirmPassword.Text = nextString;
+            txtComfirmPassword.SelectionStart = txtComfirmPassword.Text.Length;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            cryptatePassword(true);
+        }
+
+        private void txtComfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            cryptateComfirmPassword(true);
         }
     }
 }

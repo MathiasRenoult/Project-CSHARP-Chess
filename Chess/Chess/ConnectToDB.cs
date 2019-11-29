@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Chess
 {
-    class ConnectToDB
+    public class ConnectToDB
     {
         private MySqlConnection connection;
 
@@ -43,6 +43,8 @@ namespace Chess
         /// <param name="pseudo"></param>
         public bool AddPlayer(string pseudo, string mail, string password, int victory, int loss)
         {
+            password = CryptoPassword.Hash(password);
+
             // Create a SQL command
             MySqlCommand cmd = connection.CreateCommand();
 
@@ -107,7 +109,7 @@ namespace Chess
                 while (reader.Read())
                 {
 
-                    if (password == reader.GetString(0))
+                    if (CryptoPassword.Verify(password, reader.GetString(0)))
                     {
                         Console.WriteLine("Passwords matches.");
                         Console.WriteLine("Login complete !");

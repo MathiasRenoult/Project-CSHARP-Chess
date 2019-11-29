@@ -75,6 +75,7 @@
     <Compile Include="GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Hashing.cs" />
     <Compile Include="Register.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="LoginForm.cs">

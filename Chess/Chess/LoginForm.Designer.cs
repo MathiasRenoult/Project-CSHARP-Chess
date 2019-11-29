@@ -46,6 +46,7 @@
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "Pa$$w0rd";
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtMail
             // 

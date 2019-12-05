@@ -36,7 +36,7 @@ namespace Chess
             ConnectToDB connectBD = new ConnectToDB();
             connectBD.OpenConnection();
 
-            bool success = connectBD.AddPlayer("UN_ZZEEERO", "mathias.renoult@gmail.com", "", 0, 0);
+            bool success = connectBD.AddPlayer("UN_ZZEEERO", "mathias.renoult@gmail.com", "Pa$$w0rd", 0, 10000);
             connectBD.CloseConnection();
 
             Assert.AreEqual(true, success);

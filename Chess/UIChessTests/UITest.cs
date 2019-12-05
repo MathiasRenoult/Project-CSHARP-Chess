@@ -4,11 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace UIChessTests
 {
     [TestClass]
-    public class UnitTest1
+    public class UITest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestPasswordIsCorrect()
         {
+            
         }
     }
 }

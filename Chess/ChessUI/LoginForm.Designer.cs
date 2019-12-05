@@ -49,6 +49,7 @@
             // 
             // txtMail
             // 
+            this.txtMail.BackColor = System.Drawing.SystemColors.Window;
             this.txtMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.txtMail.Location = new System.Drawing.Point(169, 142);
             this.txtMail.Name = "txtMail";

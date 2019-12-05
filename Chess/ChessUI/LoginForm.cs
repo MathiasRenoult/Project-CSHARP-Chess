@@ -20,27 +20,35 @@ namespace Chess
         {
             InitializeComponent();
             InitTimer();
+            password = txtPassword.Text;
+            txtPassword.Tag = password;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             bool acceptedRequest = true;
             mail = txtMail.Text;
-            password = txtPassword.Text;
+            password = txtPassword.Tag.ToString();
+
+            txtPassword.BackColor = Color.White;
+            txtMail.BackColor = Color.White;
 
             if (password == "")
             {
                 lblError.Text = "You must enter a password";
+                txtPassword.BackColor = Color.Red;
                 acceptedRequest = false;
             }
             if (!IsValidEmail(mail))
             {
                 lblError.Text = "Your mail address is not valid";
+                txtMail.BackColor = Color.Red;
                 acceptedRequest = false;
             }
             if (mail == "")
             {
                 lblError.Text = "You must enter a mail address";
+                txtMail.BackColor = Color.Red;
                 acceptedRequest = false;
             }
 
@@ -104,28 +112,40 @@ namespace Chess
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-            cryptatePassword(true);
+            cryptatePassword(false);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            cryptatePassword(false);
+            cryptatePassword(true);
         }
 
-        public void cryptatePassword(bool keyPressed)
+        public void cryptatePassword(bool timesUp)
         {
-            int i;
-            string nextString = "", currentString = txtPassword.Text;
-            for (i = 0; i < currentString.Length; i++)
+            string tempString = "";
+            string realPassword = txtPassword.Tag.ToString() ;
+            string cryptedPassword = txtPassword.Text;
+
+           
+            if (realPassword.Length < txtPassword.Text.Length)
             {
-                nextString += "*";
+                realPassword += txtPassword.Text.Substring(txtPassword.Text.Length - 1, 1);
+                Console.WriteLine(realPassword);
             }
-            if(keyPressed == true && currentString.Length > 0)
+            if (realPassword.Length > txtPassword.Text.Length)
             {
-                
-                   nextString = nextString.Substring(0, nextString.Length-1) + currentString.Substring(currentString.Length - 1, 1);
+                realPassword = realPassword.Substring(0, realPassword.Length - 1);
+                Console.WriteLine(realPassword);
             }
-            txtPassword.Text = nextString;
+            if (realPassword.Length == txtPassword.Text.Length && timesUp == true)
+            {
+                for (int i = 0; i < txtPassword.Text.Length; i++)
+                {
+                    tempString += "*";
+                }
+                txtPassword.Text = tempString;
+            }
+            txtPassword.Tag = realPassword;
             txtPassword.Focus();
             txtPassword.SelectionStart = txtPassword.Text.Length;
         }

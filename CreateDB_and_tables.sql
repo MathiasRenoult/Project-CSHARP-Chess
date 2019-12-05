@@ -8,7 +8,7 @@ CREATE TABLE `Joueur` (
 	`idJoueur` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 	`pseudo` VARCHAR(50) NOT NULL,
 	`mail` VARCHAR(50) NOT NULL,
-	`password` VARCHAR(50) NOT NULL,
+	`password` VARCHAR(100) NOT NULL,
 	`nb_victoire` INT(11) UNSIGNED NOT NULL DEFAULT '0',
 	`nb_defaite` INT(11) UNSIGNED NOT NULL DEFAULT '0',
 	PRIMARY KEY (`idJoueur`)

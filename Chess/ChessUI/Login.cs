@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-    class Login
+    public class Login
     {
         public static bool LoginUser(string mail, string password)
         {

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-    class Register
+    public class Register
     {
-        public static bool CreateUser(string mail, string pseudo, string password)
+         public static bool CreateUser(string mail, string pseudo, string password)
         {
             bool state = false;
             try

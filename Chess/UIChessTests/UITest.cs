@@ -41,5 +41,30 @@ namespace Chess
 
             Assert.AreEqual(true, success);
         }
+
+        [TestMethod]
+        public void FakePassword()
+        {
+            ConnectToDB connectBD = new ConnectToDB();
+            connectBD.OpenConnection();
+
+            bool fail = connectBD.LoginPlayer("mathias.renoult@cpnv.ch", "Pa$$W0rd");
+            connectBD.CloseConnection();
+
+            Assert.AreEqual(false, fail);
+        }
+
+        [TestMethod]
+        public void ConfirmPassword()
+        {
+            ConnectToDB connectBD = new ConnectToDB();
+            connectBD.OpenConnection();
+
+            //bool success = connectBD.
+        }
+
+        [TestMethod]
+        public void 
+
     }
 }

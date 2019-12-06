@@ -54,7 +54,7 @@ namespace Chess
             {
                 if (Login.LoginUser(mail,password))
                 {
-                    GameForm newGameForm = new GameForm();
+                    GameForm newGameForm = new GameForm(mail);
                     newGameForm.ShowDialog();
                 } 
                 else

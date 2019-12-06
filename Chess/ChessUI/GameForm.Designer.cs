@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lblChessGame = new System.Windows.Forms.Label();
+            this.lblLogged = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblChessGame
@@ -41,11 +42,21 @@
             this.lblChessGame.TabIndex = 0;
             this.lblChessGame.Text = "ChEsS GaMe";
             // 
+            // lblLogged
+            // 
+            this.lblLogged.AutoSize = true;
+            this.lblLogged.Location = new System.Drawing.Point(626, 9);
+            this.lblLogged.Name = "lblLogged";
+            this.lblLogged.Size = new System.Drawing.Size(60, 13);
+            this.lblLogged.TabIndex = 1;
+            this.lblLogged.Text = "Logged as:";
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 411);
+            this.Controls.Add(this.lblLogged);
             this.Controls.Add(this.lblChessGame);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -58,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblChessGame;
+        private System.Windows.Forms.Label lblLogged;
     }
 }

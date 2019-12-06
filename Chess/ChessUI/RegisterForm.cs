@@ -98,7 +98,7 @@ namespace Chess
                 if (Register.CreateUser(mail, pseudo, password))
                 {
                     this.Hide();
-                    GameForm newGameForm = new GameForm();
+                    GameForm newGameForm = new GameForm(mail);
                     newGameForm.ShowDialog();
                 }
                 else

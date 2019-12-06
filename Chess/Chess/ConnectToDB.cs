@@ -58,7 +58,7 @@ namespace Chess
             }
             catch
             {
-                MessageBox.Show("Wesh apprend a rentrer des identifiants corrects GLADYS");
+                MessageBox.Show("Connection to database failed. Try to correct your DB connection parameters.");
             }
             
         }

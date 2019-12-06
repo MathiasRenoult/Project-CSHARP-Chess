@@ -36,6 +36,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.btnChangeDBConfig = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -118,11 +119,22 @@
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblError.Visible = false;
             // 
+            // btnChangeDBConfig
+            // 
+            this.btnChangeDBConfig.Location = new System.Drawing.Point(16, 16);
+            this.btnChangeDBConfig.Name = "btnChangeDBConfig";
+            this.btnChangeDBConfig.Size = new System.Drawing.Size(75, 46);
+            this.btnChangeDBConfig.TabIndex = 23;
+            this.btnChangeDBConfig.Text = "Change DB config";
+            this.btnChangeDBConfig.UseVisualStyleBackColor = true;
+            this.btnChangeDBConfig.Click += new System.EventHandler(this.btnChangeDBConfig_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 232);
+            this.Controls.Add(this.btnChangeDBConfig);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.lblTitle);
@@ -150,6 +162,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Button btnChangeDBConfig;
     }
 }
 

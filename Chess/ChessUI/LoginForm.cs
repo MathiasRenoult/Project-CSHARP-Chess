@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
-
+using ChessUI;
 
 namespace Chess
 {
@@ -160,6 +160,13 @@ namespace Chess
                     this.SetDesktopLocation(newPoint.X, newPoint.Y);
                 }
             }
+        }
+
+        private void btnChangeDBConfig_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ChangeDBConfigForm newRegisterForm = new ChangeDBConfigForm();
+            newRegisterForm.ShowDialog();
         }
     }
 }

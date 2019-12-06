@@ -114,6 +114,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ChessTests\ChessTests.csproj">
+      <Project>{040f49c3-f429-460f-ad22-eac55717865b}</Project>
+      <Name>ChessTests</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Chess\Chess.csproj">
       <Project>{06c730df-58e3-420a-a778-a75b12884e65}</Project>
       <Name>Chess</Name>

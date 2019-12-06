@@ -2,10 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace Chess
 {
@@ -25,8 +28,23 @@ namespace Chess
         {
             // Creation of the connection string : where, who
             // Avoid user id and pwd hardcoded
-            string connectionString = "SERVER=127.0.0.1; DATABASE=chesscsharp; UID=root; PASSWORD=Pa$$w0rd";
-            connection = new MySqlConnection(connectionString);
+            string path = @"./configDB.json";
+            string connectionString = " ";
+            if (File.Exists(path))
+            {
+                using (StreamReader file = File.OpenText(@"./configDB.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    DatabaseConfig newPoint = (DatabaseConfig)serializer.Deserialize(file, typeof(DatabaseConfig));
+                    connectionString = "SERVER="+newPoint.Server+"; DATABASE="+newPoint.Db+"; UID="+newPoint.Uid+"; PASSWORD="+newPoint.Password+"";
+                }
+            }
+            else
+            {
+                connectionString = "SERVER=127.0.0.1; DATABASE=chesscsharp; UID=root; PASSWORD=Pa$$w0rd";
+            } 
+           
+             connection = new MySqlConnection(connectionString);
         }
 
         /// <summary>
@@ -34,7 +52,15 @@ namespace Chess
         /// </summary>
         public void OpenConnection()
         {
-            connection.Open();
+            try
+            {
+                connection.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Wesh apprend a rentrer des identifiants corrects GLADYS");
+            }
+            
         }
 
         /// <summary>

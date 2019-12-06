@@ -31,7 +31,7 @@ namespace Chess
         }
 
         [TestMethod]
-        public void TestRegister()
+        public void TestRegisterCorrect()
         {
             ConnectToDB connectBD = new ConnectToDB();
             connectBD.OpenConnection();
@@ -57,14 +57,57 @@ namespace Chess
         [TestMethod]
         public void ConfirmPassword()
         {
-            ConnectToDB connectBD = new ConnectToDB();
-            connectBD.OpenConnection();
-
-            //bool success = connectBD.
+            RegisterForm register = new RegisterForm();
+            
+            if (register.Password == register.PasswordConfirm)
+            {
+                Assert.IsTrue(true);
+            }
         }
 
         [TestMethod]
-        public void 
+        public void ConfirmPasswordFalse()
+        {
+            RegisterForm register = new RegisterForm();
+
+            if (register.Password != register.PasswordConfirm)
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [TestMethod]
+        public void RegisterWithoutMail()
+        {
+            RegisterForm register = new RegisterForm();
+
+            if (register.Mail == "")
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [TestMethod]
+        public void RegisterPasswordShort()
+        {
+            RegisterForm register = new RegisterForm();
+
+            if (register.Password == "12" && register.PasswordConfirm == "12")
+            {
+                Assert.IsTrue(false);
+            }
+        }
+
+        [TestMethod]
+        public void RegisterPasswordIsCorrect()
+        {
+            RegisterForm register = new RegisterForm();
+
+            if (register.Password == "Pa$$w0rd" && register.PasswordConfirm == "Pa$$w0rd")
+            {
+                Assert.IsTrue(true);
+            }
+        }
 
     }
 }

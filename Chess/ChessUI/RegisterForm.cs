@@ -27,7 +27,28 @@ namespace Chess
             passwordComfirm= txtComfirmPassword.Text;
             txtComfirmPassword.Tag = passwordComfirm;
         }
-
+        #region accesseur 
+        public string Mail
+        {
+            get { return mail; }
+            set { value = mail; }
+        }
+        public string Pseudo
+        {
+            get { return pseudo; }
+            set { value = pseudo; }
+        }
+        public string Password
+        {
+            get { return password; }
+            set { value = password; }
+        }
+        public string PasswordConfirm
+        {
+            get { return passwordComfirm; }
+            set { value = passwordComfirm; }
+        }
+        #endregion accesseur
         private void btnRegister_Click(object sender, EventArgs e)
         {
             bool acceptedRequest = true;

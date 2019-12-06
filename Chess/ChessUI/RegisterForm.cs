@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Newtonsoft.Json;
+using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Chess
@@ -196,6 +193,16 @@ namespace Chess
                 txtComfirmPassword.Text = tempString;
             }
             txtComfirmPassword.Tag = realComfirmPassword;
+        }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+            using (StreamReader file = File.OpenText(@"./NewText.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                Point newPoint = (Point)serializer.Deserialize(file, typeof(Point));
+                this.SetDesktopLocation(newPoint.X, newPoint.Y);
+            }
         }
     }
 }

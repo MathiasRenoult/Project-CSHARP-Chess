@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Newtonsoft.Json;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace Chess
 {
@@ -15,6 +12,7 @@ namespace Chess
         private string mail;
         private string password;
         private Timer timer1;
+        string path = @"./NewText.json";
 
         public LoginForm()
         {
@@ -118,6 +116,9 @@ namespace Chess
         private void timer1_Tick(object sender, EventArgs e)
         {
             cryptatePassword(true);
+
+            string output = JsonConvert.SerializeObject(this.Location);
+            File.WriteAllText(path, output);
         }
 
         public void cryptatePassword(bool timesUp)
@@ -146,6 +147,19 @@ namespace Chess
             txtPassword.Tag = realPassword;
             txtPassword.Focus();
             txtPassword.SelectionStart = txtPassword.Text.Length;
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(path))
+            {
+                using (StreamReader file = File.OpenText(@"./NewText.json"))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    Point newPoint = (Point)serializer.Deserialize(file, typeof(Point));
+                    this.SetDesktopLocation(newPoint.X, newPoint.Y);
+                }
+            }
         }
     }
 }

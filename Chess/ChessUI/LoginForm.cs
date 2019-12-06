@@ -124,8 +124,6 @@ namespace Chess
         {
             string tempString = "";
             string realPassword = txtPassword.Tag.ToString() ;
-            string cryptedPassword = txtPassword.Text;
-
            
             if (realPassword.Length < txtPassword.Text.Length)
             {

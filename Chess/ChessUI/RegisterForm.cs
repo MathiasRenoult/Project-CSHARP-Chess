@@ -22,6 +22,12 @@ namespace Chess
         {
             InitializeComponent();
             InitTimer();
+
+            password = txtPassword.Text;
+            txtPassword.Tag = password;
+
+            passwordComfirm= txtComfirmPassword.Text;
+            txtComfirmPassword.Tag = passwordComfirm;
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -34,7 +40,7 @@ namespace Chess
 
             if (password.Length < 6 || !password.Any(char.IsDigit))
             {
-                lblError.Text= "You password is too weak";
+                lblError.Text = "You password is too weak";
                 acceptedRequest = false;
             }
             if (password != passwordComfirm)
@@ -81,13 +87,13 @@ namespace Chess
                     this.Hide();
                     RegisterForm newRegisterForm = new RegisterForm();
                     newRegisterForm.ShowDialog();
-                 }
+                }
             }
             else
             {
                 lblError.Visible = true;
             }
-              
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -119,54 +125,77 @@ namespace Chess
         }
 
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             cryptatePassword(false);
-            cryptateComfirmPassword(false);
-        }
-
-        public void cryptatePassword(bool keyPressed)
-        {
-            int i;
-            string nextString = "", currentString = txtPassword.Text;
-            for (i = 0; i < currentString.Length; i++)
-            {
-                nextString += "*";
-            }
-            if (keyPressed == true && currentString.Length > 0)
-            {
-
-                nextString = nextString.Substring(0, nextString.Length - 1) + currentString.Substring(currentString.Length - 1, 1);
-            }
-            txtPassword.Text = nextString;
+            txtPassword.Focus();
             txtPassword.SelectionStart = txtPassword.Text.Length;
         }
-
-        public void cryptateComfirmPassword(bool keyPressed)
+   
+        private void txtComfirmPassword_TextChanged(object sender, EventArgs e)
         {
-            int i;
-            string nextString = "", currentString = txtComfirmPassword.Text;
-            for (i = 0; i < currentString.Length; i++)
-            {
-                nextString += "*";
-            }
-            if (keyPressed == true && currentString.Length > 0)
-            {
-
-                nextString = nextString.Substring(0, nextString.Length - 1) + currentString.Substring(currentString.Length - 1, 1);
-            }
-            txtComfirmPassword.Text = nextString;
+            cryptateComfirmPassword(false);
+            txtComfirmPassword.Focus();
             txtComfirmPassword.SelectionStart = txtComfirmPassword.Text.Length;
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
             cryptatePassword(true);
+            cryptateComfirmPassword(true);
         }
 
-        private void txtComfirmPassword_TextChanged(object sender, EventArgs e)
+        public void cryptatePassword(bool timesUp)
         {
-            cryptateComfirmPassword(true);
+            string tempString = "";
+            string realPassword = txtPassword.Tag.ToString();
+
+
+            if (realPassword.Length < txtPassword.Text.Length)
+            {
+                realPassword += txtPassword.Text.Substring(txtPassword.Text.Length - 1, 1);
+                Console.WriteLine(realPassword);
+            }
+            if (realPassword.Length > txtPassword.Text.Length)
+            {
+                realPassword = realPassword.Substring(0, realPassword.Length - 1);
+                Console.WriteLine(realPassword);
+            }
+            if (realPassword.Length == txtPassword.Text.Length && timesUp == true)
+            {
+                for (int i = 0; i < txtPassword.Text.Length; i++)
+                {
+                    tempString += "*";
+                }
+                txtPassword.Text = tempString;
+            }
+            txtPassword.Tag = realPassword;
+        }
+
+        public void cryptateComfirmPassword(bool timesUp)
+        {
+            string tempString = "";
+            string realComfirmPassword = txtComfirmPassword.Tag.ToString();
+
+            if (realComfirmPassword.Length < txtComfirmPassword.Text.Length)
+            {
+                realComfirmPassword += txtComfirmPassword.Text.Substring(txtComfirmPassword.Text.Length - 1, 1);
+                Console.WriteLine(realComfirmPassword);
+            }
+            if (realComfirmPassword.Length > txtComfirmPassword.Text.Length)
+            {
+                realComfirmPassword = realComfirmPassword.Substring(0, realComfirmPassword.Length - 1);
+                Console.WriteLine(realComfirmPassword);
+            }
+            if (realComfirmPassword.Length == txtComfirmPassword.Text.Length && timesUp == true)
+            {
+                for (int i = 0; i < txtComfirmPassword.Text.Length; i++)
+                {
+                    tempString += "*";
+                }
+                txtComfirmPassword.Text = tempString;
+            }
+            txtComfirmPassword.Tag = realComfirmPassword;
         }
     }
 }

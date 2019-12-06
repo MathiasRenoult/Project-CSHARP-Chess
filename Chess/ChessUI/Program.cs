@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using Chess;
 
-namespace Chess
+namespace ChessUI
 {
     static class Program
     {

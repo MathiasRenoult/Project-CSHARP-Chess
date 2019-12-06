@@ -48,7 +48,7 @@
             this.ClientSize = new System.Drawing.Size(784, 411);
             this.Controls.Add(this.lblChessGame);
             this.Name = "GameForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
             this.ResumeLayout(false);
             this.PerformLayout();

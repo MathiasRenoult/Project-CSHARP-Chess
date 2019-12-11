@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MovingPieces.cs" />
     <Compile Include="TestsAddingPieces.cs" />
     <Compile Include="TestsInitializingBoard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

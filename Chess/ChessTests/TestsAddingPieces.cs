@@ -11,10 +11,10 @@ namespace ChessTests
         public void AddingPawn()
         {
              string actualColor = "white";
-            double actualX = 4;
-            double actualY = 5;
-            bool actualIsChecking = true;
-            Pawn p1 = new Pawn(actualColor,actualX,actualY, actualIsChecking);
+            int actualX = 4;
+            int actualY = 5;
+            Board newBoard = new Board();
+            Pawn p1 = new Pawn(actualColor,actualX,actualY, newBoard);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -24,10 +24,10 @@ namespace ChessTests
         public void AddingKnight()
         {
             string actualColor = "black";
-            double actualX = 6;
-            double actualY = 7;
-            bool actualIsChecking = false;
-            Knight p1 = new Knight(actualColor, actualX, actualY, actualIsChecking);
+            int actualX = 6;
+            int actualY = 7;
+            Board newBoard = new Board();
+            Knight p1 = new Knight(actualColor, actualX, actualY, newBoard);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -37,10 +37,10 @@ namespace ChessTests
         public void AddingRook()
         {
             string actualColor = "black";
-            double actualX = 1;
-            double actualY = 2;
-            bool actualIsChecking = false;
-            Rook p1 = new Rook(actualColor, actualX, actualY, actualIsChecking);
+            int actualX = 1;
+            int actualY = 2;
+            Board newBoard = new Board();
+            Rook p1 = new Rook(actualColor, actualX, actualY, newBoard);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -50,10 +50,10 @@ namespace ChessTests
         public void AddingBishop()
         {
             string actualColor = "black";
-            double actualX = 4;
-            double actualY = 4;
-            bool actualIsChecking = true;
-            Bishop p1 = new Bishop(actualColor, actualX, actualY, actualIsChecking);
+            int actualX = 4;
+            int actualY = 4;
+            Board newBoard = new Board();
+            Bishop p1 = new Bishop(actualColor, actualX, actualY, newBoard);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -63,10 +63,10 @@ namespace ChessTests
         public void AddingQueen()
         {
             string actualColor = "black";
-            double actualX = 7;
-            double actualY = 7;
-            bool actualIsChecking = false;
-            Queen p1 = new Queen(actualColor, actualX, actualY,actualIsChecking);
+            int actualX = 7;
+            int actualY = 7;
+            Board newBoard = new Board();
+            Queen p1 = new Queen(actualColor, actualX, actualY, newBoard);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -76,10 +76,10 @@ namespace ChessTests
         public void AddingKing()
         {
             string actualColor = "black";
-            double actualX = 0;
-            double actualY = 4;
-            bool actualIsChecking = true;
-            King p1 = new King(actualColor, actualX, actualY, actualIsChecking);
+            int actualX = 0;
+            int actualY = 4;
+            Board newBoard = new Board();
+            King p1 = new King(actualColor, actualX, actualY, newBoard);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);

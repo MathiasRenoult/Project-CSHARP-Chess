@@ -57,7 +57,7 @@ namespace Chess
             password = txtPassword.Text;
             passwordComfirm = txtComfirmPassword.Text;
 
-            if (password.Length < 6 || !password.Any(char.IsDigit))
+            if (password.Length < 6 /*|| !password.Any(char.IsDigit)*/)
             {
                 lblError.Text = "You password is too weak";
                 acceptedRequest = false;

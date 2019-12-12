@@ -27,7 +27,6 @@ namespace Chess
         public override bool CanMoveThere(int x, int y, Board board)
         {
             int biggerMove = 0;
-
             if (board.Grid[x, y].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
             {
                 return false;

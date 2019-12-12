@@ -23,19 +23,6 @@ namespace Chess
             this.grid = grid;
         }
 
-        public void clearBoard(Board board)
-        {
-            int i, j;
-            for (i = 0; i < size; i++)
-            {
-                for (j = 0; j < size; j++)
-                {
-                    Piece standardVoid = new VoidCase("void", i, j, board);
-                    grid[i, j] = new Case(standardVoid, 0);
-                }
-            }
-        }
-
         public int Size
         {
             get { return size; }
@@ -56,6 +43,19 @@ namespace Chess
         {
             get { return grid; }
             set { grid = value; }
+        }
+
+        public void clearBoard(Board board)
+        {
+            int i, j;
+            for (i = 0; i < size; i++)
+            {
+                for (j = 0; j < size; j++)
+                {
+                    Piece standardVoid = new VoidCase("void", i, j, board);
+                    grid[i, j] = new Case(standardVoid, 0);
+                }
+            }
         }
 
         public void placePieces(Board board)

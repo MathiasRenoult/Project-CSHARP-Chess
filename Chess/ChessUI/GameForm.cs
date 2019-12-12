@@ -17,6 +17,7 @@ namespace Chess
         {
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
+            DrawGrid();
         }
 
         public void InitTimer()
@@ -42,6 +43,14 @@ namespace Chess
                 //we display the error message.
                 MessageBox.Show("Connection with database lost");
                 lblLogged.Text = "Logged as: no connection";
+            }
+        }
+
+        public void DrawGrid()
+        {
+            foreach (PictureBox pctCase in groupBox1.Controls)
+            {
+                pctCase.Image = Image.FromFile("C:\\Users\\Mathias.RENOULT\\Documents\\GitHub\\Project-CSHARP-Chess\\Chess\\Assets\\blackQueen.png") ;
             }
         }
     }

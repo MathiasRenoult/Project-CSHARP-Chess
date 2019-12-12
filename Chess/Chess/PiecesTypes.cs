@@ -26,78 +26,32 @@ namespace Chess
 
         public override bool CanMoveThere(int x, int y, Board board)
         {
-            bool res = false;
-            if (this.Color == "black")
+            int biggerMove = 0;
+
+            if (board.Grid[x, y].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
             {
-                if (board.Grid[x,y].WhoIsOnIt is VoidCase)
-                {
-                    if (this.X == 1)
-                    {
-                        if (x - this.X <= 2 && x - this.X > 0 && this.Y == y && board.Grid[this.X + 1,this.Y].WhoIsOnIt is VoidCase)
-                        {
-                            res = true;
-                        }
-                        else
-                        {
-                            res = false;
-                        }
-                    }
-                    else
-                    {
-                        if (x - this.X == 1 && this.Y == y)
-                        {
-                            res = true;
-                        }
-                        else
-                        {
-                            res = false;
-                        }
-                    }
-                }
-                else
-                {
-                    if (y - this.Y == 1 || y - this.Y == -1)
-                    {
-                        res = true;
-                    }
-                }
+                return false;
             }
             else
             {
-                if (board.Grid[x,y].WhoIsOnIt is VoidCase)
+                if ((this.Color == "white" && this.X == 6) ||
+                     (this.Color == "black" && this.X == 1))
                 {
-                    if (this.X == 6)
-                    {
-                        if (this.X - x <= 2 && this.X - x > 0  && this.Y == y && board.Grid[this.X -1,this.Y].WhoIsOnIt is VoidCase)
-                        {
-                            res = true;
-                        }
-                        else
-                        {
-                            res = false;
-                        }
-                    }
-                    else
-                    {
-                        if (this.X - x == 1 && this.Y == y)
-                        {
-                            res = true;
-                        }
-                        else
-                        {
-                            res = false;
-                        }
-                    }
+                    biggerMove = 1;
+                }
+                if (Math.Abs(this.Y - y) == 1 && board.Grid[x, y].WhoIsOnIt.Color != this.Color && board.Grid[x, y].WhoIsOnIt.Color != "void" && Math.Abs(x - this.X) == 1)
+                {
+                    return true;
                 }
                 else
                 {
-                    if (y - this.Y == 1 || y - this.Y == -1)
+                    if (board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) <= 1 + biggerMove)
                     {
-                        res = true;
+                        return true;
                     }
+                    return false;
                 }
             }
-            return res;
         }
     }
     public class Knight : Piece

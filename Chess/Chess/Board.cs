@@ -30,7 +30,7 @@ namespace Chess
             {
                 for (j = 0; j < size; j++)
                 {
-                    Piece standardVoid = new VoidCase("", i, j, board);
+                    Piece standardVoid = new VoidCase("void", i, j, board);
                     grid[i, j] = new Case(standardVoid, 0);
                 }
             }

@@ -14,14 +14,13 @@ namespace Chess
     public partial class GameForm : Form
     {
         private Timer timer1;
-        
+        private Board mainBoard = new Board();
+
         public GameForm(string user)
         {
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
-            Board mainBoard = new Board();
             mainBoard.placePieces(mainBoard);
-            DrawGrid(mainBoard);
         }
 
         public void InitTimer()
@@ -53,42 +52,44 @@ namespace Chess
         public void DrawGrid(Board board)
         {
             int i=0,j=0;
-            foreach (PictureBox pctCase in groupBox1.Controls)
+            foreach (PictureBox pctCase in pnlMain.Controls.Cast<Control>().OrderBy(c => c.TabIndex))
             {
-
+                if (pctCase.Image != null)
+                {
+                    pctCase.Image = null;
+                }
                 if (board.Grid[i%8,j%8].WhoIsOnIt.Color == "void")
                 {
                     if(pctCase.Image != null)
                     {
                         pctCase.Image = null;
-                        pctCase.Image.Dispose();
                     }   
                 }
                 if(board.Grid[i%8,j%8].WhoIsOnIt.Color == "white")
                 {
                     if(board.Grid[i%8,j%8].WhoIsOnIt is Knight)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/whiteKnight.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteKnight.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Rook)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/whiteRook.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteRook.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Bishop)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/whiteBishop.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteBishop.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Queen)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/whiteQueen.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteQueen.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is King)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/whiteKing.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteKing.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Pawn)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/whitePawn.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whitePawn.png");
                     }
 
                 }
@@ -96,33 +97,37 @@ namespace Chess
                 {
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Knight)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/blackKnight.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackKnight.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Rook)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/blackRook.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackRook.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Bishop)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/blackBishop.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackBishop.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Queen)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/blackQueen.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackQueen.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is King)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/blackKing.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackKing.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Pawn)
                     {
-                        pctCase.Image = Image.FromFile("../../../Assets/blackPawn.png");
+                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackPawn.png");
                     }
                 }
                 j++;
                 if (j%8 == 0)
                 {
                     i++;
+                }
+                if(j == 64)
+                {
+                    break;
                 }
                 
             }
@@ -197,9 +202,10 @@ namespace Chess
 
        private void ClickOnCase(object sender, EventArgs e)
         {
-            Control offset = (Control)(60, 60);
-           PictureBox pctBox = sender as PictureBox;
-           pctSelection.Location = pctBox.Location;
+            DrawGrid(mainBoard);
+            PictureBox pctBox = sender as PictureBox;
+            pctBox.Image = Image.FromFile("../../../Assets/selection.png");
+            lbl1.Text = pctBox.Name;
         }
     }
 }

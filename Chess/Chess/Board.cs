@@ -60,6 +60,7 @@ namespace Chess
 
         public void placePieces(Board board)
         {
+            board.clearBoard(board);
             //Instancing each piece
             Rook newBlackRook1 = new Rook("black", 0, 0, board);
             Knight newBlackKnight1 = new Knight("black", 0, 1, board);

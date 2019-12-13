@@ -197,6 +197,7 @@ namespace Chess
 
        private void ClickOnCase(object sender, EventArgs e)
         {
+            Control offset = (Control)(60, 60);
            PictureBox pctBox = sender as PictureBox;
            pctSelection.Location = pctBox.Location;
         }

@@ -965,7 +965,6 @@
             this.pctSelection.BackColor = System.Drawing.Color.Transparent;
             this.pctSelection.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctSelection.BackgroundImage")));
             this.pctSelection.Location = new System.Drawing.Point(314, 30);
-            this.pctSelection.Margin = new System.Windows.Forms.Padding(60, 60, 3, 3);
             this.pctSelection.Name = "pctSelection";
             this.pctSelection.Padding = new System.Windows.Forms.Padding(7);
             this.pctSelection.Size = new System.Drawing.Size(50, 50);

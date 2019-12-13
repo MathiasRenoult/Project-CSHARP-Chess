@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.lblLogged = new System.Windows.Forms.Label();
             this.pctCase01 = new System.Windows.Forms.PictureBox();
             this.pctCase00 = new System.Windows.Forms.PictureBox();
@@ -95,6 +96,7 @@
             this.pctCase41 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl1 = new System.Windows.Forms.Label();
+            this.pctSelection = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).BeginInit();
@@ -160,6 +162,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSelection)).BeginInit();
             this.SuspendLayout();
             // 
             // lblLogged
@@ -173,7 +176,7 @@
             // 
             // pctCase01
             // 
-            this.pctCase01.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase01.BackColor = System.Drawing.Color.Gray;
             this.pctCase01.Location = new System.Drawing.Point(68, 24);
             this.pctCase01.Name = "pctCase01";
             this.pctCase01.Padding = new System.Windows.Forms.Padding(7);
@@ -181,7 +184,6 @@
             this.pctCase01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase01.TabIndex = 1;
             this.pctCase01.TabStop = false;
-            this.pctCase01.Click += new System.EventHandler(this.pctCase01_Click);
             // 
             // pctCase00
             // 
@@ -193,7 +195,6 @@
             this.pctCase00.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase00.TabIndex = 0;
             this.pctCase00.TabStop = false;
-            this.pctCase00.Click += new System.EventHandler(this.pctCase00_Click);
             // 
             // pctCase02
             // 
@@ -205,11 +206,10 @@
             this.pctCase02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase02.TabIndex = 2;
             this.pctCase02.TabStop = false;
-            this.pctCase02.Click += new System.EventHandler(this.pctCase02_Click);
             // 
             // pctCase03
             // 
-            this.pctCase03.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase03.BackColor = System.Drawing.Color.Gray;
             this.pctCase03.Location = new System.Drawing.Point(168, 24);
             this.pctCase03.Name = "pctCase03";
             this.pctCase03.Padding = new System.Windows.Forms.Padding(7);
@@ -217,7 +217,6 @@
             this.pctCase03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase03.TabIndex = 3;
             this.pctCase03.TabStop = false;
-            this.pctCase03.Click += new System.EventHandler(this.pctCase03_Click);
             // 
             // pctCase06
             // 
@@ -229,11 +228,10 @@
             this.pctCase06.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase06.TabIndex = 6;
             this.pctCase06.TabStop = false;
-            this.pctCase06.Click += new System.EventHandler(this.pctCase06_Click);
             // 
             // pctCase07
             // 
-            this.pctCase07.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase07.BackColor = System.Drawing.Color.Gray;
             this.pctCase07.Location = new System.Drawing.Point(368, 24);
             this.pctCase07.Name = "pctCase07";
             this.pctCase07.Padding = new System.Windows.Forms.Padding(7);
@@ -241,7 +239,6 @@
             this.pctCase07.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase07.TabIndex = 7;
             this.pctCase07.TabStop = false;
-            this.pctCase07.Click += new System.EventHandler(this.pctCase07_Click);
             // 
             // pctCase04
             // 
@@ -253,11 +250,10 @@
             this.pctCase04.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase04.TabIndex = 4;
             this.pctCase04.TabStop = false;
-            this.pctCase04.Click += new System.EventHandler(this.pctCase04_Click);
             // 
             // pctCase05
             // 
-            this.pctCase05.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase05.BackColor = System.Drawing.Color.Gray;
             this.pctCase05.Location = new System.Drawing.Point(268, 24);
             this.pctCase05.Name = "pctCase05";
             this.pctCase05.Padding = new System.Windows.Forms.Padding(7);
@@ -265,7 +261,6 @@
             this.pctCase05.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase05.TabIndex = 5;
             this.pctCase05.TabStop = false;
-            this.pctCase05.Click += new System.EventHandler(this.pctCase05_Click);
             // 
             // pctCase15
             // 
@@ -277,11 +272,10 @@
             this.pctCase15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase15.TabIndex = 15;
             this.pctCase15.TabStop = false;
-            this.pctCase15.Click += new System.EventHandler(this.pctCase15_Click);
             // 
             // pctCase16
             // 
-            this.pctCase16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase16.BackColor = System.Drawing.Color.Gray;
             this.pctCase16.Location = new System.Drawing.Point(318, 74);
             this.pctCase16.Name = "pctCase16";
             this.pctCase16.Padding = new System.Windows.Forms.Padding(7);
@@ -289,7 +283,6 @@
             this.pctCase16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase16.TabIndex = 16;
             this.pctCase16.TabStop = false;
-            this.pctCase16.Click += new System.EventHandler(this.pctCase16_Click);
             // 
             // pctCase13
             // 
@@ -301,11 +294,10 @@
             this.pctCase13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase13.TabIndex = 13;
             this.pctCase13.TabStop = false;
-            this.pctCase13.Click += new System.EventHandler(this.pctCase13_Click);
             // 
             // pctCase14
             // 
-            this.pctCase14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase14.BackColor = System.Drawing.Color.Gray;
             this.pctCase14.Location = new System.Drawing.Point(218, 74);
             this.pctCase14.Name = "pctCase14";
             this.pctCase14.Padding = new System.Windows.Forms.Padding(7);
@@ -313,7 +305,6 @@
             this.pctCase14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase14.TabIndex = 14;
             this.pctCase14.TabStop = false;
-            this.pctCase14.Click += new System.EventHandler(this.pctCase14_Click);
             // 
             // pctCase11
             // 
@@ -325,11 +316,10 @@
             this.pctCase11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase11.TabIndex = 11;
             this.pctCase11.TabStop = false;
-            this.pctCase11.Click += new System.EventHandler(this.pctCase11_Click);
             // 
             // pctCase12
             // 
-            this.pctCase12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase12.BackColor = System.Drawing.Color.Gray;
             this.pctCase12.Location = new System.Drawing.Point(118, 74);
             this.pctCase12.Name = "pctCase12";
             this.pctCase12.Padding = new System.Windows.Forms.Padding(7);
@@ -337,7 +327,6 @@
             this.pctCase12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase12.TabIndex = 12;
             this.pctCase12.TabStop = false;
-            this.pctCase12.Click += new System.EventHandler(this.pctCase12_Click);
             // 
             // pctCase17
             // 
@@ -349,11 +338,10 @@
             this.pctCase17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase17.TabIndex = 71;
             this.pctCase17.TabStop = false;
-            this.pctCase17.Click += new System.EventHandler(this.pctCase17_Click);
             // 
             // pctCase10
             // 
-            this.pctCase10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase10.BackColor = System.Drawing.Color.Gray;
             this.pctCase10.Location = new System.Drawing.Point(18, 74);
             this.pctCase10.Name = "pctCase10";
             this.pctCase10.Padding = new System.Windows.Forms.Padding(7);
@@ -361,7 +349,6 @@
             this.pctCase10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase10.TabIndex = 10;
             this.pctCase10.TabStop = false;
-            this.pctCase10.Click += new System.EventHandler(this.pctCase10_Click);
             // 
             // pctCase35
             // 
@@ -373,11 +360,10 @@
             this.pctCase35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase35.TabIndex = 35;
             this.pctCase35.TabStop = false;
-            this.pctCase35.Click += new System.EventHandler(this.pctCase35_Click);
             // 
             // pctCase36
             // 
-            this.pctCase36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase36.BackColor = System.Drawing.Color.Gray;
             this.pctCase36.Location = new System.Drawing.Point(318, 174);
             this.pctCase36.Name = "pctCase36";
             this.pctCase36.Padding = new System.Windows.Forms.Padding(7);
@@ -385,7 +371,6 @@
             this.pctCase36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase36.TabIndex = 36;
             this.pctCase36.TabStop = false;
-            this.pctCase36.Click += new System.EventHandler(this.pctCase36_Click);
             // 
             // pctCase33
             // 
@@ -397,11 +382,10 @@
             this.pctCase33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase33.TabIndex = 33;
             this.pctCase33.TabStop = false;
-            this.pctCase33.Click += new System.EventHandler(this.pctCase33_Click);
             // 
             // pctCase34
             // 
-            this.pctCase34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase34.BackColor = System.Drawing.Color.Gray;
             this.pctCase34.Location = new System.Drawing.Point(218, 174);
             this.pctCase34.Name = "pctCase34";
             this.pctCase34.Padding = new System.Windows.Forms.Padding(7);
@@ -409,7 +393,6 @@
             this.pctCase34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase34.TabIndex = 34;
             this.pctCase34.TabStop = false;
-            this.pctCase34.Click += new System.EventHandler(this.pctCase34_Click);
             // 
             // pctCase31
             // 
@@ -421,11 +404,10 @@
             this.pctCase31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase31.TabIndex = 31;
             this.pctCase31.TabStop = false;
-            this.pctCase31.Click += new System.EventHandler(this.pctCase31_Click);
             // 
             // pctCase32
             // 
-            this.pctCase32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase32.BackColor = System.Drawing.Color.Gray;
             this.pctCase32.Location = new System.Drawing.Point(118, 174);
             this.pctCase32.Name = "pctCase32";
             this.pctCase32.Padding = new System.Windows.Forms.Padding(7);
@@ -433,7 +415,6 @@
             this.pctCase32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase32.TabIndex = 32;
             this.pctCase32.TabStop = false;
-            this.pctCase32.Click += new System.EventHandler(this.pctCase32_Click);
             // 
             // pctCase37
             // 
@@ -445,11 +426,10 @@
             this.pctCase37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase37.TabIndex = 37;
             this.pctCase37.TabStop = false;
-            this.pctCase37.Click += new System.EventHandler(this.pctCase37_Click);
             // 
             // pctCase30
             // 
-            this.pctCase30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase30.BackColor = System.Drawing.Color.Gray;
             this.pctCase30.Location = new System.Drawing.Point(18, 174);
             this.pctCase30.Name = "pctCase30";
             this.pctCase30.Padding = new System.Windows.Forms.Padding(7);
@@ -457,7 +437,6 @@
             this.pctCase30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase30.TabIndex = 30;
             this.pctCase30.TabStop = false;
-            this.pctCase30.Click += new System.EventHandler(this.pctCase30_Click);
             // 
             // pctCase26
             // 
@@ -469,11 +448,10 @@
             this.pctCase26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase26.TabIndex = 26;
             this.pctCase26.TabStop = false;
-            this.pctCase26.Click += new System.EventHandler(this.pctCase26_Click);
             // 
             // pctCase27
             // 
-            this.pctCase27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase27.BackColor = System.Drawing.Color.Gray;
             this.pctCase27.Location = new System.Drawing.Point(368, 124);
             this.pctCase27.Name = "pctCase27";
             this.pctCase27.Padding = new System.Windows.Forms.Padding(7);
@@ -481,7 +459,6 @@
             this.pctCase27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase27.TabIndex = 27;
             this.pctCase27.TabStop = false;
-            this.pctCase27.Click += new System.EventHandler(this.pctCase27_Click);
             // 
             // pctCase24
             // 
@@ -493,11 +470,10 @@
             this.pctCase24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase24.TabIndex = 24;
             this.pctCase24.TabStop = false;
-            this.pctCase24.Click += new System.EventHandler(this.pctCase24_Click);
             // 
             // pctCase25
             // 
-            this.pctCase25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase25.BackColor = System.Drawing.Color.Gray;
             this.pctCase25.Location = new System.Drawing.Point(268, 124);
             this.pctCase25.Name = "pctCase25";
             this.pctCase25.Padding = new System.Windows.Forms.Padding(7);
@@ -505,7 +481,6 @@
             this.pctCase25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase25.TabIndex = 25;
             this.pctCase25.TabStop = false;
-            this.pctCase25.Click += new System.EventHandler(this.pctCase25_Click);
             // 
             // pctCase22
             // 
@@ -517,11 +492,10 @@
             this.pctCase22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase22.TabIndex = 22;
             this.pctCase22.TabStop = false;
-            this.pctCase22.Click += new System.EventHandler(this.pctCase22_Click);
             // 
             // pctCase23
             // 
-            this.pctCase23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase23.BackColor = System.Drawing.Color.Gray;
             this.pctCase23.Location = new System.Drawing.Point(168, 124);
             this.pctCase23.Name = "pctCase23";
             this.pctCase23.Padding = new System.Windows.Forms.Padding(7);
@@ -529,7 +503,6 @@
             this.pctCase23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase23.TabIndex = 23;
             this.pctCase23.TabStop = false;
-            this.pctCase23.Click += new System.EventHandler(this.pctCase23_Click);
             // 
             // pctCase20
             // 
@@ -541,11 +514,10 @@
             this.pctCase20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase20.TabIndex = 20;
             this.pctCase20.TabStop = false;
-            this.pctCase20.Click += new System.EventHandler(this.pctCase20_Click);
             // 
             // pctCase21
             // 
-            this.pctCase21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase21.BackColor = System.Drawing.Color.Gray;
             this.pctCase21.Location = new System.Drawing.Point(68, 124);
             this.pctCase21.Name = "pctCase21";
             this.pctCase21.Padding = new System.Windows.Forms.Padding(7);
@@ -553,7 +525,6 @@
             this.pctCase21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase21.TabIndex = 21;
             this.pctCase21.TabStop = false;
-            this.pctCase21.Click += new System.EventHandler(this.pctCase21_Click);
             // 
             // pctCase75
             // 
@@ -565,11 +536,10 @@
             this.pctCase75.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase75.TabIndex = 75;
             this.pctCase75.TabStop = false;
-            this.pctCase75.Click += new System.EventHandler(this.pctCase75_Click);
             // 
             // pctCase76
             // 
-            this.pctCase76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase76.BackColor = System.Drawing.Color.Gray;
             this.pctCase76.Location = new System.Drawing.Point(318, 374);
             this.pctCase76.Name = "pctCase76";
             this.pctCase76.Padding = new System.Windows.Forms.Padding(7);
@@ -577,7 +547,6 @@
             this.pctCase76.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase76.TabIndex = 76;
             this.pctCase76.TabStop = false;
-            this.pctCase76.Click += new System.EventHandler(this.pctCase76_Click);
             // 
             // pctCase73
             // 
@@ -589,11 +558,10 @@
             this.pctCase73.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase73.TabIndex = 73;
             this.pctCase73.TabStop = false;
-            this.pctCase73.Click += new System.EventHandler(this.pctCase73_Click);
             // 
             // pctCase74
             // 
-            this.pctCase74.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase74.BackColor = System.Drawing.Color.Gray;
             this.pctCase74.Location = new System.Drawing.Point(218, 374);
             this.pctCase74.Name = "pctCase74";
             this.pctCase74.Padding = new System.Windows.Forms.Padding(7);
@@ -601,7 +569,6 @@
             this.pctCase74.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase74.TabIndex = 74;
             this.pctCase74.TabStop = false;
-            this.pctCase74.Click += new System.EventHandler(this.pctCase74_Click);
             // 
             // pctCase71
             // 
@@ -613,11 +580,10 @@
             this.pctCase71.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase71.TabIndex = 71;
             this.pctCase71.TabStop = false;
-            this.pctCase71.Click += new System.EventHandler(this.pctCase71_Click);
             // 
             // pctCase72
             // 
-            this.pctCase72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase72.BackColor = System.Drawing.Color.Gray;
             this.pctCase72.Location = new System.Drawing.Point(118, 374);
             this.pctCase72.Name = "pctCase72";
             this.pctCase72.Padding = new System.Windows.Forms.Padding(7);
@@ -625,7 +591,6 @@
             this.pctCase72.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase72.TabIndex = 72;
             this.pctCase72.TabStop = false;
-            this.pctCase72.Click += new System.EventHandler(this.pctCase72_Click);
             // 
             // pctCase77
             // 
@@ -637,11 +602,10 @@
             this.pctCase77.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase77.TabIndex = 77;
             this.pctCase77.TabStop = false;
-            this.pctCase77.Click += new System.EventHandler(this.pctCase77_Click);
             // 
             // pctCase70
             // 
-            this.pctCase70.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase70.BackColor = System.Drawing.Color.Gray;
             this.pctCase70.Location = new System.Drawing.Point(18, 374);
             this.pctCase70.Name = "pctCase70";
             this.pctCase70.Padding = new System.Windows.Forms.Padding(7);
@@ -649,7 +613,6 @@
             this.pctCase70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase70.TabIndex = 70;
             this.pctCase70.TabStop = false;
-            this.pctCase70.Click += new System.EventHandler(this.pctCase70_Click);
             // 
             // pctCase66
             // 
@@ -661,11 +624,10 @@
             this.pctCase66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase66.TabIndex = 66;
             this.pctCase66.TabStop = false;
-            this.pctCase66.Click += new System.EventHandler(this.pctCase66_Click);
             // 
             // pctCase67
             // 
-            this.pctCase67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase67.BackColor = System.Drawing.Color.Gray;
             this.pctCase67.Location = new System.Drawing.Point(368, 324);
             this.pctCase67.Name = "pctCase67";
             this.pctCase67.Padding = new System.Windows.Forms.Padding(7);
@@ -673,7 +635,6 @@
             this.pctCase67.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase67.TabIndex = 67;
             this.pctCase67.TabStop = false;
-            this.pctCase67.Click += new System.EventHandler(this.pctCase67_Click);
             // 
             // pctCase64
             // 
@@ -685,11 +646,10 @@
             this.pctCase64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase64.TabIndex = 64;
             this.pctCase64.TabStop = false;
-            this.pctCase64.Click += new System.EventHandler(this.pctCase64_Click);
             // 
             // pctCase65
             // 
-            this.pctCase65.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase65.BackColor = System.Drawing.Color.Gray;
             this.pctCase65.Location = new System.Drawing.Point(268, 324);
             this.pctCase65.Name = "pctCase65";
             this.pctCase65.Padding = new System.Windows.Forms.Padding(7);
@@ -697,7 +657,6 @@
             this.pctCase65.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase65.TabIndex = 65;
             this.pctCase65.TabStop = false;
-            this.pctCase65.Click += new System.EventHandler(this.pctCase65_Click);
             // 
             // pctCase62
             // 
@@ -709,11 +668,10 @@
             this.pctCase62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase62.TabIndex = 62;
             this.pctCase62.TabStop = false;
-            this.pctCase62.Click += new System.EventHandler(this.pctCase62_Click);
             // 
             // pctCase63
             // 
-            this.pctCase63.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase63.BackColor = System.Drawing.Color.Gray;
             this.pctCase63.Location = new System.Drawing.Point(168, 324);
             this.pctCase63.Name = "pctCase63";
             this.pctCase63.Padding = new System.Windows.Forms.Padding(7);
@@ -721,7 +679,6 @@
             this.pctCase63.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase63.TabIndex = 63;
             this.pctCase63.TabStop = false;
-            this.pctCase63.Click += new System.EventHandler(this.pctCase63_Click);
             // 
             // pctCase60
             // 
@@ -733,11 +690,10 @@
             this.pctCase60.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase60.TabIndex = 60;
             this.pctCase60.TabStop = false;
-            this.pctCase60.Click += new System.EventHandler(this.pctCase60_Click);
             // 
             // pctCase61
             // 
-            this.pctCase61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase61.BackColor = System.Drawing.Color.Gray;
             this.pctCase61.Location = new System.Drawing.Point(68, 324);
             this.pctCase61.Name = "pctCase61";
             this.pctCase61.Padding = new System.Windows.Forms.Padding(7);
@@ -745,7 +701,6 @@
             this.pctCase61.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase61.TabIndex = 61;
             this.pctCase61.TabStop = false;
-            this.pctCase61.Click += new System.EventHandler(this.pctCase61_Click);
             // 
             // pctCase55
             // 
@@ -757,11 +712,10 @@
             this.pctCase55.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase55.TabIndex = 65;
             this.pctCase55.TabStop = false;
-            this.pctCase55.Click += new System.EventHandler(this.pctCase55_Click);
             // 
             // pctCase56
             // 
-            this.pctCase56.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase56.BackColor = System.Drawing.Color.Gray;
             this.pctCase56.Location = new System.Drawing.Point(318, 274);
             this.pctCase56.Name = "pctCase56";
             this.pctCase56.Padding = new System.Windows.Forms.Padding(7);
@@ -769,7 +723,6 @@
             this.pctCase56.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase56.TabIndex = 56;
             this.pctCase56.TabStop = false;
-            this.pctCase56.Click += new System.EventHandler(this.pctCase56_Click);
             // 
             // pctCase53
             // 
@@ -781,11 +734,10 @@
             this.pctCase53.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase53.TabIndex = 53;
             this.pctCase53.TabStop = false;
-            this.pctCase53.Click += new System.EventHandler(this.pctCase53_Click);
             // 
             // pctCase54
             // 
-            this.pctCase54.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase54.BackColor = System.Drawing.Color.Gray;
             this.pctCase54.Location = new System.Drawing.Point(218, 274);
             this.pctCase54.Name = "pctCase54";
             this.pctCase54.Padding = new System.Windows.Forms.Padding(7);
@@ -793,7 +745,6 @@
             this.pctCase54.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase54.TabIndex = 54;
             this.pctCase54.TabStop = false;
-            this.pctCase54.Click += new System.EventHandler(this.pctCase54_Click);
             // 
             // pctCase51
             // 
@@ -805,11 +756,10 @@
             this.pctCase51.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase51.TabIndex = 51;
             this.pctCase51.TabStop = false;
-            this.pctCase51.Click += new System.EventHandler(this.pctCase51_Click);
             // 
             // pctCase52
             // 
-            this.pctCase52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase52.BackColor = System.Drawing.Color.Gray;
             this.pctCase52.Location = new System.Drawing.Point(118, 274);
             this.pctCase52.Name = "pctCase52";
             this.pctCase52.Padding = new System.Windows.Forms.Padding(7);
@@ -817,7 +767,6 @@
             this.pctCase52.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase52.TabIndex = 52;
             this.pctCase52.TabStop = false;
-            this.pctCase52.Click += new System.EventHandler(this.pctCase52_Click);
             // 
             // pctCase57
             // 
@@ -829,11 +778,10 @@
             this.pctCase57.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase57.TabIndex = 57;
             this.pctCase57.TabStop = false;
-            this.pctCase57.Click += new System.EventHandler(this.pctCase57_Click);
             // 
             // pctCase50
             // 
-            this.pctCase50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase50.BackColor = System.Drawing.Color.Gray;
             this.pctCase50.Location = new System.Drawing.Point(18, 274);
             this.pctCase50.Name = "pctCase50";
             this.pctCase50.Padding = new System.Windows.Forms.Padding(7);
@@ -841,7 +789,6 @@
             this.pctCase50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase50.TabIndex = 50;
             this.pctCase50.TabStop = false;
-            this.pctCase50.Click += new System.EventHandler(this.pctCase50_Click);
             // 
             // pctCase46
             // 
@@ -853,11 +800,10 @@
             this.pctCase46.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase46.TabIndex = 46;
             this.pctCase46.TabStop = false;
-            this.pctCase46.Click += new System.EventHandler(this.pctCase46_Click);
             // 
             // pctCase47
             // 
-            this.pctCase47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase47.BackColor = System.Drawing.Color.Gray;
             this.pctCase47.Location = new System.Drawing.Point(368, 224);
             this.pctCase47.Name = "pctCase47";
             this.pctCase47.Padding = new System.Windows.Forms.Padding(7);
@@ -865,7 +811,6 @@
             this.pctCase47.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase47.TabIndex = 47;
             this.pctCase47.TabStop = false;
-            this.pctCase47.Click += new System.EventHandler(this.pctCase47_Click);
             // 
             // pctCase44
             // 
@@ -877,11 +822,10 @@
             this.pctCase44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase44.TabIndex = 44;
             this.pctCase44.TabStop = false;
-            this.pctCase44.Click += new System.EventHandler(this.pctCase44_Click);
             // 
             // pctCase45
             // 
-            this.pctCase45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase45.BackColor = System.Drawing.Color.Gray;
             this.pctCase45.Location = new System.Drawing.Point(268, 224);
             this.pctCase45.Name = "pctCase45";
             this.pctCase45.Padding = new System.Windows.Forms.Padding(7);
@@ -889,7 +833,6 @@
             this.pctCase45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase45.TabIndex = 45;
             this.pctCase45.TabStop = false;
-            this.pctCase45.Click += new System.EventHandler(this.pctCase45_Click);
             // 
             // pctCase42
             // 
@@ -901,11 +844,10 @@
             this.pctCase42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase42.TabIndex = 42;
             this.pctCase42.TabStop = false;
-            this.pctCase42.Click += new System.EventHandler(this.pctCase42_Click);
             // 
             // pctCase43
             // 
-            this.pctCase43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase43.BackColor = System.Drawing.Color.Gray;
             this.pctCase43.Location = new System.Drawing.Point(168, 224);
             this.pctCase43.Name = "pctCase43";
             this.pctCase43.Padding = new System.Windows.Forms.Padding(7);
@@ -913,7 +855,6 @@
             this.pctCase43.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase43.TabIndex = 43;
             this.pctCase43.TabStop = false;
-            this.pctCase43.Click += new System.EventHandler(this.pctCase43_Click);
             // 
             // pctCase40
             // 
@@ -925,11 +866,10 @@
             this.pctCase40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase40.TabIndex = 40;
             this.pctCase40.TabStop = false;
-            this.pctCase40.Click += new System.EventHandler(this.pctCase40_Click);
             // 
             // pctCase41
             // 
-            this.pctCase41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pctCase41.BackColor = System.Drawing.Color.Gray;
             this.pctCase41.Location = new System.Drawing.Point(68, 224);
             this.pctCase41.Name = "pctCase41";
             this.pctCase41.Padding = new System.Windows.Forms.Padding(7);
@@ -937,7 +877,6 @@
             this.pctCase41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pctCase41.TabIndex = 41;
             this.pctCase41.TabStop = false;
-            this.pctCase41.Click += new System.EventHandler(this.pctCase41_Click);
             // 
             // groupBox1
             // 
@@ -1021,18 +960,33 @@
             this.lbl1.TabIndex = 67;
             this.lbl1.Text = "lbl1";
             // 
+            // pctSelection
+            // 
+            this.pctSelection.BackColor = System.Drawing.Color.Transparent;
+            this.pctSelection.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pctSelection.BackgroundImage")));
+            this.pctSelection.Location = new System.Drawing.Point(314, 30);
+            this.pctSelection.Margin = new System.Windows.Forms.Padding(60, 60, 3, 3);
+            this.pctSelection.Name = "pctSelection";
+            this.pctSelection.Padding = new System.Windows.Forms.Padding(7);
+            this.pctSelection.Size = new System.Drawing.Size(50, 50);
+            this.pctSelection.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pctSelection.TabIndex = 78;
+            this.pctSelection.TabStop = false;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 648);
+            this.Controls.Add(this.pctSelection);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblLogged);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
+            this.Load += new System.EventHandler(this.GameForm_Click);
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).EndInit();
@@ -1098,6 +1052,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctSelection)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1171,5 +1126,6 @@
         private System.Windows.Forms.PictureBox pctCase41;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.PictureBox pctSelection;
     }
 }

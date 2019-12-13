@@ -127,326 +127,78 @@ namespace Chess
                 
             }
         }
-
-        private void pctCase67_Click(object sender, EventArgs e)
+        private void GameForm_Click(object sender, EventArgs e)
         {
-            lbl1.Text = pctCase67.Name;
-            pctCase67.BackColor = Color.DarkOliveGreen;
+            pctCase00.Click += ClickOnCase;
+            pctCase01.Click += ClickOnCase;
+            pctCase02.Click += ClickOnCase;
+            pctCase03.Click += ClickOnCase;
+            pctCase04.Click += ClickOnCase;
+            pctCase05.Click += ClickOnCase;
+            pctCase06.Click += ClickOnCase;
+            pctCase07.Click += ClickOnCase;
+            pctCase10.Click += ClickOnCase;
+            pctCase11.Click += ClickOnCase;
+            pctCase12.Click += ClickOnCase;
+            pctCase13.Click += ClickOnCase;
+            pctCase14.Click += ClickOnCase;
+            pctCase15.Click += ClickOnCase;
+            pctCase16.Click += ClickOnCase;
+            pctCase17.Click += ClickOnCase;
+            pctCase20.Click += ClickOnCase;
+            pctCase21.Click += ClickOnCase;
+            pctCase22.Click += ClickOnCase;
+            pctCase23.Click += ClickOnCase;
+            pctCase24.Click += ClickOnCase;
+            pctCase25.Click += ClickOnCase;
+            pctCase26.Click += ClickOnCase;
+            pctCase27.Click += ClickOnCase;
+            pctCase30.Click += ClickOnCase;
+            pctCase31.Click += ClickOnCase;
+            pctCase32.Click += ClickOnCase;
+            pctCase33.Click += ClickOnCase;
+            pctCase34.Click += ClickOnCase;
+            pctCase35.Click += ClickOnCase;
+            pctCase36.Click += ClickOnCase;
+            pctCase37.Click += ClickOnCase;
+            pctCase40.Click += ClickOnCase;
+            pctCase41.Click += ClickOnCase;
+            pctCase42.Click += ClickOnCase;
+            pctCase43.Click += ClickOnCase;
+            pctCase44.Click += ClickOnCase;
+            pctCase45.Click += ClickOnCase;
+            pctCase46.Click += ClickOnCase;
+            pctCase47.Click += ClickOnCase;
+            pctCase50.Click += ClickOnCase;
+            pctCase51.Click += ClickOnCase;
+            pctCase52.Click += ClickOnCase;
+            pctCase53.Click += ClickOnCase;
+            pctCase54.Click += ClickOnCase;
+            pctCase55.Click += ClickOnCase;
+            pctCase56.Click += ClickOnCase;
+            pctCase57.Click += ClickOnCase;
+            pctCase60.Click += ClickOnCase;
+            pctCase61.Click += ClickOnCase;
+            pctCase62.Click += ClickOnCase;
+            pctCase63.Click += ClickOnCase;
+            pctCase64.Click += ClickOnCase;
+            pctCase65.Click += ClickOnCase;
+            pctCase66.Click += ClickOnCase;
+            pctCase67.Click += ClickOnCase;
+            pctCase70.Click += ClickOnCase;
+            pctCase71.Click += ClickOnCase;
+            pctCase72.Click += ClickOnCase;
+            pctCase73.Click += ClickOnCase;
+            pctCase74.Click += ClickOnCase;
+            pctCase75.Click += ClickOnCase;
+            pctCase76.Click += ClickOnCase;
+            pctCase77.Click += ClickOnCase;
         }
 
-        private void pctCase10_Click(object sender, EventArgs e)
+       private void ClickOnCase(object sender, EventArgs e)
         {
-
-        }
-
-        private void pctCase01_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase02_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase03_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase14_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase04_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase05_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase15_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase06_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase07_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase17_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase27_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase26_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase25_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase23_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase22_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase21_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase30_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase31_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase32_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase33_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase34_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase35_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase37_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase47_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase46_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase45_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase44_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase43_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase42_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase41_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase40_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase51_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase50_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase60_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase61_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase52_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase62_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase53_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase63_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase54_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase64_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase65_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase55_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase66_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase00_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase57_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase77_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase76_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase56_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase75_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase74_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase73_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase72_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase71_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pctCase70_Click(object sender, EventArgs e)
-        {
-
+           PictureBox pctBox = sender as PictureBox;
+           pctSelection.Location = pctBox.Location;
         }
     }
 }

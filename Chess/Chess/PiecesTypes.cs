@@ -12,7 +12,7 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override bool CanMoveThere(int x, int y)
         {
             return false;
         }
@@ -24,10 +24,10 @@ namespace Chess
             
         }
 
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override bool CanMoveThere(int x, int y)
         {
             int biggerMove = 0;
-            if (board.Grid[x, y].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
+            if (this.Board.Grid[x, y].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
             {
                 return false;
             }
@@ -38,13 +38,13 @@ namespace Chess
                 {
                     biggerMove = 1;
                 }
-                if (Math.Abs(this.Y - y) == 1 && board.Grid[x, y].WhoIsOnIt.Color != this.Color && board.Grid[x, y].WhoIsOnIt.Color != "void" && Math.Abs(x - this.X) == 1)
+                if (Math.Abs(this.Y - y) == 1 && this.Board.Grid[x, y].WhoIsOnIt.Color != this.Color && this.Board.Grid[x, y].WhoIsOnIt.Color != "void" && Math.Abs(x - this.X) == 1)
                 {
                     return true;
                 }
                 else
                 {
-                    if (board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) <= 1 + biggerMove)
+                    if (this.Board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) <= 1 + biggerMove)
                     {
                         return true;
                     }
@@ -59,20 +59,20 @@ namespace Chess
         {
             
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override bool CanMoveThere(int x, int y)
         {
             if (Math.Abs(this.X - x) + Math.Abs(this.Y - y) != 3 || Math.Abs(this.X - x) > 2 || Math.Abs(this.Y - y) > 2)
             {
                 return false; //Invalid move, Knights can only move in "L" shape
             }
 
-            if (board.Grid[x, y].whoIsOnIt.Color == this.Color)
+            if (this.Board.Grid[x, y].whoIsOnIt.Color == this.Color)
             {
                 return false;
             }
             else
             {
-                if (board.Grid[x, y].whoIsOnIt.Color != this.Color)
+                if (this.Board.Grid[x, y].whoIsOnIt.Color != this.Color)
                 {
                     return true;
                 }
@@ -86,7 +86,7 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override bool CanMoveThere(int x, int y)
         {
             return false;
         }
@@ -97,7 +97,7 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override bool CanMoveThere(int x, int y)
         {
             return false;
         }
@@ -108,7 +108,7 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override bool CanMoveThere(int x, int y)
         {
             return false;
         }
@@ -119,9 +119,24 @@ namespace Chess
         public King(string color, int x, int y, Board board) : base(color, x, y, board)
         {
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override bool CanMoveThere(int x, int y)
         {
-            return false;
+            if (Math.Abs(x - this.X) > 1 || Math.Abs(y - this.Y) > 1)
+            {
+                return false;
+            }
+            else
+            {
+                if (this.Board.Grid[x, y].whoIsOnIt.Color != this.Color)
+                {
+                    return true;
+                }
+                if (this.Board.Grid[x, y].whoIsOnIt.Color == this.Color)
+                {
+                    return false;
+                }
+                return true;
+            }
         }
     }
 }

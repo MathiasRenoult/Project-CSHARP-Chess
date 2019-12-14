@@ -21,6 +21,10 @@ namespace Chess
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
             mainBoard.placePieces(mainBoard);
+            King testKing = new King("white", 4, 4, mainBoard);
+            mainBoard.Grid[testKing.X, testKing.Y].whoIsOnIt = testKing;
+
+            DrawGrid(mainBoard);
         }
 
         public void InitTimer()
@@ -202,10 +206,45 @@ namespace Chess
 
        private void ClickOnCase(object sender, EventArgs e)
         {
+            
             DrawGrid(mainBoard);
+
             PictureBox pctBox = sender as PictureBox;
-            pctBox.Image = Image.FromFile("../../../Assets/selection.png");
-            lbl1.Text = pctBox.Name;
+            int i = pctBox.TabIndex / 10;
+            int j = pctBox.TabIndex % 10;
+            
+            if(btnBlackTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "white" || btnWhiteTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "black")
+            {
+
+            }
+            else
+            {
+                pctBox.Image = Image.FromFile("../../../Assets/selection.png");
+                lbl1.Text = pctBox.Name;
+                lbl1.Text = mainBoard.Grid[i, j].whoIsOnIt.Color + mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Length - 6);
+                ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+            }
+        }
+
+        private void ColorValidMoves(Piece piece)
+        {
+            bool res;
+            for(int i=0;i<8;i++)
+            {
+                for(int j=0;j<8;j++)
+                {
+                    res = piece.CanMoveThere(i,j);
+                    if(res == true)
+                    {
+                        Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                        PictureBox pctBox = control[0] as PictureBox;
+                        pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
+                    }
+                    else
+                    {
+                    }
+                }
+            }
         }
     }
 }

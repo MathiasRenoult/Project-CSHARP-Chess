@@ -95,6 +95,9 @@
             this.pctCase41 = new System.Windows.Forms.PictureBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnWhiteTurn = new System.Windows.Forms.RadioButton();
+            this.btnBlackTurn = new System.Windows.Forms.RadioButton();
+            this.grpRadio = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).BeginInit();
@@ -160,6 +163,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).BeginInit();
             this.pnlMain.SuspendLayout();
+            this.grpRadio.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogged
@@ -1019,6 +1023,38 @@
             this.pnlMain.Size = new System.Drawing.Size(481, 462);
             this.pnlMain.TabIndex = 97;
             // 
+            // btnWhiteTurn
+            // 
+            this.btnWhiteTurn.AutoSize = true;
+            this.btnWhiteTurn.Location = new System.Drawing.Point(12, 42);
+            this.btnWhiteTurn.Name = "btnWhiteTurn";
+            this.btnWhiteTurn.Size = new System.Drawing.Size(78, 17);
+            this.btnWhiteTurn.TabIndex = 100;
+            this.btnWhiteTurn.TabStop = true;
+            this.btnWhiteTurn.Text = "White Turn";
+            this.btnWhiteTurn.UseVisualStyleBackColor = true;
+            // 
+            // btnBlackTurn
+            // 
+            this.btnBlackTurn.AutoSize = true;
+            this.btnBlackTurn.Location = new System.Drawing.Point(12, 19);
+            this.btnBlackTurn.Name = "btnBlackTurn";
+            this.btnBlackTurn.Size = new System.Drawing.Size(77, 17);
+            this.btnBlackTurn.TabIndex = 101;
+            this.btnBlackTurn.TabStop = true;
+            this.btnBlackTurn.Text = "Black Turn";
+            this.btnBlackTurn.UseVisualStyleBackColor = true;
+            // 
+            // grpRadio
+            // 
+            this.grpRadio.Controls.Add(this.btnWhiteTurn);
+            this.grpRadio.Controls.Add(this.btnBlackTurn);
+            this.grpRadio.Location = new System.Drawing.Point(540, 223);
+            this.grpRadio.Name = "grpRadio";
+            this.grpRadio.Size = new System.Drawing.Size(103, 68);
+            this.grpRadio.TabIndex = 102;
+            this.grpRadio.TabStop = false;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1028,6 +1064,7 @@
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblLogged);
+            this.Controls.Add(this.grpRadio);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
@@ -1097,6 +1134,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).EndInit();
             this.pnlMain.ResumeLayout(false);
+            this.grpRadio.ResumeLayout(false);
+            this.grpRadio.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1170,5 +1209,8 @@
         private System.Windows.Forms.PictureBox pctCase41;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.RadioButton btnWhiteTurn;
+        private System.Windows.Forms.RadioButton btnBlackTurn;
+        private System.Windows.Forms.GroupBox grpRadio;
     }
 }

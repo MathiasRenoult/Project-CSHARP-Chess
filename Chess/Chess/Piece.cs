@@ -48,7 +48,7 @@ namespace Chess
             set { board = value; }
         }
 
-        public virtual bool CanMoveThere(int x, int y, Board board)
+        public virtual bool CanMoveThere(int x, int y)
         {
             return false;
         }

@@ -98,6 +98,10 @@
             this.btnWhiteTurn = new System.Windows.Forms.RadioButton();
             this.btnBlackTurn = new System.Windows.Forms.RadioButton();
             this.grpRadio = new System.Windows.Forms.GroupBox();
+            this.btnFade = new System.Windows.Forms.RadioButton();
+            this.btnDot = new System.Windows.Forms.RadioButton();
+            this.btnSquare = new System.Windows.Forms.RadioButton();
+            this.grp2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).BeginInit();
@@ -164,6 +168,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.grpRadio.SuspendLayout();
+            this.grp2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogged
@@ -1055,6 +1060,49 @@
             this.grpRadio.TabIndex = 102;
             this.grpRadio.TabStop = false;
             // 
+            // btnFade
+            // 
+            this.btnFade.AutoSize = true;
+            this.btnFade.Checked = true;
+            this.btnFade.Location = new System.Drawing.Point(3, 54);
+            this.btnFade.Name = "btnFade";
+            this.btnFade.Size = new System.Drawing.Size(49, 17);
+            this.btnFade.TabIndex = 105;
+            this.btnFade.TabStop = true;
+            this.btnFade.Text = "Fade";
+            this.btnFade.UseVisualStyleBackColor = true;
+            // 
+            // btnDot
+            // 
+            this.btnDot.AutoSize = true;
+            this.btnDot.Location = new System.Drawing.Point(3, 8);
+            this.btnDot.Name = "btnDot";
+            this.btnDot.Size = new System.Drawing.Size(42, 17);
+            this.btnDot.TabIndex = 103;
+            this.btnDot.Text = "Dot";
+            this.btnDot.UseVisualStyleBackColor = true;
+            // 
+            // btnSquare
+            // 
+            this.btnSquare.AutoSize = true;
+            this.btnSquare.Location = new System.Drawing.Point(3, 31);
+            this.btnSquare.Name = "btnSquare";
+            this.btnSquare.Size = new System.Drawing.Size(59, 17);
+            this.btnSquare.TabIndex = 104;
+            this.btnSquare.Text = "Square";
+            this.btnSquare.UseVisualStyleBackColor = true;
+            // 
+            // grp2
+            // 
+            this.grp2.Controls.Add(this.btnFade);
+            this.grp2.Controls.Add(this.btnSquare);
+            this.grp2.Controls.Add(this.btnDot);
+            this.grp2.Location = new System.Drawing.Point(546, 323);
+            this.grp2.Name = "grp2";
+            this.grp2.Size = new System.Drawing.Size(84, 78);
+            this.grp2.TabIndex = 106;
+            this.grp2.TabStop = false;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1065,6 +1113,7 @@
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblLogged);
             this.Controls.Add(this.grpRadio);
+            this.Controls.Add(this.grp2);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
@@ -1136,6 +1185,8 @@
             this.pnlMain.ResumeLayout(false);
             this.grpRadio.ResumeLayout(false);
             this.grpRadio.PerformLayout();
+            this.grp2.ResumeLayout(false);
+            this.grp2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1212,5 +1263,9 @@
         private System.Windows.Forms.RadioButton btnWhiteTurn;
         private System.Windows.Forms.RadioButton btnBlackTurn;
         private System.Windows.Forms.GroupBox grpRadio;
+        private System.Windows.Forms.RadioButton btnFade;
+        private System.Windows.Forms.RadioButton btnDot;
+        private System.Windows.Forms.RadioButton btnSquare;
+        private System.Windows.Forms.GroupBox grp2;
     }
 }

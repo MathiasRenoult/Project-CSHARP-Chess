@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
 
 namespace Chess
 {
@@ -21,8 +16,12 @@ namespace Chess
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
             mainBoard.placePieces(mainBoard);
-            King testKing = new King("white", 4, 4, mainBoard);
-            mainBoard.Grid[testKing.X, testKing.Y].whoIsOnIt = testKing;
+
+            Queen testQueen = new Queen("white", 3, 3, mainBoard);
+            mainBoard.Grid[testQueen.X, testQueen.Y].whoIsOnIt = testQueen;
+
+            //King testKing = new King("white", 4, 4, mainBoard);
+            //mainBoard.Grid[testKing.X, testKing.Y].whoIsOnIt = testKing;
 
             DrawGrid(mainBoard);
         }
@@ -207,13 +206,11 @@ namespace Chess
        private void ClickOnCase(object sender, EventArgs e)
         {
             
-            DrawGrid(mainBoard);
-
             PictureBox pctBox = sender as PictureBox;
             int i = pctBox.TabIndex / 10;
             int j = pctBox.TabIndex % 10;
-            
-            if(btnBlackTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "white" || btnWhiteTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "black")
+
+            if (btnBlackTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "white" || btnWhiteTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "black")
             {
 
             }
@@ -238,8 +235,20 @@ namespace Chess
                     {
                         Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                         PictureBox pctBox = control[0] as PictureBox;
-                        pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
-                    }
+
+                        if(btnDot.Checked == true)
+                        {
+                            pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
+                        }
+                        if (btnSquare.Checked == true)
+                        {
+                            pctBox.Image = Image.FromFile("../../../Assets/selectionBlue.png");
+                        }
+                        if (btnFade.Checked == true)
+                        {
+                            pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png");
+                        }
+                    }                       
                     else
                     {
                     }

@@ -52,5 +52,21 @@ namespace Chess
         {
             return false;
         }
+
+        public int giveDirection(int a, int b)//Return x or y value for the direction
+        {
+            if (a - b > 0)
+            {
+                return -1;
+            }
+            else if (a - b < 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
     }
 }

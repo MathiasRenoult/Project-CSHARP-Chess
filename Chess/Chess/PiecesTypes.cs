@@ -91,7 +91,7 @@ namespace Chess
             double length = Math.Abs(this.X - x) + Math.Abs(this.Y - y);
 
             if (x == this.X && y == this.Y) return false;
-            if (x - this.X != 0 && y - this.Y != 0 && Math.Abs(y - this.Y) != Math.Abs(x - this.X)) return false;
+            if (x - this.X != 0 && y - this.Y != 0) return false;
 
             int xDir = giveDirection(this.X, x);
             int yDir = giveDirection(this.Y, y);
@@ -131,7 +131,7 @@ namespace Chess
             double length = Math.Round(Math.Sqrt(Math.Pow(Math.Abs(x - this.X), 2) + Math.Pow(Math.Abs(y - this.Y), 2)) / 1.414);
 
             if (x == this.X && y == this.Y) return false;
-            if (x - this.X != 0 && y - this.Y != 0 && Math.Abs(y - this.Y) != Math.Abs(x - this.X)) return false;
+            if (x - this.X == 0 || y - this.Y == 0 || (Math.Abs(x - this.X) != Math.Abs(y - this.Y))) return false;
 
             int xDir = giveDirection(this.X, x);
             int yDir = giveDirection(this.Y, y);

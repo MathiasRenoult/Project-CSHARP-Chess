@@ -10,19 +10,13 @@ namespace Chess
     {
         private Timer timer1;
         private Board mainBoard = new Board();
+        private int i = 0,  j = 0;
 
         public GameForm(string user)
         {
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
             mainBoard.placePieces(mainBoard);
-
-            Queen testQueen = new Queen("white", 3, 3, mainBoard);
-            mainBoard.Grid[testQueen.X, testQueen.Y].whoIsOnIt = testQueen;
-
-            //King testKing = new King("white", 4, 4, mainBoard);
-            //mainBoard.Grid[testKing.X, testKing.Y].whoIsOnIt = testKing;
-
             DrawGrid(mainBoard);
         }
 
@@ -66,7 +60,11 @@ namespace Chess
                     if(pctCase.Image != null)
                     {
                         pctCase.Image = null;
-                    }   
+                    }
+                    if (pctCase.BackgroundImage != null)
+                    {
+                        pctCase.BackgroundImage = null;
+                    }
                 }
                 if(board.Grid[i%8,j%8].WhoIsOnIt.Color == "white")
                 {
@@ -201,26 +199,77 @@ namespace Chess
             pctCase75.Click += ClickOnCase;
             pctCase76.Click += ClickOnCase;
             pctCase77.Click += ClickOnCase;
+
+            btnBlackTurn.Click += UpdateGrid;
+            btnWhiteTurn.Click += UpdateGrid;
+            btnDot.Click += UpdateGrid;
+            btnSquare.Click += UpdateGrid;
+            btnFade.Click += UpdateGrid;
         }
 
        private void ClickOnCase(object sender, EventArgs e)
         {
-            
-            PictureBox pctBox = sender as PictureBox;
-            int i = pctBox.TabIndex / 10;
-            int j = pctBox.TabIndex % 10;
+            int oldI = i;
+            int oldJ = j;
+            string playerTurn;
 
-            if (btnBlackTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "white" || btnWhiteTurn.Checked == true && mainBoard.Grid[i, j].whoIsOnIt.Color == "black")
+            if(btnBlackTurn.Checked == true)
             {
-
+                playerTurn = "black";
             }
             else
             {
-                pctBox.Image = Image.FromFile("../../../Assets/selection.png");
-                lbl1.Text = pctBox.Name;
-                lbl1.Text = mainBoard.Grid[i, j].whoIsOnIt.Color + mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Length - 6);
-                ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+                playerTurn = "white";
             }
+
+            DrawGrid(mainBoard);
+            PictureBox pctBox = sender as PictureBox;
+
+
+            i = pctBox.TabIndex / 10;
+            j = pctBox.TabIndex % 10;
+
+
+            if (mainBoard.Grid[i, j].whoIsOnIt.Color != playerTurn && mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color == playerTurn)
+            {
+                if (mainBoard.Grid[oldI, oldJ].WhoIsOnIt.CanMoveThere(pctBox.TabIndex / 10, pctBox.TabIndex % 10) == true)
+                {
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt = mainBoard.Grid[oldI, oldJ].whoIsOnIt;
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.X = pctBox.TabIndex / 10;
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.Y = pctBox.TabIndex % 10;
+                    VoidCase voidCase = new VoidCase("void", oldI, oldJ, mainBoard);
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt = voidCase;
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color = "void";
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.X = i;
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.Y = j;
+                    DrawGrid(mainBoard);
+                    if(btnWhiteTurn.Checked == true)
+                    {
+                        btnBlackTurn.Checked = btnWhiteTurn.Checked;
+                    }
+                    else
+                    {
+                        btnWhiteTurn.Checked = btnBlackTurn.Checked;
+                    }
+                    
+                }
+            }
+            else
+            {
+                if(mainBoard.Grid[i, j].whoIsOnIt.Color == playerTurn)
+                {
+                    pctBox.Image = Image.FromFile("../../../Assets/selection.png");
+                    lbl1.Text = pctBox.Name;
+                    lbl1.Text = mainBoard.Grid[i, j].whoIsOnIt.Color + mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Length - 6);
+                    ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+                }
+                
+            }
+        }
+
+        private void UpdateGrid(Object sender, EventArgs e)
+        {
+            ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
         }
 
         private void ColorValidMoves(Piece piece)

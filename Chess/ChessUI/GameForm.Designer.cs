@@ -953,9 +953,8 @@
             this.lbl1.AutoSize = true;
             this.lbl1.Location = new System.Drawing.Point(553, 147);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(23, 13);
+            this.lbl1.Size = new System.Drawing.Size(0, 13);
             this.lbl1.TabIndex = 98;
-            this.lbl1.Text = "lbl1";
             // 
             // pnlMain
             // 

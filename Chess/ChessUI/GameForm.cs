@@ -205,6 +205,8 @@ namespace Chess
             btnDot.Click += UpdateGrid;
             btnSquare.Click += UpdateGrid;
             btnFade.Click += UpdateGrid;
+            btnStandardMode.Click += UpdateGrid;
+            btnDebugMode.Click += UpdateGrid;
         }
 
        private void ClickOnCase(object sender, EventArgs e)
@@ -242,6 +244,7 @@ namespace Chess
                         mainBoard.Grid[oldI, 7].whoIsOnIt = newVoidCase;
                         mainBoard.Grid[oldI, 7].whoIsOnIt.Color = "void";
                         mainBoard.Grid[oldI, 7].whoIsOnIt.Y = 5;
+                        mainBoard.Grid[oldI, 7].whoIsOnIt.NbrOfMoves++;
                     }
                     if (mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == -2)
                     {
@@ -251,6 +254,7 @@ namespace Chess
                         mainBoard.Grid[oldI, 0].whoIsOnIt = newVoidCase;
                         mainBoard.Grid[oldI, 0].whoIsOnIt.Color = "void";
                         mainBoard.Grid[oldI, 0].whoIsOnIt.Y = 3;
+                        mainBoard.Grid[oldI, 0].whoIsOnIt.NbrOfMoves++;
                     }
                     mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt = mainBoard.Grid[oldI, oldJ].whoIsOnIt;
                     mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.X = pctBox.TabIndex / 10;
@@ -260,6 +264,7 @@ namespace Chess
                     mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color = "void";
                     mainBoard.Grid[oldI, oldJ].whoIsOnIt.X = i;
                     mainBoard.Grid[oldI, oldJ].whoIsOnIt.Y = j;
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.NbrOfMoves++;
                     DrawGrid(mainBoard);
                     if(btnWhiteTurn.Checked == true)
                     {
@@ -293,31 +298,96 @@ namespace Chess
         private void ColorValidMoves(Piece piece)
         {
             bool res;
-            for(int i=0;i<8;i++)
+            if(btnStandardMode.Checked == true)
             {
-                for(int j=0;j<8;j++)
+                for (int i = 0; i < 8; i++)
                 {
-                    res = piece.CanMoveThere(i,j);
-                    if(res == true)
+                    for (int j = 0; j < 8; j++)
                     {
-                        Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
-                        PictureBox pctBox = control[0] as PictureBox;
+                        res = piece.CanMoveThere(i, j);
+                        if (res == true)
+                        {
+                            Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                            PictureBox pctBox = control[0] as PictureBox;
 
-                        if(btnDot.Checked == true)
-                        {
-                            pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
+                            if (btnDot.Checked == true)
+                            {
+                                pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
+                            }
+                            if (btnSquare.Checked == true)
+                            {
+                                pctBox.Image = Image.FromFile("../../../Assets/selectionBlue.png");
+                            }
+                            if (btnFade.Checked == true)
+                            {
+                                if(mainBoard.Grid[i, j].whoIsOnIt.Color != piece.Color && mainBoard.Grid[i, j].whoIsOnIt.Color != "void")
+                                {
+                                    pctBox.Image = Image.FromFile("../../../Assets/fadeRed.png");
+                                    pctBox.Tag = "fadeRed";
+                                }
+                                else
+                                {
+                                    pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png"); pctBox.Tag = "fadeBlue";
+                                    pctBox.Tag = "fadeBlue";
+                                }
+                                
+                            }
                         }
-                        if (btnSquare.Checked == true)
-                        {
-                            pctBox.Image = Image.FromFile("../../../Assets/selectionBlue.png");
-                        }
-                        if (btnFade.Checked == true)
-                        {
-                            pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png");
-                        }
-                    }                       
-                    else
+                    }
+                }
+            }
+            else
+            {
+                if(btnDebugMode.Checked == true)
+                {
+                    for(int i=0; i<8;i++)
                     {
+                        for(int j=0;j<8;j++)
+                        {
+                            for(int ii=0;ii<8;ii++)
+                            {
+                                for(int jj=0;jj<8;jj++)
+                                {
+                                    if(mainBoard.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj))
+                                    {
+                                        Control[] control = pnlMain.Controls.Find("pctCase" + ii.ToString() + jj.ToString(), true);
+                                        PictureBox pctBox = control[0] as PictureBox;
+                                        if(mainBoard.Grid[i, j].whoIsOnIt.Color == "white")
+                                        { 
+                                            if(pctBox.Image == null)
+                                            {
+                                                pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png");
+                                                pctBox.Tag = "fadeBlue";
+                                            }
+                                            else
+                                            {
+                                                if (pctBox.Tag.ToString() == "fadeRed")
+                                                {
+                                                    pctBox.Image = Image.FromFile("../../../Assets/fadePurple.png");
+                                                    pctBox.Tag = "fadePurple";
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (pctBox.Image == null)
+                                            {
+                                                pctBox.Image = Image.FromFile("../../../Assets/fadeRed.png");
+                                                pctBox.Tag = "fadeRed";
+                                            }
+                                            else
+                                            {
+                                                if (pctBox.Tag.ToString() == "fadeBlue")
+                                                {
+                                                    pctBox.Image = Image.FromFile("../../../Assets/fadePurple.png");
+                                                    pctBox.Tag = "fadePurple";
+                                                }
+                                            }
+                                        }    
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

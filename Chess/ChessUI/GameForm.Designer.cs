@@ -102,6 +102,9 @@
             this.btnDot = new System.Windows.Forms.RadioButton();
             this.btnSquare = new System.Windows.Forms.RadioButton();
             this.grp2 = new System.Windows.Forms.GroupBox();
+            this.grpBox3 = new System.Windows.Forms.GroupBox();
+            this.btnStandardMode = new System.Windows.Forms.RadioButton();
+            this.btnDebugMode = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).BeginInit();
@@ -169,6 +172,7 @@
             this.pnlMain.SuspendLayout();
             this.grpRadio.SuspendLayout();
             this.grp2.SuspendLayout();
+            this.grpBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogged
@@ -1102,12 +1106,45 @@
             this.grp2.TabIndex = 106;
             this.grp2.TabStop = false;
             // 
+            // grpBox3
+            // 
+            this.grpBox3.Controls.Add(this.btnDebugMode);
+            this.grpBox3.Controls.Add(this.btnStandardMode);
+            this.grpBox3.Location = new System.Drawing.Point(653, 323);
+            this.grpBox3.Name = "grpBox3";
+            this.grpBox3.Size = new System.Drawing.Size(156, 77);
+            this.grpBox3.TabIndex = 108;
+            this.grpBox3.TabStop = false;
+            // 
+            // btnStandardMode
+            // 
+            this.btnStandardMode.AutoSize = true;
+            this.btnStandardMode.Location = new System.Drawing.Point(6, 8);
+            this.btnStandardMode.Name = "btnStandardMode";
+            this.btnStandardMode.Size = new System.Drawing.Size(98, 17);
+            this.btnStandardMode.TabIndex = 0;
+            this.btnStandardMode.TabStop = true;
+            this.btnStandardMode.Text = "Standard Mode";
+            this.btnStandardMode.UseVisualStyleBackColor = true;
+            // 
+            // btnDebugMode
+            // 
+            this.btnDebugMode.AutoSize = true;
+            this.btnDebugMode.Location = new System.Drawing.Point(6, 31);
+            this.btnDebugMode.Name = "btnDebugMode";
+            this.btnDebugMode.Size = new System.Drawing.Size(87, 17);
+            this.btnDebugMode.TabIndex = 1;
+            this.btnDebugMode.TabStop = true;
+            this.btnDebugMode.Text = "Debug Mode";
+            this.btnDebugMode.UseVisualStyleBackColor = true;
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 648);
+            this.Controls.Add(this.grpBox3);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblLogged);
@@ -1186,6 +1223,8 @@
             this.grpRadio.PerformLayout();
             this.grp2.ResumeLayout(false);
             this.grp2.PerformLayout();
+            this.grpBox3.ResumeLayout(false);
+            this.grpBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1266,5 +1305,8 @@
         private System.Windows.Forms.RadioButton btnDot;
         private System.Windows.Forms.RadioButton btnSquare;
         private System.Windows.Forms.GroupBox grp2;
+        private System.Windows.Forms.GroupBox grpBox3;
+        private System.Windows.Forms.RadioButton btnDebugMode;
+        private System.Windows.Forms.RadioButton btnStandardMode;
     }
 }

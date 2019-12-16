@@ -234,6 +234,24 @@ namespace Chess
             {
                 if (mainBoard.Grid[oldI, oldJ].WhoIsOnIt.CanMoveThere(pctBox.TabIndex / 10, pctBox.TabIndex % 10) == true)
                 {
+                    if(mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == 2)
+                    {
+                        mainBoard.Grid[oldI, 5].whoIsOnIt = mainBoard.Grid[oldI, 7].whoIsOnIt;
+                        mainBoard.Grid[oldI, 5].whoIsOnIt.Y = mainBoard.Grid[oldI, 7].whoIsOnIt.Y;
+                        VoidCase newVoidCase = new VoidCase("void", oldI, 7, mainBoard);
+                        mainBoard.Grid[oldI, 7].whoIsOnIt = newVoidCase;
+                        mainBoard.Grid[oldI, 7].whoIsOnIt.Color = "void";
+                        mainBoard.Grid[oldI, 7].whoIsOnIt.Y = 5;
+                    }
+                    if (mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == -2)
+                    {
+                        mainBoard.Grid[oldI, 3].whoIsOnIt = mainBoard.Grid[oldI, 0].whoIsOnIt;
+                        mainBoard.Grid[oldI, 3].whoIsOnIt.Y = mainBoard.Grid[oldI, 0].whoIsOnIt.Y;
+                        VoidCase newVoidCase = new VoidCase("void", oldI, 0, mainBoard);
+                        mainBoard.Grid[oldI, 0].whoIsOnIt = newVoidCase;
+                        mainBoard.Grid[oldI, 0].whoIsOnIt.Color = "void";
+                        mainBoard.Grid[oldI, 0].whoIsOnIt.Y = 3;
+                    }
                     mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt = mainBoard.Grid[oldI, oldJ].whoIsOnIt;
                     mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.X = pctBox.TabIndex / 10;
                     mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.Y = pctBox.TabIndex % 10;

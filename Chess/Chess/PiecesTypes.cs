@@ -218,6 +218,16 @@ namespace Chess
         }
         public override bool CanMoveThere(int x, int y)
         {
+            if(NbrOfMoves == 0 && Board.Grid[this.X, 7].whoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 && 
+                Board.Grid[this.X, 6].whoIsOnIt is VoidCase && Board.Grid[this.X, 5].whoIsOnIt is VoidCase)//Small castling
+            {
+                return true;
+            }
+            if (NbrOfMoves == 0 && Board.Grid[this.X, 0].whoIsOnIt.NbrOfMoves == 0 && x == this.X && this.Y - y == 2 &&
+                Board.Grid[this.X, 3].whoIsOnIt is VoidCase && Board.Grid[this.X, 3].whoIsOnIt is VoidCase && Board.Grid[this.X, 1].whoIsOnIt is VoidCase)//Big castling
+            {
+                return true;
+            }
             if (Math.Abs(x - this.X) > 1 || Math.Abs(y - this.Y) > 1)
             {
                 return false;

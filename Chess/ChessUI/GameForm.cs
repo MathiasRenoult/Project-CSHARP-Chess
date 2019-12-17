@@ -400,5 +400,25 @@ namespace Chess
                 }
             }
         }
+
+        private void btnTestColors_Click(object sender, EventArgs e)
+        {
+            FunnyColors();
+        }
+
+        public void FunnyColors()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                    PictureBox pctBox = control[0] as PictureBox;
+
+                    pctBox.BackColor = Color.FromArgb(255,(i*j*10000+48198198)%256,(int)(Math.Pow(i,j)+8919)%256, (int)(Math.Pow(j,i)+291971)%256);  
+
+                }
+            }
+        }
     }
 }

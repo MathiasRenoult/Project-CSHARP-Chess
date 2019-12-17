@@ -17,6 +17,14 @@ namespace Chess
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
             mainBoard.placePieces(mainBoard);
+            /*
+            Queen newBlackQueen = new Queen("black", 4, 4, mainBoard);
+            mainBoard.Grid[newBlackQueen.X, newBlackQueen.Y].whoIsOnIt = newBlackQueen;
+            Queen newWhiteQueen = new Queen("white", 4, 6, mainBoard);
+            mainBoard.Grid[newWhiteQueen.X, newWhiteQueen.Y].whoIsOnIt = newWhiteQueen;
+            Rook newWhiteRook = new Rook("white", 4, 0, mainBoard);
+            mainBoard.Grid[newWhiteRook.X, newWhiteRook.Y].whoIsOnIt = newWhiteRook;
+            */
             DrawGrid(mainBoard);
         }
 
@@ -234,7 +242,7 @@ namespace Chess
 
             if (mainBoard.Grid[i, j].whoIsOnIt.Color != playerTurn && mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color == playerTurn)
             {
-                if (mainBoard.Grid[oldI, oldJ].WhoIsOnIt.CanMoveThere(pctBox.TabIndex / 10, pctBox.TabIndex % 10) == true)
+                if (mainBoard.Grid[oldI, oldJ].WhoIsOnIt.CanMoveThere(pctBox.TabIndex / 10, pctBox.TabIndex % 10) > 0)
                 {
                     if(mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == 2)
                     {
@@ -297,7 +305,7 @@ namespace Chess
 
         private void ColorValidMoves(Piece piece)
         {
-            bool res;
+            int res;
             if(btnStandardMode.Checked == true)
             {
                 for (int i = 0; i < 8; i++)
@@ -305,7 +313,7 @@ namespace Chess
                     for (int j = 0; j < 8; j++)
                     {
                         res = piece.CanMoveThere(i, j);
-                        if (res == true)
+                        if (res>0)
                         {
                             Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                             PictureBox pctBox = control[0] as PictureBox;
@@ -348,7 +356,7 @@ namespace Chess
                             {
                                 for(int jj=0;jj<8;jj++)
                                 {
-                                    if(mainBoard.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj))
+                                    if(mainBoard.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj) == 1)
                                     {
                                         Control[] control = pnlMain.Controls.Find("pctCase" + ii.ToString() + jj.ToString(), true);
                                         PictureBox pctBox = control[0] as PictureBox;

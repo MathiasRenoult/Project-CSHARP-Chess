@@ -55,9 +55,9 @@ namespace Chess
             set { board = value; }
         }
 
-        public virtual bool CanMoveThere(int x, int y)
+        public virtual int CanMoveThere(int x, int y) // 0= invalid move, 1 = valid move, 2 = pawn bigger move
         {
-            return false;
+            return 0;
         }
 
         public int giveDirection(int a, int b)//Return x or y value for the direction

@@ -14,6 +14,7 @@ namespace Chess
 
         public GameForm(string user)
         {
+            InitTimer();
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
             mainBoard.placePieces(mainBoard);
@@ -32,12 +33,13 @@ namespace Chess
         {
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 100; // in miliseconds
+            timer1.Interval = 1; // in miliseconds
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            FunnyColors();
             try
             {
                 ConnectToDB connDB = new ConnectToDB();
@@ -51,7 +53,7 @@ namespace Chess
                 //we display the error message.
                 MessageBox.Show("Connection with database lost");
                 lblLogged.Text = "Logged as: no connection";
-            }
+            } 
         }
 
         public void DrawGrid(Board board)
@@ -401,21 +403,21 @@ namespace Chess
             }
         }
 
-        private void btnTestColors_Click(object sender, EventArgs e)
-        {
-            FunnyColors();
-        }
-
         public void FunnyColors()
         {
+            int r, g, b;
+            Random random = new Random();
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
                     Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                     PictureBox pctBox = control[0] as PictureBox;
+                    r = random.Next(0, 256);
+                    g = random.Next(0, 256);
+                    b = random.Next(0, 256);
 
-                    pctBox.BackColor = Color.FromArgb(255,(i*j*10000+48198198)%256,(int)(Math.Pow(i,j)+8919)%256, (int)(Math.Pow(j,i)+291971)%256);  
+                    pctBox.BackColor = Color.FromArgb(255,r,g,b);  
 
                 }
             }

@@ -12,9 +12,9 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override int CanMoveThere(int x, int y)
         {
-            return false;
+            return 0;
         }
     }
     public class Pawn : Piece 
@@ -24,12 +24,12 @@ namespace Chess
             
         }
 
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override int CanMoveThere(int x, int y)
         {
             int biggerMove = 0;
-            if (board.Grid[x, y].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
+            if (this.Board.Grid[x, y].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
             {
-                return false;
+                return 0;
             }
             else
             {
@@ -38,17 +38,21 @@ namespace Chess
                 {
                     biggerMove = 1;
                 }
-                if (Math.Abs(this.Y - y) == 1 && board.Grid[x, y].WhoIsOnIt.Color != this.Color && board.Grid[x, y].WhoIsOnIt.Color != "void" && Math.Abs(x - this.X) == 1)
+                if (Math.Abs(this.Y - y) == 1 && this.Board.Grid[x, y].WhoIsOnIt.Color != this.Color && this.Board.Grid[x, y].WhoIsOnIt.Color != "void" && Math.Abs(x - this.X) == 1)
                 {
-                    return true;
+                    return 1;
                 }
                 else
                 {
-                    if (board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) <= 1 + biggerMove)
+                    if (this.Board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1 + biggerMove)
                     {
-                        return true;
+                        return 2;      
                     }
-                    return false;
+                    if(this.Board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1)
+                    {
+                        return 1;
+                    }
+                    return 0;
                 }
             }
         }
@@ -59,25 +63,25 @@ namespace Chess
         {
             
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override int CanMoveThere(int x, int y)
         {
             if (Math.Abs(this.X - x) + Math.Abs(this.Y - y) != 3 || Math.Abs(this.X - x) > 2 || Math.Abs(this.Y - y) > 2)
             {
-                return false; //Invalid move, Knights can only move in "L" shape
+                return 0; //Invalid move, Knights can only move in "L" shape
             }
 
-            if (board.Grid[x, y].whoIsOnIt.Color == this.Color)
+            if (this.Board.Grid[x, y].whoIsOnIt.Color == this.Color)
             {
-                return false;
+                return 0;
             }
             else
             {
-                if (board.Grid[x, y].whoIsOnIt.Color != this.Color)
+                if (this.Board.Grid[x, y].whoIsOnIt.Color != this.Color)
                 {
-                    return true;
+                    return 1;
                 }
             }
-            return false;
+            return 0;
         }
     }
     public class Rook : Piece
@@ -86,9 +90,38 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override int CanMoveThere(int x, int y)
         {
-            return false;
+            double length = Math.Abs(this.X - x) + Math.Abs(this.Y - y);
+
+            if (x == this.X && y == this.Y) return 0;
+            if (x - this.X != 0 && y - this.Y != 0) return 0;
+
+            int xDir = giveDirection(this.X, x);
+            int yDir = giveDirection(this.Y, y);
+
+            for (int i = 1; i <= length; i++)
+            {
+                if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != "void")
+                {
+                    if (i == length)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
+                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color == this.Color)
+                    {
+                        return 0;
+                    }
+                }
+            }
+            return 1;
         }
     }
     public class Bishop : Piece
@@ -97,9 +130,38 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override int CanMoveThere(int x, int y)
         {
-            return false;
+            double length = Math.Round(Math.Sqrt(Math.Pow(Math.Abs(x - this.X), 2) + Math.Pow(Math.Abs(y - this.Y), 2)) / 1.414);
+
+            if (x == this.X && y == this.Y) return 0;
+            if (x - this.X == 0 || y - this.Y == 0 || (Math.Abs(x - this.X) != Math.Abs(y - this.Y))) return 0;
+
+            int xDir = giveDirection(this.X, x);
+            int yDir = giveDirection(this.Y, y);
+
+            for (int i = 1; i <= length; i++)
+            {
+                if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != "void")
+                {
+                    if (i == length)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
+                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color == this.Color)
+                    {
+                        return 0;
+                    }
+                }
+            }
+            return 1;
         }
     }
     public class Queen : Piece
@@ -108,20 +170,154 @@ namespace Chess
         {
 
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+
+        public override int CanMoveThere(int x, int y)
         {
-            return false;
-        }
+            double length;
+
+            if (x == this.X && y == this.Y) return 0;
+            if (x - this.X != 0 && y - this.Y != 0 && Math.Abs(y - this.Y) != Math.Abs(x - this.X)) return 0;
+
+            if(Math.Abs(this.X - x) == Math.Abs(this.Y -y))
+            {
+                length = Math.Round(Math.Sqrt(Math.Pow(Math.Abs(x - this.X), 2) + Math.Pow(Math.Abs(y - this.Y), 2)) / 1.414);
+            }
+            else
+            {
+                length = Math.Abs(this.X - x) + Math.Abs(this.Y - y);
+            }
+            
+            int xDir = giveDirection(this.X, x);
+            int yDir = giveDirection(this.Y, y);
+
+            for (int i = 1; i <= length; i++)
+            {
+                if (this.Board.Grid[this.X + (xDir*i), this.Y + (yDir*i)].whoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != "void")
+                {
+                    if (i == Math.Abs(this.X - x))
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
+                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color == this.Color)
+                    {
+                        return 0;
+                    }
+                }
+            }
+            return 1;
+        }  
     }
     public class King : Piece
     {
-        private bool isChecked;
         public King(string color, int x, int y, Board board) : base(color, x, y, board)
         {
         }
-        public override bool CanMoveThere(int x, int y, Board board)
+        public override int CanMoveThere(int x, int y)
         {
+            if(NbrOfMoves == 0 && Board.Grid[this.X, 7].whoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 && 
+                Board.Grid[this.X, 6].whoIsOnIt is VoidCase && Board.Grid[this.X, 5].whoIsOnIt is VoidCase)//Small castling
+            {
+                return 1;
+            }
+            if (NbrOfMoves == 0 && Board.Grid[this.X, 0].whoIsOnIt.NbrOfMoves == 0 && x == this.X && this.Y - y == 2 &&
+                Board.Grid[this.X, 3].whoIsOnIt is VoidCase && Board.Grid[this.X, 3].whoIsOnIt is VoidCase && Board.Grid[this.X, 1].whoIsOnIt is VoidCase)//Big castling
+            {
+                return 1;
+            }
+            if (Math.Abs(x - this.X) > 1 || Math.Abs(y - this.Y) > 1)
+            {
+                return 0;
+            }
+            else
+            {
+                if (this.Board.Grid[x, y].whoIsOnIt.Color != this.Color)
+                {
+                    return 1;
+                }
+                if (this.Board.Grid[x, y].whoIsOnIt.Color == this.Color)
+                {
+                    return 0;
+                }
+                return 1;
+            }
+        }
+
+        public override bool IsChecked()
+        {
+            for(int i=0;i<8;i++)
+            {
+                for(int j=0;j<8;j++)
+                {
+                   if( Board.Grid[i, j].whoIsOnIt.CanMoveThere(this.X, this.Y) == 1)
+                    {
+                        return true;
+                    }
+                }
+            }
             return false;
         }
+
+        public override bool IsCheckMated()
+        {
+            Board tempBoard = new Board();
+
+            for(int ii=0;ii<8;ii++)
+            {
+                for(int jj=0;jj<8;jj++)
+                {
+                    tempBoard.Grid[ii, jj] = this.Board.Grid[ii, jj];
+                }
+            }
+
+            for(int i=0;i<8;i++)
+            {
+                for(int j=0;j<8;j++)
+                {
+                    for(int ii=0;ii<8;ii++)
+                    {
+                        for(int jj=0;jj<8;jj++)
+                        {
+                            if (this.Board.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj) > 1)
+                            {
+                                VoidCase newVoid = new VoidCase("void", i, j, tempBoard);
+                                tempBoard.Grid[i, j].whoIsOnIt = newVoid;
+                                tempBoard.Grid[ii, jj].whoIsOnIt = this.Board.Grid[i, j].whoIsOnIt;
+
+                                for (int k = 0; k < 8; k++)
+                                {
+                                    for (int l = 0; l < 8; l++)
+                                    {
+                                        if (tempBoard.Grid[k, l].whoIsOnIt.CanMoveThere(this.X, this.Y) == 0)
+                                        {
+                                            return false;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (int x = 0; x < 8; x++)
+                                {
+                                    for (int y = 0; y < 8; y++)
+                                    {
+                                        tempBoard.Grid[x, y] = this.Board.Grid[x, y];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
     }
 }

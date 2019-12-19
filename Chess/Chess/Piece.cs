@@ -12,6 +12,7 @@ namespace Chess
         private int x; //X coordinates [0-7]
         private int y; //Y coordinates [0-7]
         private bool isChecking; //Check if the piece is checking the opponent's King
+        private int nbrOfMoves; //Count the number of times the piece was moved
         private Board board; //Set the board wich the piece is on
 
         public Piece(string color,int x,int y, Board board)
@@ -20,6 +21,7 @@ namespace Chess
             this.x = x;
             this.y = y;
             this.isChecking = false;
+            this.nbrOfMoves = 0;
             this.board = board;
         }
         public string Color
@@ -42,15 +44,46 @@ namespace Chess
             get { return isChecking; }
             set { isChecking = value; }
         }
+        public int NbrOfMoves
+        {
+            get { return nbrOfMoves; }
+            set { nbrOfMoves = value; }
+        }
         public Board Board
         {
             get { return board; }
             set { board = value; }
         }
 
-        public virtual bool CanMoveThere(int x, int y, Board board)
+        public virtual int CanMoveThere(int x, int y) // 0= invalid move, 1 = valid move, 2 = pawn bigger move
+        {
+            return 0;
+        }
+
+        public virtual bool IsChecked()
         {
             return false;
+        }
+
+        public virtual bool IsCheckMated()
+        {
+            return false;
+        }
+
+        public int giveDirection(int a, int b)//Return x or y value for the direction
+        {
+            if (a - b > 0)
+            {
+                return -1;
+            }
+            else if (a - b < 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
 
 namespace Chess
 {
@@ -15,19 +10,30 @@ namespace Chess
     {
         private Timer timer1;
         private Board mainBoard = new Board();
+        private int i = 0,  j = 0;
 
         public GameForm(string user)
         {
+            InitTimer();
             InitializeComponent();
             lblLogged.Text = "Logged as: " + user;
             mainBoard.placePieces(mainBoard);
+            /*
+            Queen newBlackQueen = new Queen("black", 4, 4, mainBoard);
+            mainBoard.Grid[newBlackQueen.X, newBlackQueen.Y].whoIsOnIt = newBlackQueen;
+            Queen newWhiteQueen = new Queen("white", 4, 6, mainBoard);
+            mainBoard.Grid[newWhiteQueen.X, newWhiteQueen.Y].whoIsOnIt = newWhiteQueen;
+            Rook newWhiteRook = new Rook("white", 4, 0, mainBoard);
+            mainBoard.Grid[newWhiteRook.X, newWhiteRook.Y].whoIsOnIt = newWhiteRook;
+            */
+            DrawGrid(mainBoard);
         }
 
         public void InitTimer()
         {
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 100; // in miliseconds
+            timer1.Interval = 1000; // in miliseconds
             timer1.Start();
         }
 
@@ -63,7 +69,11 @@ namespace Chess
                     if(pctCase.Image != null)
                     {
                         pctCase.Image = null;
-                    }   
+                    }
+                    if (pctCase.BackgroundImage != null)
+                    {
+                        pctCase.BackgroundImage = null;
+                    }
                 }
                 if(board.Grid[i%8,j%8].WhoIsOnIt.Color == "white")
                 {
@@ -198,14 +208,301 @@ namespace Chess
             pctCase75.Click += ClickOnCase;
             pctCase76.Click += ClickOnCase;
             pctCase77.Click += ClickOnCase;
+
+            btnBlackTurn.Click += UpdateGrid;
+            btnWhiteTurn.Click += UpdateGrid;
+            btnDot.Click += UpdateGrid;
+            btnSquare.Click += UpdateGrid;
+            btnFade.Click += UpdateGrid;
+            btnStandardMode.Click += UpdateGrid;
+            btnDebugMode.Click += UpdateGrid;
         }
 
        private void ClickOnCase(object sender, EventArgs e)
         {
+            int oldI = i;
+            int oldJ = j;
+            string playerTurn;
+
+            if (btnBlackTurn.Checked == true)
+            {
+                playerTurn = "black";
+            }
+            else
+            {
+                playerTurn = "white";
+            }
+
             DrawGrid(mainBoard);
             PictureBox pctBox = sender as PictureBox;
-            pctBox.Image = Image.FromFile("../../../Assets/selection.png");
-            lbl1.Text = pctBox.Name;
+
+
+            i = pctBox.TabIndex / 10;
+            j = pctBox.TabIndex % 10;
+
+
+            if (mainBoard.Grid[i, j].whoIsOnIt.Color != playerTurn && mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color == playerTurn)
+            {
+                if (mainBoard.Grid[oldI, oldJ].WhoIsOnIt.CanMoveThere(pctBox.TabIndex / 10, pctBox.TabIndex % 10) > 0)
+                {
+                    if(mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == 2)
+                    {
+                        mainBoard.Grid[oldI, 5].whoIsOnIt = mainBoard.Grid[oldI, 7].whoIsOnIt;
+                        mainBoard.Grid[oldI, 5].whoIsOnIt.Y = mainBoard.Grid[oldI, 7].whoIsOnIt.Y;
+                        VoidCase newVoidCase = new VoidCase("void", oldI, 7, mainBoard);
+                        mainBoard.Grid[oldI, 7].whoIsOnIt = newVoidCase;
+                        mainBoard.Grid[oldI, 7].whoIsOnIt.Color = "void";
+                        mainBoard.Grid[oldI, 7].whoIsOnIt.Y = 5;
+                        mainBoard.Grid[oldI, 7].whoIsOnIt.NbrOfMoves++;
+                    }
+                    if (mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == -2)
+                    {
+                        mainBoard.Grid[oldI, 3].whoIsOnIt = mainBoard.Grid[oldI, 0].whoIsOnIt;
+                        mainBoard.Grid[oldI, 3].whoIsOnIt.Y = mainBoard.Grid[oldI, 0].whoIsOnIt.Y;
+                        VoidCase newVoidCase = new VoidCase("void", oldI, 0, mainBoard);
+                        mainBoard.Grid[oldI, 0].whoIsOnIt = newVoidCase;
+                        mainBoard.Grid[oldI, 0].whoIsOnIt.Color = "void";
+                        mainBoard.Grid[oldI, 0].whoIsOnIt.Y = 3;
+                        mainBoard.Grid[oldI, 0].whoIsOnIt.NbrOfMoves++;
+                    }
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt = mainBoard.Grid[oldI, oldJ].whoIsOnIt;
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.X = pctBox.TabIndex / 10;
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.Y = pctBox.TabIndex % 10;
+                    VoidCase voidCase = new VoidCase("void", oldI, oldJ, mainBoard);
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt = voidCase;
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color = "void";
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.X = i;
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.Y = j;
+                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.NbrOfMoves++;
+                    DrawGrid(mainBoard);
+                    if(btnWhiteTurn.Checked == true)
+                    {
+                        btnBlackTurn.Checked = btnWhiteTurn.Checked;
+                    }
+                    else
+                    {
+                        btnWhiteTurn.Checked = btnBlackTurn.Checked;
+                    }
+                    
+                }
+            }
+            else
+            {
+                if(mainBoard.Grid[i, j].whoIsOnIt.Color == playerTurn)
+                {
+                    pctBox.Image = Image.FromFile("../../../Assets/selection.png");
+                    lbl1.Text = mainBoard.Grid[i, j].whoIsOnIt.Color + mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Length - 6);
+                    ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+                }
+                
+            }
+            TestForEndGame();
+            ColorCheckedKing();
+        }
+
+        private void UpdateGrid(Object sender, EventArgs e)
+        {
+            ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+            ColorCheckedKing();
+        }
+
+        private void TestForEndGame()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (mainBoard.Grid[i, j].whoIsOnIt is King && mainBoard.Grid[i, j].whoIsOnIt.IsCheckMated())
+                    {
+                        MessageBox.Show("Echec et Mat!");
+                    }
+                }
+            }
+        }
+
+        private void ColorCheckedKing()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (mainBoard.Grid[i, j].whoIsOnIt is King && mainBoard.Grid[i, j].whoIsOnIt.IsChecked())
+                    {
+                        Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                        PictureBox pctBox = control[0] as PictureBox;
+                        pctBox.Image = Image.FromFile("../../../Assets/selectionRed.png");
+                    }
+                }
+            }
+        }
+        private void ColorValidMoves(Piece piece)
+        {
+            int res;
+            if(btnStandardMode.Checked == true)
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    for (int j = 0; j < 8; j++)
+                    {
+                        res = piece.CanMoveThere(i, j);
+                        Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                        PictureBox pctBox = control[0] as PictureBox;
+                        if (res>0)
+                        {
+                            if (btnDot.Checked == true)
+                            {
+                                pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
+                            }
+                            if (btnSquare.Checked == true)
+                            {
+                                pctBox.Image = Image.FromFile("../../../Assets/selectionBlue.png");
+                            }
+                            if (btnFade.Checked == true)
+                            {
+                                if(mainBoard.Grid[i, j].whoIsOnIt.Color != piece.Color && mainBoard.Grid[i, j].whoIsOnIt.Color != "void")
+                                {
+                                    pctBox.Image = Image.FromFile("../../../Assets/fadeRed.png");
+                                    pctBox.Tag = "fadeRed";
+                                }
+                                else
+                                {
+                                    pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png"); pctBox.Tag = "fadeBlue";
+                                    pctBox.Tag = "fadeBlue";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if(btnDebugMode.Checked == true)
+                {
+                    for(int i=0; i<8;i++)
+                    {
+                        for(int j=0;j<8;j++)
+                        {
+                            for(int ii=0;ii<8;ii++)
+                            {
+                                for(int jj=0;jj<8;jj++)
+                                {
+                                    if(mainBoard.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj) == 1)
+                                    {
+                                        Control[] control = pnlMain.Controls.Find("pctCase" + ii.ToString() + jj.ToString(), true);
+                                        PictureBox pctBox = control[0] as PictureBox;
+                                        if(mainBoard.Grid[i, j].whoIsOnIt.Color == "white")
+                                        { 
+                                            if(pctBox.Image == null)
+                                            {
+                                                pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png");
+                                                pctBox.Tag = "fadeBlue";
+                                            }
+                                            else
+                                            {
+                                                if (pctBox.Tag.ToString() == "fadeRed")
+                                                {
+                                                    pctBox.Image = Image.FromFile("../../../Assets/fadePurple.png");
+                                                    pctBox.Tag = "fadePurple";
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (pctBox.Image == null)
+                                            {
+                                                pctBox.Image = Image.FromFile("../../../Assets/fadeRed.png");
+                                                pctBox.Tag = "fadeRed";
+                                            }
+                                            else
+                                            {
+                                                if (pctBox.Tag.ToString() == "fadeBlue")
+                                                {
+                                                    pctBox.Image = Image.FromFile("../../../Assets/fadePurple.png");
+                                                    pctBox.Tag = "fadePurple";
+                                                }
+                                            }
+                                        }    
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void FunnyColors()
+        {
+            int r, g, b;
+            float angle;
+            double hyp;
+            Random random = new Random();
+
+            r = random.Next(0, 256);
+            g = random.Next(0, 256);
+            b = random.Next(0, 256);
+
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                    PictureBox pctBox = control[0] as PictureBox;
+
+                   
+                    hyp = Math.Sqrt(Math.Pow(i, 2) + Math.Pow(j, 2)) / 8 * 255;
+                    if (hyp > 255)
+                    {
+                        hyp = 255;
+                    }
+
+                    //Red
+                    angle = ((int)((Math.Atan2(i-4, j-4) * 180 / Math.PI) + 180)) % 360;
+                    r = (int)GetColorValue(angle);
+
+                    //Green
+                    angle = ((int)((Math.Atan2(i-4, j-4) * 180 / Math.PI) + 300)) % 360;
+                    g = (int)(GetColorValue(angle));
+
+                    //Blue
+                    angle = ((int)((Math.Atan2(i-4, j-4) * 180 / Math.PI) + 420)) % 360;
+                    b = (int)(GetColorValue(angle));
+
+                    pctBox.BackColor = Color.FromArgb(255,r,g,b);  
+
+                }
+            }
+        }
+
+        private void btnTestColors_Click(object sender, EventArgs e)
+        {
+            FunnyColors();
+        }
+
+        public float GetColorValue(float angle)
+        {
+            float temp = 0;
+            if (angle >= 0 && angle < 60)
+            {
+                temp = angle;
+                temp /= 60;
+                return temp * 255;
+            }
+            if (angle >= 60 && angle < 180)
+            {
+                return 255;
+            }
+            if (angle >= 180 && angle < 240)
+            {
+                temp = 240 - angle;
+                temp /= 60;
+                return temp * 255;
+            }
+            if (angle >= 240 && angle < 360)
+            {
+                return 0;
+            }
+            return 0;
         }
     }
 }

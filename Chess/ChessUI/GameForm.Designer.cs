@@ -95,6 +95,17 @@
             this.pctCase41 = new System.Windows.Forms.PictureBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.btnWhiteTurn = new System.Windows.Forms.RadioButton();
+            this.btnBlackTurn = new System.Windows.Forms.RadioButton();
+            this.grpRadio = new System.Windows.Forms.GroupBox();
+            this.btnFade = new System.Windows.Forms.RadioButton();
+            this.btnDot = new System.Windows.Forms.RadioButton();
+            this.btnSquare = new System.Windows.Forms.RadioButton();
+            this.grp2 = new System.Windows.Forms.GroupBox();
+            this.grpBox3 = new System.Windows.Forms.GroupBox();
+            this.btnDebugMode = new System.Windows.Forms.RadioButton();
+            this.btnStandardMode = new System.Windows.Forms.RadioButton();
+            this.btnTestColors = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).BeginInit();
@@ -160,6 +171,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).BeginInit();
             this.pnlMain.SuspendLayout();
+            this.grpRadio.SuspendLayout();
+            this.grp2.SuspendLayout();
+            this.grpBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogged
@@ -944,9 +958,8 @@
             this.lbl1.AutoSize = true;
             this.lbl1.Location = new System.Drawing.Point(553, 147);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(23, 13);
+            this.lbl1.Size = new System.Drawing.Size(0, 13);
             this.lbl1.TabIndex = 98;
-            this.lbl1.Text = "lbl1";
             // 
             // pnlMain
             // 
@@ -1019,15 +1032,136 @@
             this.pnlMain.Size = new System.Drawing.Size(481, 462);
             this.pnlMain.TabIndex = 97;
             // 
+            // btnWhiteTurn
+            // 
+            this.btnWhiteTurn.AutoSize = true;
+            this.btnWhiteTurn.Location = new System.Drawing.Point(12, 42);
+            this.btnWhiteTurn.Name = "btnWhiteTurn";
+            this.btnWhiteTurn.Size = new System.Drawing.Size(78, 17);
+            this.btnWhiteTurn.TabIndex = 100;
+            this.btnWhiteTurn.TabStop = true;
+            this.btnWhiteTurn.Text = "White Turn";
+            this.btnWhiteTurn.UseVisualStyleBackColor = true;
+            // 
+            // btnBlackTurn
+            // 
+            this.btnBlackTurn.AutoSize = true;
+            this.btnBlackTurn.Location = new System.Drawing.Point(12, 19);
+            this.btnBlackTurn.Name = "btnBlackTurn";
+            this.btnBlackTurn.Size = new System.Drawing.Size(77, 17);
+            this.btnBlackTurn.TabIndex = 101;
+            this.btnBlackTurn.TabStop = true;
+            this.btnBlackTurn.Text = "Black Turn";
+            this.btnBlackTurn.UseVisualStyleBackColor = true;
+            // 
+            // grpRadio
+            // 
+            this.grpRadio.Controls.Add(this.btnWhiteTurn);
+            this.grpRadio.Controls.Add(this.btnBlackTurn);
+            this.grpRadio.Location = new System.Drawing.Point(540, 223);
+            this.grpRadio.Name = "grpRadio";
+            this.grpRadio.Size = new System.Drawing.Size(103, 68);
+            this.grpRadio.TabIndex = 102;
+            this.grpRadio.TabStop = false;
+            // 
+            // btnFade
+            // 
+            this.btnFade.AutoSize = true;
+            this.btnFade.Checked = true;
+            this.btnFade.Location = new System.Drawing.Point(3, 54);
+            this.btnFade.Name = "btnFade";
+            this.btnFade.Size = new System.Drawing.Size(49, 17);
+            this.btnFade.TabIndex = 105;
+            this.btnFade.TabStop = true;
+            this.btnFade.Text = "Fade";
+            this.btnFade.UseVisualStyleBackColor = true;
+            // 
+            // btnDot
+            // 
+            this.btnDot.AutoSize = true;
+            this.btnDot.Location = new System.Drawing.Point(3, 8);
+            this.btnDot.Name = "btnDot";
+            this.btnDot.Size = new System.Drawing.Size(42, 17);
+            this.btnDot.TabIndex = 103;
+            this.btnDot.Text = "Dot";
+            this.btnDot.UseVisualStyleBackColor = true;
+            // 
+            // btnSquare
+            // 
+            this.btnSquare.AutoSize = true;
+            this.btnSquare.Location = new System.Drawing.Point(3, 31);
+            this.btnSquare.Name = "btnSquare";
+            this.btnSquare.Size = new System.Drawing.Size(59, 17);
+            this.btnSquare.TabIndex = 104;
+            this.btnSquare.Text = "Square";
+            this.btnSquare.UseVisualStyleBackColor = true;
+            // 
+            // grp2
+            // 
+            this.grp2.Controls.Add(this.btnFade);
+            this.grp2.Controls.Add(this.btnSquare);
+            this.grp2.Controls.Add(this.btnDot);
+            this.grp2.Location = new System.Drawing.Point(546, 323);
+            this.grp2.Name = "grp2";
+            this.grp2.Size = new System.Drawing.Size(84, 78);
+            this.grp2.TabIndex = 106;
+            this.grp2.TabStop = false;
+            // 
+            // grpBox3
+            // 
+            this.grpBox3.Controls.Add(this.btnDebugMode);
+            this.grpBox3.Controls.Add(this.btnStandardMode);
+            this.grpBox3.Location = new System.Drawing.Point(653, 323);
+            this.grpBox3.Name = "grpBox3";
+            this.grpBox3.Size = new System.Drawing.Size(156, 77);
+            this.grpBox3.TabIndex = 108;
+            this.grpBox3.TabStop = false;
+            // 
+            // btnDebugMode
+            // 
+            this.btnDebugMode.AutoSize = true;
+            this.btnDebugMode.Location = new System.Drawing.Point(6, 31);
+            this.btnDebugMode.Name = "btnDebugMode";
+            this.btnDebugMode.Size = new System.Drawing.Size(87, 17);
+            this.btnDebugMode.TabIndex = 1;
+            this.btnDebugMode.TabStop = true;
+            this.btnDebugMode.Text = "Debug Mode";
+            this.btnDebugMode.UseVisualStyleBackColor = true;
+            // 
+            // btnStandardMode
+            // 
+            this.btnStandardMode.AutoSize = true;
+            this.btnStandardMode.Location = new System.Drawing.Point(6, 8);
+            this.btnStandardMode.Name = "btnStandardMode";
+            this.btnStandardMode.Size = new System.Drawing.Size(98, 17);
+            this.btnStandardMode.TabIndex = 0;
+            this.btnStandardMode.TabStop = true;
+            this.btnStandardMode.Text = "Standard Mode";
+            this.btnStandardMode.UseVisualStyleBackColor = true;
+            // 
+            // btnTestColors
+            // 
+            this.btnTestColors.Location = new System.Drawing.Point(559, 96);
+            this.btnTestColors.Name = "btnTestColors";
+            this.btnTestColors.Size = new System.Drawing.Size(216, 101);
+            this.btnTestColors.TabIndex = 109;
+            this.btnTestColors.Text = "TEST COLORS";
+            this.btnTestColors.UseVisualStyleBackColor = true;
+            this.btnTestColors.Click += new System.EventHandler(this.btnTestColors_Click);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 648);
+            this.Controls.Add(this.btnTestColors);
+            this.Controls.Add(this.grpBox3);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblLogged);
+            this.Controls.Add(this.grpRadio);
+            this.Controls.Add(this.grp2);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
@@ -1097,6 +1231,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).EndInit();
             this.pnlMain.ResumeLayout(false);
+            this.grpRadio.ResumeLayout(false);
+            this.grpRadio.PerformLayout();
+            this.grp2.ResumeLayout(false);
+            this.grp2.PerformLayout();
+            this.grpBox3.ResumeLayout(false);
+            this.grpBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1170,5 +1310,16 @@
         private System.Windows.Forms.PictureBox pctCase41;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.RadioButton btnWhiteTurn;
+        private System.Windows.Forms.RadioButton btnBlackTurn;
+        private System.Windows.Forms.GroupBox grpRadio;
+        private System.Windows.Forms.RadioButton btnFade;
+        private System.Windows.Forms.RadioButton btnDot;
+        private System.Windows.Forms.RadioButton btnSquare;
+        private System.Windows.Forms.GroupBox grp2;
+        private System.Windows.Forms.GroupBox grpBox3;
+        private System.Windows.Forms.RadioButton btnDebugMode;
+        private System.Windows.Forms.RadioButton btnStandardMode;
+        private System.Windows.Forms.Button btnTestColors;
     }
 }

@@ -81,23 +81,23 @@ namespace Chess
             Pawn newBlackPawn8 = new Pawn("black", 1, 7, board);
 
 
-            Rook newWhiteRook1 = new Rook("white", 0, 0, board);
-            Knight newWhiteKnight1 = new Knight("white", 0, 1, board);
-            Bishop newWhiteBishop1 = new Bishop("white", 0, 2, board);
-            Queen newWhiteQueen = new Queen("white", 0, 3, board);
-            King newWhiteKing = new King("white", 0, 4, board);
-            Bishop newWhiteBishop2 = new Bishop("white", 0, 5, board);
-            Knight newWhiteKnight2 = new Knight("white", 0, 6, board);
-            Rook newWhiteRook2 = new Rook("white", 0, 7, board);
+            Rook newWhiteRook1 = new Rook("white", 7, 0, board);
+            Knight newWhiteKnight1 = new Knight("white", 7, 1, board);
+            Bishop newWhiteBishop1 = new Bishop("white", 7, 2, board);
+            Queen newWhiteQueen = new Queen("white", 7, 3, board);
+            King newWhiteKing = new King("white", 7, 4, board);
+            Bishop newWhiteBishop2 = new Bishop("white", 7, 5, board);
+            Knight newWhiteKnight2 = new Knight("white", 7, 6, board);
+            Rook newWhiteRook2 = new Rook("white", 7, 7, board);
 
-            Pawn newWhitePawn1 = new Pawn("white", 1, 0, board);
-            Pawn newWhitePawn2 = new Pawn("white", 1, 1, board);
-            Pawn newWhitePawn3 = new Pawn("white", 1, 2, board);
-            Pawn newWhitePawn4 = new Pawn("white", 1, 3, board);
-            Pawn newWhitePawn5 = new Pawn("white", 1, 4, board);
-            Pawn newWhitePawn6 = new Pawn("white", 1, 5, board);
-            Pawn newWhitePawn7 = new Pawn("white", 1, 6, board);
-            Pawn newWhitePawn8 = new Pawn("white", 1, 7, board);
+            Pawn newWhitePawn1 = new Pawn("white", 6, 0, board);
+            Pawn newWhitePawn2 = new Pawn("white", 6, 1, board);
+            Pawn newWhitePawn3 = new Pawn("white", 6, 2, board);
+            Pawn newWhitePawn4 = new Pawn("white", 6, 3, board);
+            Pawn newWhitePawn5 = new Pawn("white", 6, 4, board);
+            Pawn newWhitePawn6 = new Pawn("white", 6, 5, board);
+            Pawn newWhitePawn7 = new Pawn("white", 6, 6, board);
+            Pawn newWhitePawn8 = new Pawn("white", 6, 7, board);
 
             //Placing each piece on the board
             board.Grid[0, 0].WhoIsOnIt = newBlackRook1;

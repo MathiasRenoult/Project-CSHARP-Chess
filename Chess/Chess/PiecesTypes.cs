@@ -216,7 +216,6 @@ namespace Chess
     }
     public class King : Piece
     {
-        private bool isChecked;
         public King(string color, int x, int y, Board board) : base(color, x, y, board)
         {
         }
@@ -249,5 +248,76 @@ namespace Chess
                 return 1;
             }
         }
+
+        public override bool IsChecked()
+        {
+            for(int i=0;i<8;i++)
+            {
+                for(int j=0;j<8;j++)
+                {
+                   if( Board.Grid[i, j].whoIsOnIt.CanMoveThere(this.X, this.Y) == 1)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public override bool IsCheckMated()
+        {
+            Board tempBoard = new Board();
+
+            for(int ii=0;ii<8;ii++)
+            {
+                for(int jj=0;jj<8;jj++)
+                {
+                    tempBoard.Grid[ii, jj] = this.Board.Grid[ii, jj];
+                }
+            }
+
+            for(int i=0;i<8;i++)
+            {
+                for(int j=0;j<8;j++)
+                {
+                    for(int ii=0;ii<8;ii++)
+                    {
+                        for(int jj=0;jj<8;jj++)
+                        {
+                            if (this.Board.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj) > 1)
+                            {
+                                VoidCase newVoid = new VoidCase("void", i, j, tempBoard);
+                                tempBoard.Grid[i, j].whoIsOnIt = newVoid;
+                                tempBoard.Grid[ii, jj].whoIsOnIt = this.Board.Grid[i, j].whoIsOnIt;
+
+                                for (int k = 0; k < 8; k++)
+                                {
+                                    for (int l = 0; l < 8; l++)
+                                    {
+                                        if (tempBoard.Grid[k, l].whoIsOnIt.CanMoveThere(this.X, this.Y) == 0)
+                                        {
+                                            return false;
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                for (int x = 0; x < 8; x++)
+                                {
+                                    for (int y = 0; y < 8; y++)
+                                    {
+                                        tempBoard.Grid[x, y] = this.Board.Grid[x, y];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
     }
 }

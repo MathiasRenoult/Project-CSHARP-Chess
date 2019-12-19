@@ -60,6 +60,16 @@ namespace Chess
             return 0;
         }
 
+        public virtual bool IsChecked()
+        {
+            return false;
+        }
+
+        public virtual bool IsCheckMated()
+        {
+            return false;
+        }
+
         public int giveDirection(int a, int b)//Return x or y value for the direction
         {
             if (a - b > 0)

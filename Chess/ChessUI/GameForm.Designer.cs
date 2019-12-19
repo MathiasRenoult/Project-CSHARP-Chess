@@ -1147,6 +1147,7 @@
             this.btnTestColors.TabIndex = 109;
             this.btnTestColors.Text = "TEST COLORS";
             this.btnTestColors.UseVisualStyleBackColor = true;
+            this.btnTestColors.Click += new System.EventHandler(this.btnTestColors_Click);
             // 
             // GameForm
             // 

@@ -33,13 +33,12 @@ namespace Chess
         {
             timer1 = new Timer();
             timer1.Tick += new EventHandler(timer1_Tick);
-            timer1.Interval = 1; // in miliseconds
+            timer1.Interval = 1000; // in miliseconds
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            FunnyColors();
             try
             {
                 ConnectToDB connDB = new ConnectToDB();
@@ -53,7 +52,7 @@ namespace Chess
                 //we display the error message.
                 MessageBox.Show("Connection with database lost");
                 lblLogged.Text = "Logged as: no connection";
-            } 
+            }
         }
 
         public void DrawGrid(Board board)
@@ -225,7 +224,7 @@ namespace Chess
             int oldJ = j;
             string playerTurn;
 
-            if(btnBlackTurn.Checked == true)
+            if (btnBlackTurn.Checked == true)
             {
                 playerTurn = "black";
             }
@@ -292,19 +291,50 @@ namespace Chess
                 if(mainBoard.Grid[i, j].whoIsOnIt.Color == playerTurn)
                 {
                     pctBox.Image = Image.FromFile("../../../Assets/selection.png");
-                    lbl1.Text = pctBox.Name;
                     lbl1.Text = mainBoard.Grid[i, j].whoIsOnIt.Color + mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Length - 6);
                     ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
                 }
                 
             }
+            TestForEndGame();
+            ColorCheckedKing();
         }
 
         private void UpdateGrid(Object sender, EventArgs e)
         {
             ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+            ColorCheckedKing();
         }
 
+        private void TestForEndGame()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (mainBoard.Grid[i, j].whoIsOnIt is King && mainBoard.Grid[i, j].whoIsOnIt.IsCheckMated())
+                    {
+                        MessageBox.Show("Echec et Mat!");
+                    }
+                }
+            }
+        }
+
+        private void ColorCheckedKing()
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    if (mainBoard.Grid[i, j].whoIsOnIt is King && mainBoard.Grid[i, j].whoIsOnIt.IsChecked())
+                    {
+                        Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                        PictureBox pctBox = control[0] as PictureBox;
+                        pctBox.Image = Image.FromFile("../../../Assets/selectionRed.png");
+                    }
+                }
+            }
+        }
         private void ColorValidMoves(Piece piece)
         {
             int res;
@@ -315,11 +345,10 @@ namespace Chess
                     for (int j = 0; j < 8; j++)
                     {
                         res = piece.CanMoveThere(i, j);
+                        Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
+                        PictureBox pctBox = control[0] as PictureBox;
                         if (res>0)
                         {
-                            Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
-                            PictureBox pctBox = control[0] as PictureBox;
-
                             if (btnDot.Checked == true)
                             {
                                 pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
@@ -340,7 +369,6 @@ namespace Chess
                                     pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png"); pctBox.Tag = "fadeBlue";
                                     pctBox.Tag = "fadeBlue";
                                 }
-                                
                             }
                         }
                     }
@@ -406,21 +434,75 @@ namespace Chess
         public void FunnyColors()
         {
             int r, g, b;
+            float angle;
+            double hyp;
             Random random = new Random();
+
+            r = random.Next(0, 256);
+            g = random.Next(0, 256);
+            b = random.Next(0, 256);
+
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
                     Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                     PictureBox pctBox = control[0] as PictureBox;
-                    r = random.Next(0, 256);
-                    g = random.Next(0, 256);
-                    b = random.Next(0, 256);
+
+                   
+                    hyp = Math.Sqrt(Math.Pow(i, 2) + Math.Pow(j, 2)) / 8 * 255;
+                    if (hyp > 255)
+                    {
+                        hyp = 255;
+                    }
+
+                    //Red
+                    angle = ((int)((Math.Atan2(i-4, j-4) * 180 / Math.PI) + 180)) % 360;
+                    r = (int)GetColorValue(angle);
+
+                    //Green
+                    angle = ((int)((Math.Atan2(i-4, j-4) * 180 / Math.PI) + 300)) % 360;
+                    g = (int)(GetColorValue(angle));
+
+                    //Blue
+                    angle = ((int)((Math.Atan2(i-4, j-4) * 180 / Math.PI) + 420)) % 360;
+                    b = (int)(GetColorValue(angle));
 
                     pctBox.BackColor = Color.FromArgb(255,r,g,b);  
 
                 }
             }
+        }
+
+        private void btnTestColors_Click(object sender, EventArgs e)
+        {
+            FunnyColors();
+        }
+
+        public float GetColorValue(float angle)
+        {
+            float temp = 0;
+            if (angle >= 0 && angle < 60)
+            {
+                temp = angle;
+                temp /= 60;
+                return temp * 255;
+            }
+            if (angle >= 60 && angle < 180)
+            {
+                return 255;
+            }
+            if (angle >= 180 && angle < 240)
+            {
+                temp = 240 - angle;
+                temp /= 60;
+                return temp * 255;
+            }
+            if (angle >= 240 && angle < 360)
+            {
+                return 0;
+            }
+            return 0;
         }
     }
 }

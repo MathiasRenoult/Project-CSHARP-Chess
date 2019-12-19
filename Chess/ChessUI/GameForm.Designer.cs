@@ -97,15 +97,48 @@
             this.pnlMain = new System.Windows.Forms.Panel();
             this.btnWhiteTurn = new System.Windows.Forms.RadioButton();
             this.btnBlackTurn = new System.Windows.Forms.RadioButton();
-            this.grpRadio = new System.Windows.Forms.GroupBox();
+            this.grpTurns = new System.Windows.Forms.GroupBox();
             this.btnFade = new System.Windows.Forms.RadioButton();
             this.btnDot = new System.Windows.Forms.RadioButton();
             this.btnSquare = new System.Windows.Forms.RadioButton();
-            this.grp2 = new System.Windows.Forms.GroupBox();
-            this.grpBox3 = new System.Windows.Forms.GroupBox();
+            this.grpPrevisualisation = new System.Windows.Forms.GroupBox();
+            this.grpMode = new System.Windows.Forms.GroupBox();
             this.btnDebugMode = new System.Windows.Forms.RadioButton();
             this.btnStandardMode = new System.Windows.Forms.RadioButton();
             this.btnTestColors = new System.Windows.Forms.Button();
+            this.label0 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.chkLabels = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).BeginInit();
@@ -171,9 +204,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).BeginInit();
             this.pnlMain.SuspendLayout();
-            this.grpRadio.SuspendLayout();
-            this.grp2.SuspendLayout();
-            this.grpBox3.SuspendLayout();
+            this.grpTurns.SuspendLayout();
+            this.grpPrevisualisation.SuspendLayout();
+            this.grpMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogged
@@ -189,7 +222,7 @@
             // 
             this.pctCase01.BackColor = System.Drawing.Color.Gray;
             this.pctCase01.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase01.Location = new System.Drawing.Point(92, 28);
+            this.pctCase01.Location = new System.Drawing.Point(53, 3);
             this.pctCase01.Name = "pctCase01";
             this.pctCase01.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase01.Size = new System.Drawing.Size(50, 50);
@@ -201,7 +234,7 @@
             // 
             this.pctCase00.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase00.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase00.Location = new System.Drawing.Point(42, 28);
+            this.pctCase00.Location = new System.Drawing.Point(3, 3);
             this.pctCase00.Name = "pctCase00";
             this.pctCase00.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase00.Size = new System.Drawing.Size(50, 50);
@@ -213,7 +246,7 @@
             // 
             this.pctCase02.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase02.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase02.Location = new System.Drawing.Point(142, 28);
+            this.pctCase02.Location = new System.Drawing.Point(103, 3);
             this.pctCase02.Name = "pctCase02";
             this.pctCase02.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase02.Size = new System.Drawing.Size(50, 50);
@@ -225,7 +258,7 @@
             // 
             this.pctCase03.BackColor = System.Drawing.Color.Gray;
             this.pctCase03.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase03.Location = new System.Drawing.Point(192, 28);
+            this.pctCase03.Location = new System.Drawing.Point(153, 3);
             this.pctCase03.Name = "pctCase03";
             this.pctCase03.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase03.Size = new System.Drawing.Size(50, 50);
@@ -237,7 +270,7 @@
             // 
             this.pctCase06.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase06.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase06.Location = new System.Drawing.Point(342, 28);
+            this.pctCase06.Location = new System.Drawing.Point(303, 3);
             this.pctCase06.Name = "pctCase06";
             this.pctCase06.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase06.Size = new System.Drawing.Size(50, 50);
@@ -249,7 +282,7 @@
             // 
             this.pctCase07.BackColor = System.Drawing.Color.Gray;
             this.pctCase07.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase07.Location = new System.Drawing.Point(392, 28);
+            this.pctCase07.Location = new System.Drawing.Point(352, 3);
             this.pctCase07.Name = "pctCase07";
             this.pctCase07.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase07.Size = new System.Drawing.Size(50, 50);
@@ -261,7 +294,7 @@
             // 
             this.pctCase04.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase04.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase04.Location = new System.Drawing.Point(242, 28);
+            this.pctCase04.Location = new System.Drawing.Point(203, 3);
             this.pctCase04.Name = "pctCase04";
             this.pctCase04.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase04.Size = new System.Drawing.Size(50, 50);
@@ -273,7 +306,7 @@
             // 
             this.pctCase05.BackColor = System.Drawing.Color.Gray;
             this.pctCase05.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase05.Location = new System.Drawing.Point(292, 28);
+            this.pctCase05.Location = new System.Drawing.Point(253, 3);
             this.pctCase05.Name = "pctCase05";
             this.pctCase05.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase05.Size = new System.Drawing.Size(50, 50);
@@ -285,7 +318,7 @@
             // 
             this.pctCase15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase15.Location = new System.Drawing.Point(292, 78);
+            this.pctCase15.Location = new System.Drawing.Point(253, 53);
             this.pctCase15.Name = "pctCase15";
             this.pctCase15.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase15.Size = new System.Drawing.Size(50, 50);
@@ -297,7 +330,7 @@
             // 
             this.pctCase16.BackColor = System.Drawing.Color.Gray;
             this.pctCase16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase16.Location = new System.Drawing.Point(342, 78);
+            this.pctCase16.Location = new System.Drawing.Point(303, 53);
             this.pctCase16.Name = "pctCase16";
             this.pctCase16.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase16.Size = new System.Drawing.Size(50, 50);
@@ -309,7 +342,7 @@
             // 
             this.pctCase13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase13.Location = new System.Drawing.Point(192, 78);
+            this.pctCase13.Location = new System.Drawing.Point(153, 53);
             this.pctCase13.Name = "pctCase13";
             this.pctCase13.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase13.Size = new System.Drawing.Size(50, 50);
@@ -321,7 +354,7 @@
             // 
             this.pctCase14.BackColor = System.Drawing.Color.Gray;
             this.pctCase14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase14.Location = new System.Drawing.Point(242, 78);
+            this.pctCase14.Location = new System.Drawing.Point(203, 53);
             this.pctCase14.Name = "pctCase14";
             this.pctCase14.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase14.Size = new System.Drawing.Size(50, 50);
@@ -333,7 +366,7 @@
             // 
             this.pctCase11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase11.Location = new System.Drawing.Point(92, 78);
+            this.pctCase11.Location = new System.Drawing.Point(53, 53);
             this.pctCase11.Name = "pctCase11";
             this.pctCase11.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase11.Size = new System.Drawing.Size(50, 50);
@@ -345,7 +378,7 @@
             // 
             this.pctCase12.BackColor = System.Drawing.Color.Gray;
             this.pctCase12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase12.Location = new System.Drawing.Point(142, 78);
+            this.pctCase12.Location = new System.Drawing.Point(103, 53);
             this.pctCase12.Name = "pctCase12";
             this.pctCase12.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase12.Size = new System.Drawing.Size(50, 50);
@@ -357,7 +390,7 @@
             // 
             this.pctCase17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase17.Location = new System.Drawing.Point(391, 78);
+            this.pctCase17.Location = new System.Drawing.Point(352, 53);
             this.pctCase17.Name = "pctCase17";
             this.pctCase17.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase17.Size = new System.Drawing.Size(50, 50);
@@ -369,7 +402,7 @@
             // 
             this.pctCase10.BackColor = System.Drawing.Color.Gray;
             this.pctCase10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase10.Location = new System.Drawing.Point(42, 78);
+            this.pctCase10.Location = new System.Drawing.Point(3, 53);
             this.pctCase10.Name = "pctCase10";
             this.pctCase10.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase10.Size = new System.Drawing.Size(50, 50);
@@ -381,7 +414,7 @@
             // 
             this.pctCase35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase35.Location = new System.Drawing.Point(292, 178);
+            this.pctCase35.Location = new System.Drawing.Point(253, 153);
             this.pctCase35.Name = "pctCase35";
             this.pctCase35.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase35.Size = new System.Drawing.Size(50, 50);
@@ -393,7 +426,7 @@
             // 
             this.pctCase36.BackColor = System.Drawing.Color.Gray;
             this.pctCase36.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase36.Location = new System.Drawing.Point(342, 178);
+            this.pctCase36.Location = new System.Drawing.Point(303, 153);
             this.pctCase36.Name = "pctCase36";
             this.pctCase36.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase36.Size = new System.Drawing.Size(50, 50);
@@ -405,7 +438,7 @@
             // 
             this.pctCase33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase33.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase33.Location = new System.Drawing.Point(192, 178);
+            this.pctCase33.Location = new System.Drawing.Point(153, 153);
             this.pctCase33.Name = "pctCase33";
             this.pctCase33.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase33.Size = new System.Drawing.Size(50, 50);
@@ -417,7 +450,7 @@
             // 
             this.pctCase34.BackColor = System.Drawing.Color.Gray;
             this.pctCase34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase34.Location = new System.Drawing.Point(242, 178);
+            this.pctCase34.Location = new System.Drawing.Point(203, 153);
             this.pctCase34.Name = "pctCase34";
             this.pctCase34.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase34.Size = new System.Drawing.Size(50, 50);
@@ -429,7 +462,7 @@
             // 
             this.pctCase31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase31.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase31.Location = new System.Drawing.Point(92, 178);
+            this.pctCase31.Location = new System.Drawing.Point(53, 153);
             this.pctCase31.Name = "pctCase31";
             this.pctCase31.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase31.Size = new System.Drawing.Size(50, 50);
@@ -441,7 +474,7 @@
             // 
             this.pctCase32.BackColor = System.Drawing.Color.Gray;
             this.pctCase32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase32.Location = new System.Drawing.Point(142, 178);
+            this.pctCase32.Location = new System.Drawing.Point(103, 153);
             this.pctCase32.Name = "pctCase32";
             this.pctCase32.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase32.Size = new System.Drawing.Size(50, 50);
@@ -453,7 +486,7 @@
             // 
             this.pctCase37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase37.Location = new System.Drawing.Point(392, 178);
+            this.pctCase37.Location = new System.Drawing.Point(353, 153);
             this.pctCase37.Name = "pctCase37";
             this.pctCase37.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase37.Size = new System.Drawing.Size(50, 50);
@@ -465,7 +498,7 @@
             // 
             this.pctCase30.BackColor = System.Drawing.Color.Gray;
             this.pctCase30.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase30.Location = new System.Drawing.Point(42, 178);
+            this.pctCase30.Location = new System.Drawing.Point(3, 153);
             this.pctCase30.Name = "pctCase30";
             this.pctCase30.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase30.Size = new System.Drawing.Size(50, 50);
@@ -477,7 +510,7 @@
             // 
             this.pctCase26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase26.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase26.Location = new System.Drawing.Point(342, 128);
+            this.pctCase26.Location = new System.Drawing.Point(303, 103);
             this.pctCase26.Name = "pctCase26";
             this.pctCase26.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase26.Size = new System.Drawing.Size(50, 50);
@@ -489,7 +522,7 @@
             // 
             this.pctCase27.BackColor = System.Drawing.Color.Gray;
             this.pctCase27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase27.Location = new System.Drawing.Point(392, 128);
+            this.pctCase27.Location = new System.Drawing.Point(353, 103);
             this.pctCase27.Name = "pctCase27";
             this.pctCase27.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase27.Size = new System.Drawing.Size(50, 50);
@@ -501,7 +534,7 @@
             // 
             this.pctCase24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase24.Location = new System.Drawing.Point(242, 128);
+            this.pctCase24.Location = new System.Drawing.Point(203, 103);
             this.pctCase24.Name = "pctCase24";
             this.pctCase24.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase24.Size = new System.Drawing.Size(50, 50);
@@ -513,7 +546,7 @@
             // 
             this.pctCase25.BackColor = System.Drawing.Color.Gray;
             this.pctCase25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase25.Location = new System.Drawing.Point(292, 128);
+            this.pctCase25.Location = new System.Drawing.Point(253, 103);
             this.pctCase25.Name = "pctCase25";
             this.pctCase25.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase25.Size = new System.Drawing.Size(50, 50);
@@ -525,7 +558,7 @@
             // 
             this.pctCase22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase22.Location = new System.Drawing.Point(142, 128);
+            this.pctCase22.Location = new System.Drawing.Point(103, 103);
             this.pctCase22.Name = "pctCase22";
             this.pctCase22.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase22.Size = new System.Drawing.Size(50, 50);
@@ -537,7 +570,7 @@
             // 
             this.pctCase23.BackColor = System.Drawing.Color.Gray;
             this.pctCase23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase23.Location = new System.Drawing.Point(192, 128);
+            this.pctCase23.Location = new System.Drawing.Point(153, 103);
             this.pctCase23.Name = "pctCase23";
             this.pctCase23.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase23.Size = new System.Drawing.Size(50, 50);
@@ -549,7 +582,7 @@
             // 
             this.pctCase20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase20.Location = new System.Drawing.Point(42, 128);
+            this.pctCase20.Location = new System.Drawing.Point(3, 103);
             this.pctCase20.Name = "pctCase20";
             this.pctCase20.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase20.Size = new System.Drawing.Size(50, 50);
@@ -561,7 +594,7 @@
             // 
             this.pctCase21.BackColor = System.Drawing.Color.Gray;
             this.pctCase21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase21.Location = new System.Drawing.Point(92, 128);
+            this.pctCase21.Location = new System.Drawing.Point(53, 103);
             this.pctCase21.Name = "pctCase21";
             this.pctCase21.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase21.Size = new System.Drawing.Size(50, 50);
@@ -573,7 +606,7 @@
             // 
             this.pctCase75.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase75.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase75.Location = new System.Drawing.Point(292, 378);
+            this.pctCase75.Location = new System.Drawing.Point(253, 353);
             this.pctCase75.Name = "pctCase75";
             this.pctCase75.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase75.Size = new System.Drawing.Size(50, 50);
@@ -585,7 +618,7 @@
             // 
             this.pctCase76.BackColor = System.Drawing.Color.Gray;
             this.pctCase76.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase76.Location = new System.Drawing.Point(342, 378);
+            this.pctCase76.Location = new System.Drawing.Point(303, 353);
             this.pctCase76.Name = "pctCase76";
             this.pctCase76.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase76.Size = new System.Drawing.Size(50, 50);
@@ -597,7 +630,7 @@
             // 
             this.pctCase73.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase73.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase73.Location = new System.Drawing.Point(192, 378);
+            this.pctCase73.Location = new System.Drawing.Point(153, 353);
             this.pctCase73.Name = "pctCase73";
             this.pctCase73.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase73.Size = new System.Drawing.Size(50, 50);
@@ -609,7 +642,7 @@
             // 
             this.pctCase74.BackColor = System.Drawing.Color.Gray;
             this.pctCase74.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase74.Location = new System.Drawing.Point(242, 378);
+            this.pctCase74.Location = new System.Drawing.Point(203, 353);
             this.pctCase74.Name = "pctCase74";
             this.pctCase74.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase74.Size = new System.Drawing.Size(50, 50);
@@ -621,7 +654,7 @@
             // 
             this.pctCase71.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase71.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase71.Location = new System.Drawing.Point(92, 378);
+            this.pctCase71.Location = new System.Drawing.Point(53, 353);
             this.pctCase71.Name = "pctCase71";
             this.pctCase71.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase71.Size = new System.Drawing.Size(50, 50);
@@ -633,7 +666,7 @@
             // 
             this.pctCase72.BackColor = System.Drawing.Color.Gray;
             this.pctCase72.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase72.Location = new System.Drawing.Point(142, 378);
+            this.pctCase72.Location = new System.Drawing.Point(103, 353);
             this.pctCase72.Name = "pctCase72";
             this.pctCase72.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase72.Size = new System.Drawing.Size(50, 50);
@@ -645,7 +678,7 @@
             // 
             this.pctCase77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase77.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase77.Location = new System.Drawing.Point(392, 378);
+            this.pctCase77.Location = new System.Drawing.Point(353, 353);
             this.pctCase77.Name = "pctCase77";
             this.pctCase77.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase77.Size = new System.Drawing.Size(50, 50);
@@ -657,7 +690,7 @@
             // 
             this.pctCase70.BackColor = System.Drawing.Color.Gray;
             this.pctCase70.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase70.Location = new System.Drawing.Point(42, 378);
+            this.pctCase70.Location = new System.Drawing.Point(3, 353);
             this.pctCase70.Name = "pctCase70";
             this.pctCase70.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase70.Size = new System.Drawing.Size(50, 50);
@@ -669,7 +702,7 @@
             // 
             this.pctCase66.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase66.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase66.Location = new System.Drawing.Point(342, 328);
+            this.pctCase66.Location = new System.Drawing.Point(303, 303);
             this.pctCase66.Name = "pctCase66";
             this.pctCase66.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase66.Size = new System.Drawing.Size(50, 50);
@@ -681,7 +714,7 @@
             // 
             this.pctCase67.BackColor = System.Drawing.Color.Gray;
             this.pctCase67.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase67.Location = new System.Drawing.Point(392, 328);
+            this.pctCase67.Location = new System.Drawing.Point(353, 303);
             this.pctCase67.Name = "pctCase67";
             this.pctCase67.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase67.Size = new System.Drawing.Size(50, 50);
@@ -693,7 +726,7 @@
             // 
             this.pctCase64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase64.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase64.Location = new System.Drawing.Point(242, 328);
+            this.pctCase64.Location = new System.Drawing.Point(203, 303);
             this.pctCase64.Name = "pctCase64";
             this.pctCase64.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase64.Size = new System.Drawing.Size(50, 50);
@@ -705,7 +738,7 @@
             // 
             this.pctCase65.BackColor = System.Drawing.Color.Gray;
             this.pctCase65.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase65.Location = new System.Drawing.Point(292, 328);
+            this.pctCase65.Location = new System.Drawing.Point(253, 303);
             this.pctCase65.Name = "pctCase65";
             this.pctCase65.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase65.Size = new System.Drawing.Size(50, 50);
@@ -717,7 +750,7 @@
             // 
             this.pctCase62.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase62.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase62.Location = new System.Drawing.Point(142, 328);
+            this.pctCase62.Location = new System.Drawing.Point(103, 303);
             this.pctCase62.Name = "pctCase62";
             this.pctCase62.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase62.Size = new System.Drawing.Size(50, 50);
@@ -729,7 +762,7 @@
             // 
             this.pctCase63.BackColor = System.Drawing.Color.Gray;
             this.pctCase63.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase63.Location = new System.Drawing.Point(192, 328);
+            this.pctCase63.Location = new System.Drawing.Point(153, 303);
             this.pctCase63.Name = "pctCase63";
             this.pctCase63.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase63.Size = new System.Drawing.Size(50, 50);
@@ -741,7 +774,7 @@
             // 
             this.pctCase60.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase60.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase60.Location = new System.Drawing.Point(42, 328);
+            this.pctCase60.Location = new System.Drawing.Point(3, 303);
             this.pctCase60.Name = "pctCase60";
             this.pctCase60.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase60.Size = new System.Drawing.Size(50, 50);
@@ -753,7 +786,7 @@
             // 
             this.pctCase61.BackColor = System.Drawing.Color.Gray;
             this.pctCase61.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase61.Location = new System.Drawing.Point(92, 328);
+            this.pctCase61.Location = new System.Drawing.Point(53, 303);
             this.pctCase61.Name = "pctCase61";
             this.pctCase61.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase61.Size = new System.Drawing.Size(50, 50);
@@ -765,7 +798,7 @@
             // 
             this.pctCase55.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase55.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase55.Location = new System.Drawing.Point(292, 278);
+            this.pctCase55.Location = new System.Drawing.Point(253, 253);
             this.pctCase55.Name = "pctCase55";
             this.pctCase55.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase55.Size = new System.Drawing.Size(50, 50);
@@ -777,7 +810,7 @@
             // 
             this.pctCase56.BackColor = System.Drawing.Color.Gray;
             this.pctCase56.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase56.Location = new System.Drawing.Point(342, 278);
+            this.pctCase56.Location = new System.Drawing.Point(303, 253);
             this.pctCase56.Name = "pctCase56";
             this.pctCase56.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase56.Size = new System.Drawing.Size(50, 50);
@@ -789,7 +822,7 @@
             // 
             this.pctCase53.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase53.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase53.Location = new System.Drawing.Point(192, 278);
+            this.pctCase53.Location = new System.Drawing.Point(153, 253);
             this.pctCase53.Name = "pctCase53";
             this.pctCase53.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase53.Size = new System.Drawing.Size(50, 50);
@@ -801,7 +834,7 @@
             // 
             this.pctCase54.BackColor = System.Drawing.Color.Gray;
             this.pctCase54.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase54.Location = new System.Drawing.Point(242, 278);
+            this.pctCase54.Location = new System.Drawing.Point(203, 253);
             this.pctCase54.Name = "pctCase54";
             this.pctCase54.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase54.Size = new System.Drawing.Size(50, 50);
@@ -813,7 +846,7 @@
             // 
             this.pctCase51.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase51.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase51.Location = new System.Drawing.Point(92, 278);
+            this.pctCase51.Location = new System.Drawing.Point(53, 253);
             this.pctCase51.Name = "pctCase51";
             this.pctCase51.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase51.Size = new System.Drawing.Size(50, 50);
@@ -825,7 +858,7 @@
             // 
             this.pctCase52.BackColor = System.Drawing.Color.Gray;
             this.pctCase52.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase52.Location = new System.Drawing.Point(142, 278);
+            this.pctCase52.Location = new System.Drawing.Point(103, 253);
             this.pctCase52.Name = "pctCase52";
             this.pctCase52.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase52.Size = new System.Drawing.Size(50, 50);
@@ -837,7 +870,7 @@
             // 
             this.pctCase57.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase57.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase57.Location = new System.Drawing.Point(392, 278);
+            this.pctCase57.Location = new System.Drawing.Point(353, 253);
             this.pctCase57.Name = "pctCase57";
             this.pctCase57.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase57.Size = new System.Drawing.Size(50, 50);
@@ -849,7 +882,7 @@
             // 
             this.pctCase50.BackColor = System.Drawing.Color.Gray;
             this.pctCase50.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase50.Location = new System.Drawing.Point(42, 278);
+            this.pctCase50.Location = new System.Drawing.Point(3, 253);
             this.pctCase50.Name = "pctCase50";
             this.pctCase50.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase50.Size = new System.Drawing.Size(50, 50);
@@ -861,7 +894,7 @@
             // 
             this.pctCase46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase46.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase46.Location = new System.Drawing.Point(342, 228);
+            this.pctCase46.Location = new System.Drawing.Point(303, 203);
             this.pctCase46.Name = "pctCase46";
             this.pctCase46.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase46.Size = new System.Drawing.Size(50, 50);
@@ -873,7 +906,7 @@
             // 
             this.pctCase47.BackColor = System.Drawing.Color.Gray;
             this.pctCase47.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase47.Location = new System.Drawing.Point(392, 228);
+            this.pctCase47.Location = new System.Drawing.Point(353, 203);
             this.pctCase47.Name = "pctCase47";
             this.pctCase47.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase47.Size = new System.Drawing.Size(50, 50);
@@ -885,7 +918,7 @@
             // 
             this.pctCase44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase44.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase44.Location = new System.Drawing.Point(242, 228);
+            this.pctCase44.Location = new System.Drawing.Point(203, 203);
             this.pctCase44.Name = "pctCase44";
             this.pctCase44.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase44.Size = new System.Drawing.Size(50, 50);
@@ -897,7 +930,7 @@
             // 
             this.pctCase45.BackColor = System.Drawing.Color.Gray;
             this.pctCase45.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase45.Location = new System.Drawing.Point(292, 228);
+            this.pctCase45.Location = new System.Drawing.Point(253, 203);
             this.pctCase45.Name = "pctCase45";
             this.pctCase45.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase45.Size = new System.Drawing.Size(50, 50);
@@ -909,7 +942,7 @@
             // 
             this.pctCase42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase42.Location = new System.Drawing.Point(142, 228);
+            this.pctCase42.Location = new System.Drawing.Point(103, 203);
             this.pctCase42.Name = "pctCase42";
             this.pctCase42.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase42.Size = new System.Drawing.Size(50, 50);
@@ -921,7 +954,7 @@
             // 
             this.pctCase43.BackColor = System.Drawing.Color.Gray;
             this.pctCase43.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase43.Location = new System.Drawing.Point(192, 228);
+            this.pctCase43.Location = new System.Drawing.Point(153, 203);
             this.pctCase43.Name = "pctCase43";
             this.pctCase43.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase43.Size = new System.Drawing.Size(50, 50);
@@ -933,7 +966,7 @@
             // 
             this.pctCase40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.pctCase40.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase40.Location = new System.Drawing.Point(42, 228);
+            this.pctCase40.Location = new System.Drawing.Point(3, 203);
             this.pctCase40.Name = "pctCase40";
             this.pctCase40.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase40.Size = new System.Drawing.Size(50, 50);
@@ -945,7 +978,7 @@
             // 
             this.pctCase41.BackColor = System.Drawing.Color.Gray;
             this.pctCase41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pctCase41.Location = new System.Drawing.Point(92, 228);
+            this.pctCase41.Location = new System.Drawing.Point(53, 203);
             this.pctCase41.Name = "pctCase41";
             this.pctCase41.Padding = new System.Windows.Forms.Padding(7);
             this.pctCase41.Size = new System.Drawing.Size(50, 50);
@@ -1027,14 +1060,17 @@
             this.pnlMain.Controls.Add(this.pctCase20);
             this.pnlMain.Controls.Add(this.pctCase21);
             this.pnlMain.Controls.Add(this.pctCase62);
-            this.pnlMain.Location = new System.Drawing.Point(39, 45);
+            this.pnlMain.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.pnlMain.Location = new System.Drawing.Point(75, 85);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(481, 462);
+            this.pnlMain.Size = new System.Drawing.Size(408, 408);
             this.pnlMain.TabIndex = 97;
             // 
             // btnWhiteTurn
             // 
             this.btnWhiteTurn.AutoSize = true;
+            this.btnWhiteTurn.Checked = true;
             this.btnWhiteTurn.Location = new System.Drawing.Point(12, 42);
             this.btnWhiteTurn.Name = "btnWhiteTurn";
             this.btnWhiteTurn.Size = new System.Drawing.Size(78, 17);
@@ -1054,15 +1090,15 @@
             this.btnBlackTurn.Text = "Black Turn";
             this.btnBlackTurn.UseVisualStyleBackColor = true;
             // 
-            // grpRadio
+            // grpTurns
             // 
-            this.grpRadio.Controls.Add(this.btnWhiteTurn);
-            this.grpRadio.Controls.Add(this.btnBlackTurn);
-            this.grpRadio.Location = new System.Drawing.Point(540, 223);
-            this.grpRadio.Name = "grpRadio";
-            this.grpRadio.Size = new System.Drawing.Size(103, 68);
-            this.grpRadio.TabIndex = 102;
-            this.grpRadio.TabStop = false;
+            this.grpTurns.Controls.Add(this.btnWhiteTurn);
+            this.grpTurns.Controls.Add(this.btnBlackTurn);
+            this.grpTurns.Location = new System.Drawing.Point(540, 223);
+            this.grpTurns.Name = "grpTurns";
+            this.grpTurns.Size = new System.Drawing.Size(103, 68);
+            this.grpTurns.TabIndex = 102;
+            this.grpTurns.TabStop = false;
             // 
             // btnFade
             // 
@@ -1096,26 +1132,26 @@
             this.btnSquare.Text = "Square";
             this.btnSquare.UseVisualStyleBackColor = true;
             // 
-            // grp2
+            // grpPrevisualisation
             // 
-            this.grp2.Controls.Add(this.btnFade);
-            this.grp2.Controls.Add(this.btnSquare);
-            this.grp2.Controls.Add(this.btnDot);
-            this.grp2.Location = new System.Drawing.Point(546, 323);
-            this.grp2.Name = "grp2";
-            this.grp2.Size = new System.Drawing.Size(84, 78);
-            this.grp2.TabIndex = 106;
-            this.grp2.TabStop = false;
+            this.grpPrevisualisation.Controls.Add(this.btnFade);
+            this.grpPrevisualisation.Controls.Add(this.btnSquare);
+            this.grpPrevisualisation.Controls.Add(this.btnDot);
+            this.grpPrevisualisation.Location = new System.Drawing.Point(546, 323);
+            this.grpPrevisualisation.Name = "grpPrevisualisation";
+            this.grpPrevisualisation.Size = new System.Drawing.Size(84, 78);
+            this.grpPrevisualisation.TabIndex = 106;
+            this.grpPrevisualisation.TabStop = false;
             // 
-            // grpBox3
+            // grpMode
             // 
-            this.grpBox3.Controls.Add(this.btnDebugMode);
-            this.grpBox3.Controls.Add(this.btnStandardMode);
-            this.grpBox3.Location = new System.Drawing.Point(653, 323);
-            this.grpBox3.Name = "grpBox3";
-            this.grpBox3.Size = new System.Drawing.Size(156, 77);
-            this.grpBox3.TabIndex = 108;
-            this.grpBox3.TabStop = false;
+            this.grpMode.Controls.Add(this.btnDebugMode);
+            this.grpMode.Controls.Add(this.btnStandardMode);
+            this.grpMode.Location = new System.Drawing.Point(653, 323);
+            this.grpMode.Name = "grpMode";
+            this.grpMode.Size = new System.Drawing.Size(156, 77);
+            this.grpMode.TabIndex = 108;
+            this.grpMode.TabStop = false;
             // 
             // btnDebugMode
             // 
@@ -1131,6 +1167,7 @@
             // btnStandardMode
             // 
             this.btnStandardMode.AutoSize = true;
+            this.btnStandardMode.Checked = true;
             this.btnStandardMode.Location = new System.Drawing.Point(6, 8);
             this.btnStandardMode.Name = "btnStandardMode";
             this.btnStandardMode.Size = new System.Drawing.Size(98, 17);
@@ -1149,19 +1186,385 @@
             this.btnTestColors.UseVisualStyleBackColor = true;
             this.btnTestColors.Click += new System.EventHandler(this.btnTestColors_Click);
             // 
+            // label0
+            // 
+            this.label0.AutoSize = true;
+            this.label0.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label0.Location = new System.Drawing.Point(441, 493);
+            this.label0.Name = "label0";
+            this.label0.Size = new System.Drawing.Size(23, 25);
+            this.label0.TabIndex = 110;
+            this.label0.Text = "H";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(392, 493);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 25);
+            this.label1.TabIndex = 111;
+            this.label1.Text = "G";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(345, 493);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 25);
+            this.label2.TabIndex = 112;
+            this.label2.Text = "F";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(295, 493);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(20, 25);
+            this.label3.TabIndex = 113;
+            this.label3.Text = "E";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(242, 493);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 25);
+            this.label4.TabIndex = 114;
+            this.label4.Text = "D";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(192, 493);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(23, 25);
+            this.label5.TabIndex = 115;
+            this.label5.Text = "C";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(142, 493);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(23, 25);
+            this.label6.TabIndex = 116;
+            this.label6.Text = "B";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(93, 493);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(22, 25);
+            this.label7.TabIndex = 117;
+            this.label7.Text = "A";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(441, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(23, 25);
+            this.label8.TabIndex = 110;
+            this.label8.Text = "H";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(392, 60);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 25);
+            this.label9.TabIndex = 111;
+            this.label9.Text = "G";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(345, 60);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 25);
+            this.label10.TabIndex = 112;
+            this.label10.Text = "F";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(295, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(20, 25);
+            this.label11.TabIndex = 113;
+            this.label11.Text = "E";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(242, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(23, 25);
+            this.label12.TabIndex = 114;
+            this.label12.Text = "D";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(192, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 25);
+            this.label13.TabIndex = 115;
+            this.label13.Text = "C";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(142, 60);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(23, 25);
+            this.label14.TabIndex = 116;
+            this.label14.Text = "B";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(93, 60);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(22, 25);
+            this.label15.TabIndex = 117;
+            this.label15.Text = "A";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(52, 103);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(23, 25);
+            this.label16.TabIndex = 118;
+            this.label16.Text = "8";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(52, 153);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 25);
+            this.label17.TabIndex = 119;
+            this.label17.Text = "7";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(51, 203);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(23, 25);
+            this.label18.TabIndex = 120;
+            this.label18.Text = "6";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(52, 253);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(23, 25);
+            this.label19.TabIndex = 121;
+            this.label19.Text = "5";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(52, 303);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(22, 25);
+            this.label20.TabIndex = 122;
+            this.label20.Text = "4";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(51, 353);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(23, 25);
+            this.label21.TabIndex = 123;
+            this.label21.Text = "3";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(52, 403);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(22, 25);
+            this.label22.TabIndex = 124;
+            this.label22.Text = "2";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(52, 453);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(20, 25);
+            this.label23.TabIndex = 125;
+            this.label23.Text = "1";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(486, 103);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(23, 25);
+            this.label24.TabIndex = 118;
+            this.label24.Text = "8";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(486, 153);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(20, 25);
+            this.label25.TabIndex = 119;
+            this.label25.Text = "7";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(485, 203);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(23, 25);
+            this.label26.TabIndex = 120;
+            this.label26.Text = "6";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(486, 253);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(23, 25);
+            this.label27.TabIndex = 121;
+            this.label27.Text = "5";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(486, 303);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(22, 25);
+            this.label28.TabIndex = 122;
+            this.label28.Text = "4";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(485, 353);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(23, 25);
+            this.label29.TabIndex = 123;
+            this.label29.Text = "3";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(486, 403);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(22, 25);
+            this.label30.TabIndex = 124;
+            this.label30.Text = "2";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Impact", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(486, 453);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(20, 25);
+            this.label31.TabIndex = 125;
+            this.label31.Text = "1";
+            // 
+            // chkLabels
+            // 
+            this.chkLabels.AutoSize = true;
+            this.chkLabels.Checked = true;
+            this.chkLabels.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkLabels.Location = new System.Drawing.Point(659, 260);
+            this.chkLabels.Name = "chkLabels";
+            this.chkLabels.Size = new System.Drawing.Size(57, 17);
+            this.chkLabels.TabIndex = 126;
+            this.chkLabels.Text = "Labels";
+            this.chkLabels.UseVisualStyleBackColor = true;
+            this.chkLabels.CheckedChanged += new System.EventHandler(this.chkLabels_CheckedChanged);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 648);
+            this.Controls.Add(this.chkLabels);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label0);
             this.Controls.Add(this.btnTestColors);
-            this.Controls.Add(this.grpBox3);
+            this.Controls.Add(this.grpMode);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lblLogged);
-            this.Controls.Add(this.grpRadio);
-            this.Controls.Add(this.grp2);
+            this.Controls.Add(this.grpTurns);
+            this.Controls.Add(this.grpPrevisualisation);
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
@@ -1231,12 +1634,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCase40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase41)).EndInit();
             this.pnlMain.ResumeLayout(false);
-            this.grpRadio.ResumeLayout(false);
-            this.grpRadio.PerformLayout();
-            this.grp2.ResumeLayout(false);
-            this.grp2.PerformLayout();
-            this.grpBox3.ResumeLayout(false);
-            this.grpBox3.PerformLayout();
+            this.grpTurns.ResumeLayout(false);
+            this.grpTurns.PerformLayout();
+            this.grpPrevisualisation.ResumeLayout(false);
+            this.grpPrevisualisation.PerformLayout();
+            this.grpMode.ResumeLayout(false);
+            this.grpMode.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1312,14 +1715,47 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.RadioButton btnWhiteTurn;
         private System.Windows.Forms.RadioButton btnBlackTurn;
-        private System.Windows.Forms.GroupBox grpRadio;
+        private System.Windows.Forms.GroupBox grpTurns;
         private System.Windows.Forms.RadioButton btnFade;
         private System.Windows.Forms.RadioButton btnDot;
         private System.Windows.Forms.RadioButton btnSquare;
-        private System.Windows.Forms.GroupBox grp2;
-        private System.Windows.Forms.GroupBox grpBox3;
+        private System.Windows.Forms.GroupBox grpPrevisualisation;
+        private System.Windows.Forms.GroupBox grpMode;
         private System.Windows.Forms.RadioButton btnDebugMode;
         private System.Windows.Forms.RadioButton btnStandardMode;
         private System.Windows.Forms.Button btnTestColors;
+        private System.Windows.Forms.Label label0;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.CheckBox chkLabels;
     }
 }

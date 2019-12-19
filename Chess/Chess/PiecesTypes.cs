@@ -266,6 +266,7 @@ namespace Chess
 
         public override bool IsCheckMated()
         {
+            /*
             Board tempBoard = new Board();
 
             for(int ii=0;ii<8;ii++)
@@ -275,7 +276,6 @@ namespace Chess
                     tempBoard.Grid[ii, jj] = this.Board.Grid[ii, jj];
                 }
             }
-
             for(int i=0;i<8;i++)
             {
                 for(int j=0;j<8;j++)
@@ -315,9 +315,9 @@ namespace Chess
                     }
                 }
             }
-
             return true;
+            */
+            return false;
         }
-
     }
 }

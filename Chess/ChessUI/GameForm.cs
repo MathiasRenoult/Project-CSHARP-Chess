@@ -79,27 +79,27 @@ namespace Chess
                 {
                     if(board.Grid[i%8,j%8].WhoIsOnIt is Knight)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteKnight.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/whiteKnight.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Rook)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteRook.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/whiteRook.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Bishop)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteBishop.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/whiteBishop.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Queen)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteQueen.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/whiteQueen.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is King)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whiteKing.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/whiteKing.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Pawn)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/whitePawn.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/whitePawn.png");
                     }
 
                 }
@@ -107,27 +107,27 @@ namespace Chess
                 {
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Knight)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackKnight.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/blackKnight.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Rook)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackRook.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/blackRook.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Bishop)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackBishop.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/blackBishop.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Queen)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackQueen.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/blackQueen.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is King)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackKing.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/blackKing.png");
                     }
                     if (board.Grid[i%8,j%8].WhoIsOnIt is Pawn)
                     {
-                        pctCase.BackgroundImage = Image.FromFile("../../../Assets/blackPawn.png");
+                        pctCase.BackgroundImage = Image.FromFile("Assets/blackPawn.png");
                     }
                 }
                 j++;
@@ -293,7 +293,7 @@ namespace Chess
             {
                 if(mainBoard.Grid[i, j].WhoIsOnIt.Color == playerTurn)
                 {
-                    pctBox.Image = Image.FromFile("../../../Assets/selection.png");
+                    pctBox.Image = Image.FromFile("Assets/selection.png");
                     lbl1.Text = mainBoard.Grid[i, j].WhoIsOnIt.Color + mainBoard.Grid[i, j].WhoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].WhoIsOnIt.GetType().ToString().Length - 6);
                     ColorValidMoves(mainBoard.Grid[i, j].WhoIsOnIt);
                 }
@@ -330,7 +330,7 @@ namespace Chess
                     {
                         Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                         PictureBox pctBox = control[0] as PictureBox;
-                        pctBox.Image = Image.FromFile("../../../Assets/selectionRed.png");
+                        pctBox.Image = Image.FromFile("Assets/selectionRed.png");
                     }
                 }
             }
@@ -352,22 +352,22 @@ namespace Chess
                         {
                             if (btnDot.Checked == true)
                             {
-                                pctBox.Image = Image.FromFile("../../../Assets/dotBlue.png");
+                                pctBox.Image = Image.FromFile("Assets/dotBlue.png");
                             }
                             if (btnSquare.Checked == true)
                             {
-                                pctBox.Image = Image.FromFile("../../../Assets/selectionBlue.png");
+                                pctBox.Image = Image.FromFile("Assets/selectionBlue.png");
                             }
                             if (btnFade.Checked == true)
                             {
                                 if(mainBoard.Grid[i, j].WhoIsOnIt.Color != piece.Color && mainBoard.Grid[i, j].WhoIsOnIt.Color != "void")
                                 {
-                                    pctBox.Image = Image.FromFile("../../../Assets/fadeRed.png");
+                                    pctBox.Image = Image.FromFile("Assets/fadeRed.png");
                                     pctBox.Tag = "fadeRed";
                                 }
                                 else
                                 {
-                                    pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png"); pctBox.Tag = "fadeBlue";
+                                    pctBox.Image = Image.FromFile("Assets/fadeBlue.png"); pctBox.Tag = "fadeBlue";
                                     pctBox.Tag = "fadeBlue";
                                 }
                             }
@@ -395,14 +395,14 @@ namespace Chess
                                         { 
                                             if(pctBox.Image == null)
                                             {
-                                                pctBox.Image = Image.FromFile("../../../Assets/fadeBlue.png");
+                                                pctBox.Image = Image.FromFile("Assets/fadeBlue.png");
                                                 pctBox.Tag = "fadeBlue";
                                             }
                                             else
                                             {
                                                 if (pctBox.Tag.ToString() == "fadeRed")
                                                 {
-                                                    pctBox.Image = Image.FromFile("../../../Assets/fadePurple.png");
+                                                    pctBox.Image = Image.FromFile("Assets/fadePurple.png");
                                                     pctBox.Tag = "fadePurple";
                                                 }
                                             }
@@ -411,14 +411,14 @@ namespace Chess
                                         {
                                             if (pctBox.Image == null)
                                             {
-                                                pctBox.Image = Image.FromFile("../../../Assets/fadeRed.png");
+                                                pctBox.Image = Image.FromFile("Assets/fadeRed.png");
                                                 pctBox.Tag = "fadeRed";
                                             }
                                             else
                                             {
                                                 if (pctBox.Tag.ToString() == "fadeBlue")
                                                 {
-                                                    pctBox.Image = Image.FromFile("../../../Assets/fadePurple.png");
+                                                    pctBox.Image = Image.FromFile("Assets/fadePurple.png");
                                                     pctBox.Tag = "fadePurple";
                                                 }
                                             }

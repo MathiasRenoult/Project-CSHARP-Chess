@@ -20,11 +20,11 @@ namespace Chess
             mainBoard.placePieces(mainBoard);
             /*
             Queen newBlackQueen = new Queen("black", 4, 4, mainBoard);
-            mainBoard.Grid[newBlackQueen.X, newBlackQueen.Y].whoIsOnIt = newBlackQueen;
+            mainBoard.Grid[newBlackQueen.X, newBlackQueen.Y].WhoIsOnIt = newBlackQueen;
             Queen newWhiteQueen = new Queen("white", 4, 6, mainBoard);
-            mainBoard.Grid[newWhiteQueen.X, newWhiteQueen.Y].whoIsOnIt = newWhiteQueen;
+            mainBoard.Grid[newWhiteQueen.X, newWhiteQueen.Y].WhoIsOnIt = newWhiteQueen;
             Rook newWhiteRook = new Rook("white", 4, 0, mainBoard);
-            mainBoard.Grid[newWhiteRook.X, newWhiteRook.Y].whoIsOnIt = newWhiteRook;
+            mainBoard.Grid[newWhiteRook.X, newWhiteRook.Y].WhoIsOnIt = newWhiteRook;
             */
             DrawGrid(mainBoard);
         }
@@ -241,40 +241,41 @@ namespace Chess
             j = pctBox.TabIndex % 10;
 
 
-            if (mainBoard.Grid[i, j].whoIsOnIt.Color != playerTurn && mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color == playerTurn)
+            if (mainBoard.Grid[i, j].WhoIsOnIt.Color != playerTurn && mainBoard.Grid[oldI, oldJ].WhoIsOnIt.Color == playerTurn)
             {
                 if (mainBoard.Grid[oldI, oldJ].WhoIsOnIt.CanMoveThere(pctBox.TabIndex / 10, pctBox.TabIndex % 10) > 0)
                 {
-                    if(mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == 2)
+                    if(mainBoard.Grid[oldI, oldJ].WhoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == 2) //Castling
                     {
-                        mainBoard.Grid[oldI, 5].whoIsOnIt = mainBoard.Grid[oldI, 7].whoIsOnIt;
-                        mainBoard.Grid[oldI, 5].whoIsOnIt.Y = mainBoard.Grid[oldI, 7].whoIsOnIt.Y;
+                        mainBoard.Grid[oldI, 5].WhoIsOnIt = mainBoard.Grid[oldI, 7].WhoIsOnIt;
+                        mainBoard.Grid[oldI, 5].WhoIsOnIt.Y = mainBoard.Grid[oldI, 7].WhoIsOnIt.Y;
                         VoidCase newVoidCase = new VoidCase("void", oldI, 7, mainBoard);
-                        mainBoard.Grid[oldI, 7].whoIsOnIt = newVoidCase;
-                        mainBoard.Grid[oldI, 7].whoIsOnIt.Color = "void";
-                        mainBoard.Grid[oldI, 7].whoIsOnIt.Y = 5;
-                        mainBoard.Grid[oldI, 7].whoIsOnIt.NbrOfMoves++;
+                        mainBoard.Grid[oldI, 7].WhoIsOnIt = newVoidCase;
+                        mainBoard.Grid[oldI, 7].WhoIsOnIt.Color = "void";
+                        mainBoard.Grid[oldI, 7].WhoIsOnIt.Y = 5;
+                        mainBoard.Grid[oldI, 7].WhoIsOnIt.NbrOfMoves++;
                     }
-                    if (mainBoard.Grid[oldI, oldJ].whoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == -2)
+                    if (mainBoard.Grid[oldI, oldJ].WhoIsOnIt is King && pctBox.TabIndex % 10 - oldJ == -2)//Castling
                     {
-                        mainBoard.Grid[oldI, 3].whoIsOnIt = mainBoard.Grid[oldI, 0].whoIsOnIt;
-                        mainBoard.Grid[oldI, 3].whoIsOnIt.Y = mainBoard.Grid[oldI, 0].whoIsOnIt.Y;
+                        mainBoard.Grid[oldI, 3].WhoIsOnIt = mainBoard.Grid[oldI, 0].WhoIsOnIt;
+                        mainBoard.Grid[oldI, 3].WhoIsOnIt.Y = mainBoard.Grid[oldI, 0].WhoIsOnIt.Y;
                         VoidCase newVoidCase = new VoidCase("void", oldI, 0, mainBoard);
-                        mainBoard.Grid[oldI, 0].whoIsOnIt = newVoidCase;
-                        mainBoard.Grid[oldI, 0].whoIsOnIt.Color = "void";
-                        mainBoard.Grid[oldI, 0].whoIsOnIt.Y = 3;
-                        mainBoard.Grid[oldI, 0].whoIsOnIt.NbrOfMoves++;
+                        mainBoard.Grid[oldI, 0].WhoIsOnIt = newVoidCase;
+                        mainBoard.Grid[oldI, 0].WhoIsOnIt.Color = "void";
+                        mainBoard.Grid[oldI, 0].WhoIsOnIt.Y = 3;
+                        mainBoard.Grid[oldI, 0].WhoIsOnIt.NbrOfMoves++;
                     }
-                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt = mainBoard.Grid[oldI, oldJ].whoIsOnIt;
-                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.X = pctBox.TabIndex / 10;
-                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].whoIsOnIt.Y = pctBox.TabIndex % 10;
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].WhoIsOnIt = mainBoard.Grid[oldI, oldJ].WhoIsOnIt;
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].WhoIsOnIt.X = pctBox.TabIndex / 10;
+                    mainBoard.Grid[pctBox.TabIndex / 10, pctBox.TabIndex % 10].WhoIsOnIt.Y = pctBox.TabIndex % 10;
                     VoidCase voidCase = new VoidCase("void", oldI, oldJ, mainBoard);
-                    mainBoard.Grid[oldI, oldJ].whoIsOnIt = voidCase;
-                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.Color = "void";
-                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.X = i;
-                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.Y = j;
-                    mainBoard.Grid[oldI, oldJ].whoIsOnIt.NbrOfMoves++;
+                    mainBoard.Grid[oldI, oldJ].WhoIsOnIt = voidCase;
+                    mainBoard.Grid[oldI, oldJ].WhoIsOnIt.Color = "void";
+                    mainBoard.Grid[oldI, oldJ].WhoIsOnIt.X = i;
+                    mainBoard.Grid[oldI, oldJ].WhoIsOnIt.Y = j;
+                    mainBoard.Grid[oldI, oldJ].WhoIsOnIt.NbrOfMoves++;
                     DrawGrid(mainBoard);
+
                     if(btnWhiteTurn.Checked == true)
                     {
                         btnBlackTurn.Checked = btnWhiteTurn.Checked;
@@ -283,26 +284,25 @@ namespace Chess
                     {
                         btnWhiteTurn.Checked = btnBlackTurn.Checked;
                     }
-                    
+
+                   //TestForEndGame();
+                    ColorCheckedKing();
                 }
             }
             else
             {
-                if(mainBoard.Grid[i, j].whoIsOnIt.Color == playerTurn)
+                if(mainBoard.Grid[i, j].WhoIsOnIt.Color == playerTurn)
                 {
                     pctBox.Image = Image.FromFile("../../../Assets/selection.png");
-                    lbl1.Text = mainBoard.Grid[i, j].whoIsOnIt.Color + mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].whoIsOnIt.GetType().ToString().Length - 6);
-                    ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+                    lbl1.Text = mainBoard.Grid[i, j].WhoIsOnIt.Color + mainBoard.Grid[i, j].WhoIsOnIt.GetType().ToString().Substring(6, mainBoard.Grid[i, j].WhoIsOnIt.GetType().ToString().Length - 6);
+                    ColorValidMoves(mainBoard.Grid[i, j].WhoIsOnIt);
                 }
-                
             }
-            TestForEndGame();
-            ColorCheckedKing();
         }
 
         private void UpdateGrid(Object sender, EventArgs e)
         {
-            ColorValidMoves(mainBoard.Grid[i, j].whoIsOnIt);
+            ColorValidMoves(mainBoard.Grid[i, j].WhoIsOnIt);
             ColorCheckedKing();
         }
 
@@ -312,7 +312,7 @@ namespace Chess
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (mainBoard.Grid[i, j].whoIsOnIt is King && mainBoard.Grid[i, j].whoIsOnIt.IsCheckMated())
+                    if(mainBoard.Grid[i, j].WhoIsOnIt.IsCheckMated(i, j))
                     {
                         MessageBox.Show("Echec et Mat!");
                     }
@@ -326,7 +326,7 @@ namespace Chess
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if (mainBoard.Grid[i, j].whoIsOnIt is King && mainBoard.Grid[i, j].whoIsOnIt.IsChecked())
+                    if (mainBoard.Grid[i, j].WhoIsOnIt is King && mainBoard.Grid[i, j].WhoIsOnIt.IsChecked())
                     {
                         Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                         PictureBox pctBox = control[0] as PictureBox;
@@ -335,6 +335,7 @@ namespace Chess
                 }
             }
         }
+
         private void ColorValidMoves(Piece piece)
         {
             int res;
@@ -359,7 +360,7 @@ namespace Chess
                             }
                             if (btnFade.Checked == true)
                             {
-                                if(mainBoard.Grid[i, j].whoIsOnIt.Color != piece.Color && mainBoard.Grid[i, j].whoIsOnIt.Color != "void")
+                                if(mainBoard.Grid[i, j].WhoIsOnIt.Color != piece.Color && mainBoard.Grid[i, j].WhoIsOnIt.Color != "void")
                                 {
                                     pctBox.Image = Image.FromFile("../../../Assets/fadeRed.png");
                                     pctBox.Tag = "fadeRed";
@@ -386,11 +387,11 @@ namespace Chess
                             {
                                 for(int jj=0;jj<8;jj++)
                                 {
-                                    if(mainBoard.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj) == 1)
+                                    if(mainBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj) == 1)
                                     {
                                         Control[] control = pnlMain.Controls.Find("pctCase" + ii.ToString() + jj.ToString(), true);
                                         PictureBox pctBox = control[0] as PictureBox;
-                                        if(mainBoard.Grid[i, j].whoIsOnIt.Color == "white")
+                                        if(mainBoard.Grid[i, j].WhoIsOnIt.Color == "white")
                                         { 
                                             if(pctBox.Image == null)
                                             {

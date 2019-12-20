@@ -1178,12 +1178,13 @@
             // 
             // btnTestColors
             // 
-            this.btnTestColors.Location = new System.Drawing.Point(559, 96);
+            this.btnTestColors.Location = new System.Drawing.Point(692, 88);
             this.btnTestColors.Name = "btnTestColors";
             this.btnTestColors.Size = new System.Drawing.Size(216, 101);
             this.btnTestColors.TabIndex = 109;
             this.btnTestColors.Text = "TEST COLORS";
             this.btnTestColors.UseVisualStyleBackColor = true;
+            this.btnTestColors.Visible = false;
             this.btnTestColors.Click += new System.EventHandler(this.btnTestColors_Click);
             // 
             // label0
@@ -1521,8 +1522,8 @@
             // 
             // GameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 648);
             this.Controls.Add(this.chkLabels);
@@ -1565,6 +1566,9 @@
             this.Controls.Add(this.lblLogged);
             this.Controls.Add(this.grpTurns);
             this.Controls.Add(this.grpPrevisualisation);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";

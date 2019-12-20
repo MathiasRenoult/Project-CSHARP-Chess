@@ -70,13 +70,13 @@ namespace Chess
                 return 0; //Invalid move, Knights can only move in "L" shape
             }
 
-            if (this.Board.Grid[x, y].whoIsOnIt.Color == this.Color)
+            if (this.Board.Grid[x, y].WhoIsOnIt.Color == this.Color)
             {
                 return 0;
             }
             else
             {
-                if (this.Board.Grid[x, y].whoIsOnIt.Color != this.Color)
+                if (this.Board.Grid[x, y].WhoIsOnIt.Color != this.Color)
                 {
                     return 1;
                 }
@@ -102,7 +102,7 @@ namespace Chess
 
             for (int i = 1; i <= length; i++)
             {
-                if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != "void")
+                if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != "void")
                 {
                     if (i == length)
                     {
@@ -115,7 +115,7 @@ namespace Chess
                 }
                 else
                 {
-                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color == this.Color)
+                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color == this.Color)
                     {
                         return 0;
                     }
@@ -142,7 +142,7 @@ namespace Chess
 
             for (int i = 1; i <= length; i++)
             {
-                if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != "void")
+                if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != "void")
                 {
                     if (i == length)
                     {
@@ -155,7 +155,7 @@ namespace Chess
                 }
                 else
                 {
-                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color == this.Color)
+                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color == this.Color)
                     {
                         return 0;
                     }
@@ -192,7 +192,7 @@ namespace Chess
 
             for (int i = 1; i <= length; i++)
             {
-                if (this.Board.Grid[this.X + (xDir*i), this.Y + (yDir*i)].whoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color != "void")
+                if (this.Board.Grid[this.X + (xDir*i), this.Y + (yDir*i)].WhoIsOnIt.Color != this.Color && this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != "void")
                 {
                     if (i == Math.Abs(this.X - x))
                     {
@@ -205,7 +205,7 @@ namespace Chess
                 }
                 else
                 {
-                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].whoIsOnIt.Color == this.Color)
+                    if (this.Board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color == this.Color)
                     {
                         return 0;
                     }
@@ -221,13 +221,13 @@ namespace Chess
         }
         public override int CanMoveThere(int x, int y)
         {
-            if(NbrOfMoves == 0 && Board.Grid[this.X, 7].whoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 && 
-                Board.Grid[this.X, 6].whoIsOnIt is VoidCase && Board.Grid[this.X, 5].whoIsOnIt is VoidCase)//Small castling
+            if(NbrOfMoves == 0 && Board.Grid[this.X, 7].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 && 
+                Board.Grid[this.X, 6].WhoIsOnIt is VoidCase && Board.Grid[this.X, 5].WhoIsOnIt is VoidCase)//Small castling
             {
                 return 1;
             }
-            if (NbrOfMoves == 0 && Board.Grid[this.X, 0].whoIsOnIt.NbrOfMoves == 0 && x == this.X && this.Y - y == 2 &&
-                Board.Grid[this.X, 3].whoIsOnIt is VoidCase && Board.Grid[this.X, 3].whoIsOnIt is VoidCase && Board.Grid[this.X, 1].whoIsOnIt is VoidCase)//Big castling
+            if (NbrOfMoves == 0 && Board.Grid[this.X, 0].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && this.Y - y == 2 &&
+                Board.Grid[this.X, 3].WhoIsOnIt is VoidCase && Board.Grid[this.X, 3].WhoIsOnIt is VoidCase && Board.Grid[this.X, 1].WhoIsOnIt is VoidCase)//Big castling
             {
                 return 1;
             }
@@ -237,11 +237,11 @@ namespace Chess
             }
             else
             {
-                if (this.Board.Grid[x, y].whoIsOnIt.Color != this.Color)
+                if (this.Board.Grid[x, y].WhoIsOnIt.Color != this.Color)
                 {
                     return 1;
                 }
-                if (this.Board.Grid[x, y].whoIsOnIt.Color == this.Color)
+                if (this.Board.Grid[x, y].WhoIsOnIt.Color == this.Color)
                 {
                     return 0;
                 }
@@ -255,7 +255,7 @@ namespace Chess
             {
                 for(int j=0;j<8;j++)
                 {
-                   if( Board.Grid[i, j].whoIsOnIt.CanMoveThere(this.X, this.Y) == 1)
+                   if( Board.Grid[i, j].WhoIsOnIt.CanMoveThere(this.X, this.Y) == 1)
                     {
                         return true;
                     }
@@ -264,59 +264,52 @@ namespace Chess
             return false;
         }
 
-        public override bool IsCheckMated()
+        public override bool IsCheckMated(int x, int y)
         {
-            /*
-            Board tempBoard = new Board();
+            Board newBoard = new Board();
+            newBoard.Grid = (Case[,]) this.Board.Grid.Clone();
 
-            for(int ii=0;ii<8;ii++)
+            if(this.Board.Grid[x, y].WhoIsOnIt.IsChecked()==true)
             {
-                for(int jj=0;jj<8;jj++)
+                for (int i = 0; i < 8; i++)
                 {
-                    tempBoard.Grid[ii, jj] = this.Board.Grid[ii, jj];
-                }
-            }
-            for(int i=0;i<8;i++)
-            {
-                for(int j=0;j<8;j++)
-                {
-                    for(int ii=0;ii<8;ii++)
+                    for (int j = 0; j < 8; j++)
                     {
-                        for(int jj=0;jj<8;jj++)
+                        for (int ii = 0; ii < 8; ii++)
                         {
-                            if (this.Board.Grid[i, j].whoIsOnIt.CanMoveThere(ii, jj) > 1)
+                            for (int jj = 0; jj < 8; jj++)
                             {
-                                VoidCase newVoid = new VoidCase("void", i, j, tempBoard);
-                                tempBoard.Grid[i, j].whoIsOnIt = newVoid;
-                                tempBoard.Grid[ii, jj].whoIsOnIt = this.Board.Grid[i, j].whoIsOnIt;
-
-                                for (int k = 0; k < 8; k++)
+                                if (newBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj) == 1)
                                 {
-                                    for (int l = 0; l < 8; l++)
+                                    newBoard.Grid[ii, jj].WhoIsOnIt = newBoard.Grid[i, j].WhoIsOnIt;
+                                    VoidCase newVoidCase = new VoidCase("void", i, j, newBoard);
+                                    newBoard.Grid[i, j].WhoIsOnIt = newVoidCase;
+
+                                    if(i == x && j == y)
                                     {
-                                        if (tempBoard.Grid[k, l].whoIsOnIt.CanMoveThere(this.X, this.Y) == 0)
+                                        if(newBoard.Grid[ii, jj].WhoIsOnIt.IsChecked()==false)
+                                        {
+                                            return false;
+                                        } 
+                                    }
+                                    else
+                                    {
+                                        if(newBoard.Grid[x, y].WhoIsOnIt.IsChecked()==false)
                                         {
                                             return false;
                                         }
-                                    }
-                                }
-                            }
-                            else
-                            {
-                                for (int x = 0; x < 8; x++)
-                                {
-                                    for (int y = 0; y < 8; y++)
-                                    {
-                                        tempBoard.Grid[x, y] = this.Board.Grid[x, y];
+                                        else
+                                        {
+                                            newBoard.Grid = (Case[,])this.Board.Grid.Clone();
+                                        }
                                     }
                                 }
                             }
                         }
                     }
                 }
+                return true;
             }
-            return true;
-            */
             return false;
         }
     }

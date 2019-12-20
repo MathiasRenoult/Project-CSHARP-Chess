@@ -65,7 +65,7 @@ namespace Chess
             return false;
         }
 
-        public virtual bool IsCheckMated()
+        public virtual bool IsCheckMated(int x, int y)
         {
             return false;
         }

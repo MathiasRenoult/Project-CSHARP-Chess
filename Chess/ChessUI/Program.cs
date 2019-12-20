@@ -14,8 +14,8 @@ namespace ChessUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            Application.Run(new GameForm("Test"));
+            Application.Run(new LoginForm());
+            //Application.Run(new GameForm("Test"));
         }
 
     }

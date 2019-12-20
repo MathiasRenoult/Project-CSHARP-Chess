@@ -14,7 +14,7 @@ namespace ChessTests
             int actualX = 4;
             int actualY = 5;
             Board newBoard = new Board();
-            Pawn p1 = new Pawn(actualColor,actualX,actualY, newBoard);
+            Pawn p1 = new Pawn(actualColor,actualX,actualY);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -27,7 +27,7 @@ namespace ChessTests
             int actualX = 6;
             int actualY = 7;
             Board newBoard = new Board();
-            Knight p1 = new Knight(actualColor, actualX, actualY, newBoard);
+            Knight p1 = new Knight(actualColor, actualX, actualY);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -40,7 +40,7 @@ namespace ChessTests
             int actualX = 1;
             int actualY = 2;
             Board newBoard = new Board();
-            Rook p1 = new Rook(actualColor, actualX, actualY, newBoard);
+            Rook p1 = new Rook(actualColor, actualX, actualY);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -53,7 +53,7 @@ namespace ChessTests
             int actualX = 4;
             int actualY = 4;
             Board newBoard = new Board();
-            Bishop p1 = new Bishop(actualColor, actualX, actualY, newBoard);
+            Bishop p1 = new Bishop(actualColor, actualX, actualY);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -66,7 +66,7 @@ namespace ChessTests
             int actualX = 7;
             int actualY = 7;
             Board newBoard = new Board();
-            Queen p1 = new Queen(actualColor, actualX, actualY, newBoard);
+            Queen p1 = new Queen(actualColor, actualX, actualY);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);
@@ -79,7 +79,7 @@ namespace ChessTests
             int actualX = 0;
             int actualY = 4;
             Board newBoard = new Board();
-            King p1 = new King(actualColor, actualX, actualY, newBoard);
+            King p1 = new King(actualColor, actualX, actualY);
 
             Assert.AreEqual(p1.Color, actualColor);
             Assert.AreEqual(p1.X, actualX);

@@ -142,7 +142,6 @@ namespace Chess
 
             for (int i = 1; i <= length; i++)
             {
-               
                 if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != this.Color && board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != "void")
                 {
                     if (i == length)
@@ -267,51 +266,26 @@ namespace Chess
 
         public override bool IsCheckMated(int x, int y, Board board)
         {
-            Board newBoard = new Board();
-            newBoard.Grid = (Case[,]) board.Grid.Clone();
+            Case[,] tempGrid = new Case[8,8];
+            board.Grid.CopyTo(tempGrid,0);
 
-            if(board.Grid[x, y].WhoIsOnIt.IsChecked(board)==true)
+            for (int i = 0; i < 8; i++)
             {
-                for (int i = 0; i < 8; i++)
+                for (int j = 0; j < 8; j++)
                 {
-                    for (int j = 0; j < 8; j++)
+                    if(board.Grid[i,j].WhoIsOnIt.Color == board.Grid[x,y].WhoIsOnIt.Color)
                     {
                         for (int ii = 0; ii < 8; ii++)
                         {
                             for (int jj = 0; jj < 8; jj++)
                             {
-                                if (newBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, board) == 1)
-                                {
-                                    newBoard.Grid[ii, jj].WhoIsOnIt = newBoard.Grid[i, j].WhoIsOnIt;
-                                    VoidCase newVoidCase = new VoidCase("void", i, j);
-                                    newBoard.Grid[i, j].WhoIsOnIt = newVoidCase;
-
-                                    if(i == x && j == y)
-                                    {
-                                        if(newBoard.Grid[ii, jj].WhoIsOnIt.IsChecked(board)==false)
-                                        {
-                                            return false;
-                                        } 
-                                    }
-                                    else
-                                    {
-                                        if(newBoard.Grid[x, y].WhoIsOnIt.IsChecked(board)==false)
-                                        {
-                                            return false;
-                                        }
-                                        else
-                                        {
-                                            newBoard.Grid = (Case[,])board.Grid.Clone();
-                                        }
-                                    }
-                                }
+                                if (tempGrid[i, j].WhoIsOnIt.CanMoveThere(ii, jj) > 0) ;
                             }
                         }
-                    }
+                    } 
                 }
-                return true;
             }
-            return false;
+        return false;
         }
     }
 }

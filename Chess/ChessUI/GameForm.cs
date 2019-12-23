@@ -283,7 +283,6 @@ namespace Chess
                         btnWhiteTurn.Checked = btnBlackTurn.Checked;
                     }
 
-                   //TestForEndGame();
                     ColorCheckedKing();
                 }
             }
@@ -329,6 +328,7 @@ namespace Chess
                         Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                         PictureBox pctBox = control[0] as PictureBox;
                         pctBox.Image = Image.FromFile("Assets/selectionRed.png");
+                        TestForEndGame();
                     }
                 }
             }

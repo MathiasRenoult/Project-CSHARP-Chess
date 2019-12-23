@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -266,8 +269,17 @@ namespace Chess
 
         public override bool IsCheckMated(int x, int y, Board board)
         {
-            Case[,] tempGrid = new Case[8,8];
-            board.Grid.CopyTo(tempGrid,0);
+            string path = "gridCopy.json";
+            Board tempBoard = new Board();
+
+            string output = JsonConvert.SerializeObject(board.Grid);
+            File.WriteAllText(path, output);
+
+            using (StreamReader file = File.OpenText(path))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
+            }
 
             for (int i = 0; i < 8; i++)
             {
@@ -279,13 +291,35 @@ namespace Chess
                         {
                             for (int jj = 0; jj < 8; jj++)
                             {
-                                if (tempGrid[i, j].WhoIsOnIt.CanMoveThere(ii, jj) > 0) ;
+                                if (tempBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, tempBoard) > 0)
+                                {
+                                    tempBoard.Grid[ii, jj].WhoIsOnIt = tempBoard.Grid[i, j].WhoIsOnIt;
+                                    tempBoard.Grid[ii, jj].WhoIsOnIt.X = ii;
+                                    tempBoard.Grid[ii, jj].WhoIsOnIt.Y = jj;
+                                    VoidCase voidCase = new VoidCase("void", i, j);
+                                    tempBoard.Grid[i, j].WhoIsOnIt = voidCase;
+                                    tempBoard.Grid[i, j].WhoIsOnIt.Color = "void";
+                                    tempBoard.Grid[i, j].WhoIsOnIt.X = i;
+                                    tempBoard.Grid[i, j].WhoIsOnIt.Y = j;
+                                    tempBoard.Grid[i, j].WhoIsOnIt.NbrOfMoves++;
+
+                                    if (IsChecked(tempBoard) == false)
+                                    {
+                                        return false;
+                                    }
+
+                                    using (StreamReader file = File.OpenText(path))
+                                    {
+                                        JsonSerializer serializer = new JsonSerializer();
+                                        tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
+                                    }
+                                }
                             }
                         }
                     } 
                 }
             }
-        return false;
+        return true;
         }
     }
 }

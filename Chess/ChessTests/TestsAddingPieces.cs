@@ -10,7 +10,7 @@ namespace ChessTests
         [TestMethod]
         public void AddingPawn()
         {
-             string actualColor = "white";
+            string actualColor = "white";
             int actualX = 4;
             int actualY = 5;
             Board newBoard = new Board();

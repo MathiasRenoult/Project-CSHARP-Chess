@@ -26,7 +26,13 @@ namespace Chess
         {
 
         }
-
+        /// <summary>
+        /// the pawn deplacement
+        /// </summary>
+        /// <param name="x">position X</param>
+        /// <param name="y">position Y</param>
+        /// <param name="board">in the game</param>
+        /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
             int biggerMove = 0;
@@ -66,6 +72,13 @@ namespace Chess
         {
 
         }
+        /// <summary>
+        /// the knight deplacement 
+        /// </summary>
+        /// <param name="x">position X</param>
+        /// <param name="y">position Y</param>
+        /// <param name="board">in the game</param>
+        /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
             if (Math.Abs(this.X - x) + Math.Abs(this.Y - y) != 3 || Math.Abs(this.X - x) > 2 || Math.Abs(this.Y - y) > 2)
@@ -93,6 +106,13 @@ namespace Chess
         {
 
         }
+        /// <summary>
+        /// the rook deplacement 
+        /// </summary>
+        /// <param name="x">position X</param>
+        /// <param name="y">position Y</param>
+        /// <param name="board">in the game</param>
+        /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
             double length = Math.Abs(this.X - x) + Math.Abs(this.Y - y);
@@ -133,6 +153,13 @@ namespace Chess
         {
 
         }
+        /// <summary>
+        /// the bishop deplacement
+        /// </summary>
+        /// <param name="x">position X</param>
+        /// <param name="y">position Y</param>
+        /// <param name="board">in the game</param>
+        /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
             double length = Math.Round(Math.Sqrt(Math.Pow(Math.Abs(x - this.X), 2) + Math.Pow(Math.Abs(y - this.Y), 2)) / 1.414);
@@ -173,7 +200,13 @@ namespace Chess
         {
 
         }
-
+        /// <summary>
+        /// the queen deplacement
+        /// </summary>
+        /// <param name="x">position X</param>
+        /// <param name="y">position Y</param>
+        /// <param name="board">in the game</param>
+        /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
             double length;
@@ -222,6 +255,13 @@ namespace Chess
         public King(string color, int x, int y) : base(color, x, y)
         {
         }
+        /// <summary>
+        /// the king deplacement 
+        /// </summary>
+        /// <param name="x">position X</param>
+        /// <param name="y">position Y</param>
+        /// <param name="board"></param>
+        /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
             if(NbrOfMoves == 0 && board.Grid[this.X, 7].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 &&
@@ -251,7 +291,11 @@ namespace Chess
                 return 1;
             }
         }
-
+        /// <summary>
+        /// Check if the king is checked
+        /// </summary>
+        /// <param name="board"></param>
+        /// <returns></returns>
         public override bool IsChecked(Board board)
         {
             for(int i=0;i<8;i++)
@@ -266,7 +310,13 @@ namespace Chess
             }
             return false;
         }
-
+        /// <summary>
+        /// check if the king is check mated
+        /// </summary>
+        /// <param name="x">king position</param>
+        /// <param name="y">king position</param>
+        /// <param name="board"></param>
+        /// <returns></returns>
         public override bool IsCheckMated(int x, int y, Board board)
         {
             Board checkBoard = new Board();

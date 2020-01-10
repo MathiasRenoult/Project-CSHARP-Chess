@@ -71,6 +71,10 @@ namespace Chess
             return destinationBoard;
         }
 
+        /// <summary>
+        /// Clear the board and place each piece on the board
+        /// </summary>
+        /// <param name="board"></param>
         public void placePieces(Board board)
         {
             board.clearBoard(board);

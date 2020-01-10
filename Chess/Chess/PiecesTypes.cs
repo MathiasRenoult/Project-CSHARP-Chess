@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -266,26 +269,75 @@ namespace Chess
 
         public override bool IsCheckMated(int x, int y, Board board)
         {
-            Case[,] tempGrid = new Case[8,8];
-            board.Grid.CopyTo(tempGrid,0);
+<<<<<<< HEAD
+            Board checkBoard = new Board();
+            checkBoard.clearBoard(checkBoard);
+           checkBoard = checkBoard.copyBoard(board, checkBoard);
+=======
+            string path = "gridCopy.json";
+            Board tempBoard = new Board();
+
+            string output = JsonConvert.SerializeObject(board.Grid);
+            File.WriteAllText(path, output);
+
+            using (StreamReader file = File.OpenText(path))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
+            }
+>>>>>>> 1b5122ce13870a82d5a82da496a1d4230d43d0c2
 
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if(board.Grid[i,j].WhoIsOnIt.Color == board.Grid[x,y].WhoIsOnIt.Color)
+                    for (int ii = 0; ii < 8; ii++)
                     {
-                        for (int ii = 0; ii < 8; ii++)
+                        for (int jj = 0; jj < 8; jj++)
                         {
-                            for (int jj = 0; jj < 8; jj++)
+                            if (checkBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, board) > 0)
                             {
-                                if (tempGrid[i, j].WhoIsOnIt.CanMoveThere(ii, jj) > 0) ;
+<<<<<<< HEAD
+                                checkBoard.Grid[ii, jj].WhoIsOnIt = checkBoard.Grid[i, j].WhoIsOnIt;
+                                VoidCase newVoidCase = new VoidCase("void", i, j);
+                                checkBoard.Grid[i, j].WhoIsOnIt = newVoidCase;
+
+                                if(!checkBoard.Grid[x,y].WhoIsOnIt.IsChecked(checkBoard))
+                                {
+                                    return false;
+                                }
+                                checkBoard = checkBoard.copyBoard(board, checkBoard);
+=======
+                                if (tempBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, tempBoard) > 0)
+                                {
+                                    tempBoard.Grid[ii, jj].WhoIsOnIt = tempBoard.Grid[i, j].WhoIsOnIt;
+                                    tempBoard.Grid[ii, jj].WhoIsOnIt.X = ii;
+                                    tempBoard.Grid[ii, jj].WhoIsOnIt.Y = jj;
+                                    VoidCase voidCase = new VoidCase("void", i, j);
+                                    tempBoard.Grid[i, j].WhoIsOnIt = voidCase;
+                                    tempBoard.Grid[i, j].WhoIsOnIt.Color = "void";
+                                    tempBoard.Grid[i, j].WhoIsOnIt.X = i;
+                                    tempBoard.Grid[i, j].WhoIsOnIt.Y = j;
+                                    tempBoard.Grid[i, j].WhoIsOnIt.NbrOfMoves++;
+
+                                    if (IsChecked(tempBoard) == false)
+                                    {
+                                        return false;
+                                    }
+
+                                    using (StreamReader file = File.OpenText(path))
+                                    {
+                                        JsonSerializer serializer = new JsonSerializer();
+                                        tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
+                                    }
+                                }
+>>>>>>> 1b5122ce13870a82d5a82da496a1d4230d43d0c2
                             }
                         }
-                    } 
+                    }
                 }
             }
-        return false;
+        return true;
         }
     }
 }

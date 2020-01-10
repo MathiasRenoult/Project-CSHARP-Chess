@@ -48,7 +48,7 @@ namespace Chess
             set { nbrOfMoves = value; }
         }
 
-        public virtual int CanMoveThere(int x, int y, Board board) // 0= invalid move, 1 = valid move, 2 = pawn bigger move
+        public virtual int CanMoveThere(int x, int y, Board board) // 0 = invalid move, 1 = valid move, 2 = pawn bigger move
         {
             return 0;
         }

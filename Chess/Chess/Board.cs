@@ -58,6 +58,19 @@ namespace Chess
             }
         }
 
+        public Board copyBoard(Board sourceBoard, Board destinationBoard)
+        {
+            for(int i=0; i<8;i++)
+            {
+                for(int j=0; j<8;j++)
+                {
+                    destinationBoard.Grid[i,j] = sourceBoard.Grid[i, j];
+                }
+            }
+
+            return destinationBoard;
+        }
+
         public void placePieces(Board board)
         {
             board.clearBoard(board);

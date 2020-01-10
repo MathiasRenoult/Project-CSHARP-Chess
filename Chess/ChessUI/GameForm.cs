@@ -283,7 +283,10 @@ namespace Chess
                         btnWhiteTurn.Checked = btnBlackTurn.Checked;
                     }
 
-                   //TestForEndGame();
+<<<<<<< HEAD
+                    TestForEndGame();
+=======
+>>>>>>> 1b5122ce13870a82d5a82da496a1d4230d43d0c2
                     ColorCheckedKing();
                 }
             }
@@ -310,9 +313,12 @@ namespace Chess
             {
                 for (int j = 0; j < 8; j++)
                 {
-                    if(mainBoard.Grid[i, j].WhoIsOnIt.IsCheckMated(i, j, this.MainBoard))
+                    if(mainBoard.Grid[i,j].WhoIsOnIt.IsChecked(mainBoard))
                     {
-                        MessageBox.Show("Echec et Mat!");
+                        if(mainBoard.Grid[i, j].WhoIsOnIt.IsCheckMated(i, j, this.MainBoard))
+                        {
+                            MessageBox.Show("Echec et Mat!");
+                        }
                     }
                 }
             }
@@ -329,6 +335,7 @@ namespace Chess
                         Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                         PictureBox pctBox = control[0] as PictureBox;
                         pctBox.Image = Image.FromFile("Assets/selectionRed.png");
+                        TestForEndGame();
                     }
                 }
             }

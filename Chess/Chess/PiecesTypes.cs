@@ -20,11 +20,11 @@ namespace Chess
             return 0;
         }
     }
-    public class Pawn : Piece 
+    public class Pawn : Piece
     {
         public Pawn(string color,int x,int y) : base(color,x,y)
         {
-            
+
         }
 
         public override int CanMoveThere(int x, int y, Board board)
@@ -49,7 +49,7 @@ namespace Chess
                 {
                     if (board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1 + biggerMove)
                     {
-                        return 2;      
+                        return 2;
                     }
                     if(board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1)
                     {
@@ -64,7 +64,7 @@ namespace Chess
     {
         public Knight(string color, int x, int y) : base(color, x, y)
         {
-            
+
         }
         public override int CanMoveThere(int x, int y, Board board)
         {
@@ -215,7 +215,7 @@ namespace Chess
                 }
             }
             return 1;
-        }  
+        }
     }
     public class King : Piece
     {
@@ -224,7 +224,7 @@ namespace Chess
         }
         public override int CanMoveThere(int x, int y, Board board)
         {
-            if(NbrOfMoves == 0 && board.Grid[this.X, 7].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 && 
+            if(NbrOfMoves == 0 && board.Grid[this.X, 7].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 &&
                 board.Grid[this.X, 6].WhoIsOnIt is VoidCase && board.Grid[this.X, 5].WhoIsOnIt is VoidCase)//Small castling
             {
                 return 1;
@@ -273,7 +273,6 @@ namespace Chess
             Board checkBoard = new Board();
             checkBoard.clearBoard(checkBoard);
            checkBoard = checkBoard.copyBoard(board, checkBoard);
-=======
             string path = "gridCopy.json";
             Board tempBoard = new Board();
 
@@ -307,7 +306,6 @@ namespace Chess
                                     return false;
                                 }
                                 checkBoard = checkBoard.copyBoard(board, checkBoard);
-=======
                                 if (tempBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, tempBoard) > 0)
                                 {
                                     tempBoard.Grid[ii, jj].WhoIsOnIt = tempBoard.Grid[i, j].WhoIsOnIt;

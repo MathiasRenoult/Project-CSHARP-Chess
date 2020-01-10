@@ -137,7 +137,7 @@ namespace Chess
                 {
                     break;
                 }
-                
+
             }
         }
         private void GameForm_Click(object sender, EventArgs e)
@@ -397,7 +397,7 @@ namespace Chess
                                         Control[] control = pnlMain.Controls.Find("pctCase" + ii.ToString() + jj.ToString(), true);
                                         PictureBox pctBox = control[0] as PictureBox;
                                         if(mainBoard.Grid[i, j].WhoIsOnIt.Color == "white")
-                                        { 
+                                        {
                                             if(pctBox.Image == null)
                                             {
                                                 pctBox.Image = Image.FromFile("Assets/fadeBlue.png");
@@ -427,7 +427,7 @@ namespace Chess
                                                     pctBox.Tag = "fadePurple";
                                                 }
                                             }
-                                        }    
+                                        }
                                     }
                                 }
                             }
@@ -455,7 +455,7 @@ namespace Chess
                     Control[] control = pnlMain.Controls.Find("pctCase" + i.ToString() + j.ToString(), true);
                     PictureBox pctBox = control[0] as PictureBox;
 
-                   
+
                     hyp = Math.Sqrt(Math.Pow(i, 2) + Math.Pow(j, 2)) / 8 * 255;
                     if (hyp > 255)
                     {
@@ -474,7 +474,7 @@ namespace Chess
                     angle = ((int)((Math.Atan2(i-4, j-4) * 180 / Math.PI) + 420)) % 360;
                     b = (int)(GetColorValue(angle));
 
-                    pctBox.BackColor = Color.FromArgb(255,r,g,b);  
+                    pctBox.BackColor = Color.FromArgb(255,r,g,b);
 
                 }
             }

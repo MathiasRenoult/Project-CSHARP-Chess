@@ -260,7 +260,7 @@ namespace Chess
         /// </summary>
         /// <param name="x">position X</param>
         /// <param name="y">position Y</param>
-        /// <param name="board"></param>
+        /// <param name="board">int the game</param>
         /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
@@ -294,7 +294,7 @@ namespace Chess
         /// <summary>
         /// Check if the king is checked
         /// </summary>
-        /// <param name="board"></param>
+        /// <param name="board">in the game</param>
         /// <returns></returns>
         public override bool IsChecked(Board board)
         {
@@ -315,7 +315,7 @@ namespace Chess
         /// </summary>
         /// <param name="x">king position</param>
         /// <param name="y">king position</param>
-        /// <param name="board"></param>
+        /// <param name="board">in the game</param>
         /// <returns></returns>
         public override bool IsCheckMated(int x, int y, Board board)
         {

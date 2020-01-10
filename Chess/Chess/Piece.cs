@@ -48,21 +48,46 @@ namespace Chess
             set { nbrOfMoves = value; }
         }
 
+        /// <summary>
+        /// where the piece can move
+        /// </summary>
+        /// <param name="x">the position in X</param>
+        /// <param name="y">the position in Y</param>
+        /// <param name="board">Board name</param>
+        /// <returns></returns>
         public virtual int CanMoveThere(int x, int y, Board board) // 0 = invalid move, 1 = valid move, 2 = pawn bigger move
         {
             return 0;
         }
 
+        /// <summary>
+        /// Îf it's checked return false
+        /// </summary>
+        /// <param name="board">board name</param>
+        /// <returns></returns>
         public virtual bool IsChecked(Board board)
         {
             return false;
         }
 
+        /// <summary>
+        /// If it's check mated return false
+        /// </summary>
+        /// <param name="x">position of the king in X</param>
+        /// <param name="y">position of the king in Y</param>
+        /// <param name="board">the game under way</param>
+        /// <returns></returns>
         public virtual bool IsCheckMated(int x, int y, Board board)
         {
             return false;
         }
 
+        /// <summary>
+        /// give the direction where you can move
+        /// </summary>
+        /// <param name="a">Return X</param>
+        /// <param name="b">Return Y</param>
+        /// <returns></returns>
         public int giveDirection(int a, int b)//Return x or y value for the direction
         {
             if (a - b > 0)

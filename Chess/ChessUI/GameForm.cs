@@ -283,10 +283,7 @@ namespace Chess
                         btnWhiteTurn.Checked = btnBlackTurn.Checked;
                     }
 
-<<<<<<< HEAD
                     TestForEndGame();
-=======
->>>>>>> 1b5122ce13870a82d5a82da496a1d4230d43d0c2
                     ColorCheckedKing();
                 }
             }

@@ -269,7 +269,6 @@ namespace Chess
 
         public override bool IsCheckMated(int x, int y, Board board)
         {
-<<<<<<< HEAD
             Board checkBoard = new Board();
             checkBoard.clearBoard(checkBoard);
            checkBoard = checkBoard.copyBoard(board, checkBoard);
@@ -284,7 +283,6 @@ namespace Chess
                 JsonSerializer serializer = new JsonSerializer();
                 tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
             }
->>>>>>> 1b5122ce13870a82d5a82da496a1d4230d43d0c2
 
             for (int i = 0; i < 8; i++)
             {
@@ -296,7 +294,6 @@ namespace Chess
                         {
                             if (checkBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, board) > 0)
                             {
-<<<<<<< HEAD
                                 checkBoard.Grid[ii, jj].WhoIsOnIt = checkBoard.Grid[i, j].WhoIsOnIt;
                                 VoidCase newVoidCase = new VoidCase("void", i, j);
                                 checkBoard.Grid[i, j].WhoIsOnIt = newVoidCase;
@@ -329,7 +326,6 @@ namespace Chess
                                         tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
                                     }
                                 }
->>>>>>> 1b5122ce13870a82d5a82da496a1d4230d43d0c2
                             }
                         }
                     }

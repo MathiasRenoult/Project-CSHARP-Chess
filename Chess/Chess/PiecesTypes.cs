@@ -36,7 +36,7 @@ namespace Chess
         public override int CanMoveThere(int x, int y, Board board)
         {
             int biggerMove = 0;
-            if (board.Grid[x, y].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
+            if (board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color == this.Color || (x - this.X < 0 && this.Color == "black") || (x - this.X > 0 && this.Color == "white"))
             {
                 return 0;
             }
@@ -47,17 +47,17 @@ namespace Chess
                 {
                     biggerMove = 1;
                 }
-                if (Math.Abs(this.Y - y) == 1 && board.Grid[x, y].WhoIsOnIt.Color != this.Color && board.Grid[x, y].WhoIsOnIt.Color != "void" && Math.Abs(x - this.X) == 1)
+                if (Math.Abs(this.Y - y) == 1 && board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color != this.Color && board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color != "void" && Math.Abs(x - this.X) == 1)
                 {
                     return 1;
                 }
                 else
                 {
-                    if (board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1 + biggerMove)
+                    if (board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1 + biggerMove)
                     {
                         return 2;
                     }
-                    if(board.Grid[x, y].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1)
+                    if(board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color == "void" && Math.Abs(this.Y - y) == 0 && Math.Abs(x - this.X) == 1)
                     {
                         return 1;
                     }
@@ -86,13 +86,13 @@ namespace Chess
                 return 0; //Invalid move, Knights can only move in "L" shape
             }
 
-            if (board.Grid[x, y].WhoIsOnIt.Color == this.Color)
+            if (board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color == this.Color)
             {
                 return 0;
             }
             else
             {
-                if (board.Grid[x, y].WhoIsOnIt.Color != this.Color)
+                if (board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color != this.Color)
                 {
                     return 1;
                 }
@@ -125,7 +125,7 @@ namespace Chess
 
             for (int i = 1; i <= length; i++)
             {
-                if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != this.Color && board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != "void")
+                if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color != this.Color && board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color != "void")
                 {
                     if (i == length)
                     {
@@ -138,7 +138,7 @@ namespace Chess
                 }
                 else
                 {
-                    if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color == this.Color)
+                    if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color == this.Color)
                     {
                         return 0;
                     }
@@ -172,7 +172,7 @@ namespace Chess
 
             for (int i = 1; i <= length; i++)
             {
-                if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != this.Color && board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != "void")
+                if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color != this.Color && board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color != "void")
                 {
                     if (i == length)
                     {
@@ -185,7 +185,7 @@ namespace Chess
                 }
                 else
                 {
-                    if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color == this.Color)
+                    if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color == this.Color)
                     {
                         return 0;
                     }
@@ -228,7 +228,7 @@ namespace Chess
 
             for (int i = 1; i <= length; i++)
             {
-                if (board.Grid[this.X + (xDir*i), this.Y + (yDir*i)].WhoIsOnIt.Color != this.Color && board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color != "void")
+                if (board.Grid[this.X + (xDir*i), this.Y + (yDir*i), board.SelectedTurn].WhoIsOnIt.Color != this.Color && board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color != "void")
                 {
                     if (i == length)
                     {
@@ -241,7 +241,7 @@ namespace Chess
                 }
                 else
                 {
-                    if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i)].WhoIsOnIt.Color == this.Color)
+                    if (board.Grid[this.X + (xDir * i), this.Y + (yDir * i), board.SelectedTurn].WhoIsOnIt.Color == this.Color)
                     {
                         return 0;
                     }
@@ -264,13 +264,13 @@ namespace Chess
         /// <returns></returns>
         public override int CanMoveThere(int x, int y, Board board)
         {
-            if(NbrOfMoves == 0 && board.Grid[this.X, 7].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 &&
-                board.Grid[this.X, 6].WhoIsOnIt is VoidCase && board.Grid[this.X, 5].WhoIsOnIt is VoidCase)//Small castling
+            if(NbrOfMoves == 0 && board.Grid[this.X, 7, board.SelectedTurn].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && y - this.Y == 2 &&
+                board.Grid[this.X, 6, board.SelectedTurn].WhoIsOnIt is VoidCase && board.Grid[this.X, 5, board.SelectedTurn].WhoIsOnIt is VoidCase)//Small castling
             {
                 return 1;
             }
-            if (NbrOfMoves == 0 && board.Grid[this.X, 0].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && this.Y - y == 2 &&
-                board.Grid[this.X, 3].WhoIsOnIt is VoidCase && board.Grid[this.X, 3].WhoIsOnIt is VoidCase && board.Grid[this.X, 1].WhoIsOnIt is VoidCase)//Big castling
+            if (NbrOfMoves == 0 && board.Grid[this.X, 0, board.SelectedTurn].WhoIsOnIt.NbrOfMoves == 0 && x == this.X && this.Y - y == 2 &&
+                board.Grid[this.X, 3, board.SelectedTurn].WhoIsOnIt is VoidCase && board.Grid[this.X, 3, board.SelectedTurn].WhoIsOnIt is VoidCase && board.Grid[this.X, 1, board.SelectedTurn].WhoIsOnIt is VoidCase)//Big castling
             {
                 return 1;
             }
@@ -280,11 +280,11 @@ namespace Chess
             }
             else
             {
-                if (board.Grid[x, y].WhoIsOnIt.Color != this.Color)
+                if (board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color != this.Color)
                 {
                     return 1;
                 }
-                if (board.Grid[x, y].WhoIsOnIt.Color == this.Color)
+                if (board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.Color == this.Color)
                 {
                     return 0;
                 }
@@ -302,7 +302,7 @@ namespace Chess
             {
                 for(int j=0;j<8;j++)
                 {
-                   if( board.Grid[i, j].WhoIsOnIt.CanMoveThere(this.X, this.Y, board) == 1)
+                   if( board.Grid[i, j,  board.SelectedTurn].WhoIsOnIt.CanMoveThere(this.X, this.Y, board) == 1)
                     {
                         return true;
                     }
@@ -319,21 +319,6 @@ namespace Chess
         /// <returns></returns>
         public override bool IsCheckMated(int x, int y, Board board)
         {
-            Board checkBoard = new Board();
-            checkBoard.clearBoard(checkBoard);
-           checkBoard = checkBoard.copyBoard(board, checkBoard);
-            string path = "gridCopy.json";
-            Board tempBoard = new Board();
-
-            string output = JsonConvert.SerializeObject(board.Grid);
-            File.WriteAllText(path, output);
-
-            using (StreamReader file = File.OpenText(path))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
-            }
-
             for (int i = 0; i < 8; i++)
             {
                 for (int j = 0; j < 8; j++)
@@ -342,40 +327,11 @@ namespace Chess
                     {
                         for (int jj = 0; jj < 8; jj++)
                         {
-                            if (checkBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, board) > 0)
+                            if(board.Grid[i, j, board.SelectedTurn].WhoIsOnIt.CanMoveThere(ii, jj, board) > 0)
                             {
-                                checkBoard.Grid[ii, jj].WhoIsOnIt = checkBoard.Grid[i, j].WhoIsOnIt;
-                                VoidCase newVoidCase = new VoidCase("void", i, j);
-                                checkBoard.Grid[i, j].WhoIsOnIt = newVoidCase;
-
-                                if(!checkBoard.Grid[x,y].WhoIsOnIt.IsChecked(checkBoard))
-                                {
-                                    return false;
-                                }
-                                checkBoard = checkBoard.copyBoard(board, checkBoard);
-                                if (tempBoard.Grid[i, j].WhoIsOnIt.CanMoveThere(ii, jj, tempBoard) > 0)
-                                {
-                                    tempBoard.Grid[ii, jj].WhoIsOnIt = tempBoard.Grid[i, j].WhoIsOnIt;
-                                    tempBoard.Grid[ii, jj].WhoIsOnIt.X = ii;
-                                    tempBoard.Grid[ii, jj].WhoIsOnIt.Y = jj;
-                                    VoidCase voidCase = new VoidCase("void", i, j);
-                                    tempBoard.Grid[i, j].WhoIsOnIt = voidCase;
-                                    tempBoard.Grid[i, j].WhoIsOnIt.Color = "void";
-                                    tempBoard.Grid[i, j].WhoIsOnIt.X = i;
-                                    tempBoard.Grid[i, j].WhoIsOnIt.Y = j;
-                                    tempBoard.Grid[i, j].WhoIsOnIt.NbrOfMoves++;
-
-                                    if (IsChecked(tempBoard) == false)
-                                    {
-                                        return false;
-                                    }
-
-                                    using (StreamReader file = File.OpenText(path))
-                                    {
-                                        JsonSerializer serializer = new JsonSerializer();
-                                        tempBoard.Grid = (Chess.Case[,])serializer.Deserialize(file, typeof(Chess.Case[,]));
-                                    }
-                                }
+                                board.NewTurn(board);
+                                if (!board.Grid[x, y, board.SelectedTurn].WhoIsOnIt.IsChecked(board)) return false;
+                                board.SelectedTurn--;
                             }
                         }
                     }

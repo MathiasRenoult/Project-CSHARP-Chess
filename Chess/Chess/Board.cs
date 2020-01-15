@@ -10,16 +10,16 @@ namespace Chess
     public class Board
     {
         private int size;
-        private int turn;
+        private int selectedTurn;
         private double computerDifficulty;
-        private Case[,] grid;
+        private Case[,,] grid;
 
         public Board(double computerDifficulty=0.0)
         {
             this.size = 8;
-            this.turn = 0;
+            this.selectedTurn = 0;
             this.computerDifficulty = computerDifficulty;
-            Case[,] grid = new Case[size, size];
+            Case[,,] grid = new Case[size, size,100];
             this.grid = grid;
         }
 
@@ -28,10 +28,10 @@ namespace Chess
             get { return size; }
             set { size = value; }
         }
-        public int Turn
+        public int SelectedTurn
         {
-            get { return turn; }
-            set { turn = value; }
+            get { return selectedTurn; }
+            set { selectedTurn = value; }
         }
         public double ComputerDifficulty
         {
@@ -39,7 +39,7 @@ namespace Chess
             set { computerDifficulty = value; }
         }
             
-        public Case[,] Grid
+        public Case[,,] Grid
         {
             get { return grid; }
             set { grid = value; }
@@ -53,22 +53,21 @@ namespace Chess
                 for (j = 0; j < size; j++)
                 {
                     Piece standardVoid = new VoidCase("void", i, j);
-                    grid[i, j] = new Case(standardVoid, 0);
+                    grid[i, j,0] = new Case(standardVoid, 0);
                 }
             }
         }
 
-        public Board copyBoard(Board sourceBoard, Board destinationBoard)
+        public void NewTurn(Board board)
         {
             for(int i=0; i<8;i++)
             {
                 for(int j=0; j<8;j++)
                 {
-                    destinationBoard.Grid[i,j] = sourceBoard.Grid[i, j];
+                    board.grid[i, j, selectedTurn + 1] = board.grid[i, j, selectedTurn].DeepCopy();
                 }
             }
-
-            return destinationBoard;
+            selectedTurn++;
         }
 
         /// <summary>
@@ -117,41 +116,41 @@ namespace Chess
             Pawn newWhitePawn8 = new Pawn("white", 6, 7);
 
             //Placing each piece on the board
-            board.Grid[0, 0].WhoIsOnIt = newBlackRook1;
-            board.Grid[0, 1].WhoIsOnIt = newBlackKnight1;
-            board.Grid[0, 2].WhoIsOnIt = newBlackBishop1;
-            board.Grid[0, 3].WhoIsOnIt = newBlackQueen;
-            board.Grid[0, 4].WhoIsOnIt = newBlackKing;
-            board.Grid[0, 5].WhoIsOnIt = newBlackBishop2;
-            board.Grid[0, 6].WhoIsOnIt = newBlackKnight2;
-            board.Grid[0, 7].WhoIsOnIt = newBlackRook2;
+            board.Grid[0, 0, 0].WhoIsOnIt = newBlackRook1;
+            board.Grid[0, 1, 0].WhoIsOnIt = newBlackKnight1;
+            board.Grid[0, 2, 0].WhoIsOnIt = newBlackBishop1;
+            board.Grid[0, 3, 0].WhoIsOnIt = newBlackQueen;
+            board.Grid[0, 4, 0].WhoIsOnIt = newBlackKing;
+            board.Grid[0, 5, 0].WhoIsOnIt = newBlackBishop2;
+            board.Grid[0, 6, 0].WhoIsOnIt = newBlackKnight2;
+            board.Grid[0, 7, 0].WhoIsOnIt = newBlackRook2;
 
-            board.Grid[1, 0].WhoIsOnIt = newBlackPawn1;
-            board.Grid[1, 1].WhoIsOnIt = newBlackPawn2;
-            board.Grid[1, 2].WhoIsOnIt = newBlackPawn3;
-            board.Grid[1, 3].WhoIsOnIt = newBlackPawn4;
-            board.Grid[1, 4].WhoIsOnIt = newBlackPawn5;
-            board.Grid[1, 5].WhoIsOnIt = newBlackPawn6;
-            board.Grid[1, 6].WhoIsOnIt = newBlackPawn7;
-            board.Grid[1, 7].WhoIsOnIt = newBlackPawn8;
+            board.Grid[1, 0, 0].WhoIsOnIt = newBlackPawn1;
+            board.Grid[1, 1, 0].WhoIsOnIt = newBlackPawn2;
+            board.Grid[1, 2, 0].WhoIsOnIt = newBlackPawn3;
+            board.Grid[1, 3, 0].WhoIsOnIt = newBlackPawn4;
+            board.Grid[1, 4, 0].WhoIsOnIt = newBlackPawn5;
+            board.Grid[1, 5, 0].WhoIsOnIt = newBlackPawn6;
+            board.Grid[1, 6, 0].WhoIsOnIt = newBlackPawn7;
+            board.Grid[1, 7, 0].WhoIsOnIt = newBlackPawn8;
 
-            board.Grid[7, 0].WhoIsOnIt = newWhiteRook1;
-            board.Grid[7, 1].WhoIsOnIt = newWhiteKnight1;
-            board.Grid[7, 2].WhoIsOnIt = newWhiteBishop1;
-            board.Grid[7, 3].WhoIsOnIt = newWhiteQueen;
-            board.Grid[7, 4].WhoIsOnIt = newWhiteKing;
-            board.Grid[7, 5].WhoIsOnIt = newWhiteBishop2;
-            board.Grid[7, 6].WhoIsOnIt = newWhiteKnight2;
-            board.Grid[7, 7].WhoIsOnIt = newWhiteRook2;
+            board.Grid[7, 0, 0].WhoIsOnIt = newWhiteRook1;
+            board.Grid[7, 1, 0].WhoIsOnIt = newWhiteKnight1;
+            board.Grid[7, 2, 0].WhoIsOnIt = newWhiteBishop1;
+            board.Grid[7, 3, 0].WhoIsOnIt = newWhiteQueen;
+            board.Grid[7, 4, 0].WhoIsOnIt = newWhiteKing;
+            board.Grid[7, 5, 0].WhoIsOnIt = newWhiteBishop2;
+            board.Grid[7, 6, 0].WhoIsOnIt = newWhiteKnight2;
+            board.Grid[7, 7, 0].WhoIsOnIt = newWhiteRook2;
 
-            board.Grid[6, 0].WhoIsOnIt = newWhitePawn1;
-            board.Grid[6, 1].WhoIsOnIt = newWhitePawn2;
-            board.Grid[6, 2].WhoIsOnIt = newWhitePawn3;
-            board.Grid[6, 3].WhoIsOnIt = newWhitePawn4;
-            board.Grid[6, 4].WhoIsOnIt = newWhitePawn5;
-            board.Grid[6, 5].WhoIsOnIt = newWhitePawn6;
-            board.Grid[6, 6].WhoIsOnIt = newWhitePawn7;
-            board.Grid[6, 7].WhoIsOnIt = newWhitePawn8;
+            board.Grid[6, 0, 0].WhoIsOnIt = newWhitePawn1;
+            board.Grid[6, 1, 0].WhoIsOnIt = newWhitePawn2;
+            board.Grid[6, 2, 0].WhoIsOnIt = newWhitePawn3;
+            board.Grid[6, 3, 0].WhoIsOnIt = newWhitePawn4;
+            board.Grid[6, 4, 0].WhoIsOnIt = newWhitePawn5;
+            board.Grid[6, 5, 0].WhoIsOnIt = newWhitePawn6;
+            board.Grid[6, 6, 0].WhoIsOnIt = newWhitePawn7;
+            board.Grid[6, 7, 0].WhoIsOnIt = newWhitePawn8;
         }
     }
 }

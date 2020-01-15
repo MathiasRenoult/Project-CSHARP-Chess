@@ -48,6 +48,12 @@ namespace Chess
             set { nbrOfMoves = value; }
         }
 
+        public Piece DeepCopy()
+        {
+            Piece copy = (Piece)MemberwiseClone();
+            return copy;
+        }
+
         /// <summary>
         /// where the piece can move
         /// </summary>

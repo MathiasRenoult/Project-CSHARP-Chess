@@ -139,6 +139,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.chkLabels = new System.Windows.Forms.CheckBox();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.lblCurrentTurn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase00)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCase02)).BeginInit();
@@ -1512,7 +1515,7 @@
             this.chkLabels.AutoSize = true;
             this.chkLabels.Checked = true;
             this.chkLabels.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkLabels.Location = new System.Drawing.Point(659, 260);
+            this.chkLabels.Location = new System.Drawing.Point(649, 265);
             this.chkLabels.Name = "chkLabels";
             this.chkLabels.Size = new System.Drawing.Size(57, 17);
             this.chkLabels.TabIndex = 126;
@@ -1520,12 +1523,44 @@
             this.chkLabels.UseVisualStyleBackColor = true;
             this.chkLabels.CheckedChanged += new System.EventHandler(this.chkLabels_CheckedChanged);
             // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(649, 236);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(75, 23);
+            this.btnPrevious.TabIndex = 127;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Location = new System.Drawing.Point(730, 236);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(75, 23);
+            this.btnNext.TabIndex = 128;
+            this.btnNext.Text = "Next";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // lblCurrentTurn
+            // 
+            this.lblCurrentTurn.AutoSize = true;
+            this.lblCurrentTurn.Location = new System.Drawing.Point(727, 267);
+            this.lblCurrentTurn.Name = "lblCurrentTurn";
+            this.lblCurrentTurn.Size = new System.Drawing.Size(74, 13);
+            this.lblCurrentTurn.TabIndex = 129;
+            this.lblCurrentTurn.Text = "Current turn: 0";
+            // 
             // GameForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(951, 648);
+            this.Controls.Add(this.lblCurrentTurn);
+            this.Controls.Add(this.btnNext);
+            this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.chkLabels);
             this.Controls.Add(this.label31);
             this.Controls.Add(this.label30);
@@ -1761,5 +1796,8 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.CheckBox chkLabels;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.Label lblCurrentTurn;
     }
 }

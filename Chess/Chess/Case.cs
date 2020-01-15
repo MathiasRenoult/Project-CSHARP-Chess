@@ -25,6 +25,13 @@ namespace Chess
             this.color = "black";
         }
 
+        public Case DeepCopy()
+        {
+            Case copy =(Case) MemberwiseClone();
+            copy.WhoIsOnIt = whoIsOnIt.DeepCopy();
+            return copy;
+        }
+
         public Piece WhoIsOnIt
         {
             get { return whoIsOnIt; }

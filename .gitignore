@@ -8,3 +8,7 @@ Chess/.vs/Chess/v16/.suo
 *.lock
 
 Chess/.vs/Chess/v16/Server/sqlite3/
+
+*.dll
+
+*.pdb

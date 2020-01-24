@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['canmovethere_69',['CanMoveThere',['../class_chess_1_1_piece.html#aa63fa73be6b7f325aaddbeaab10235c6',1,'Chess.Piece.CanMoveThere()'],['../class_chess_1_1_void_case.html#adb48d858fa564b234f48e29f82f252e4',1,'Chess.VoidCase.CanMoveThere()'],['../class_chess_1_1_pawn.html#a438fa1f02ab313754f720b9a3d082606',1,'Chess.Pawn.CanMoveThere()'],['../class_chess_1_1_knight.html#a71f32fbf798977ae8a85b23a7b667da9',1,'Chess.Knight.CanMoveThere()'],['../class_chess_1_1_rook.html#a6022014366eb72424e6ab58fc5b68f0d',1,'Chess.Rook.CanMoveThere()'],['../class_chess_1_1_bishop.html#a9188ea6130092795c5b7c9efd593ce05',1,'Chess.Bishop.CanMoveThere()'],['../class_chess_1_1_queen.html#afe8fdb2bfa782831b3ce9b155428e969',1,'Chess.Queen.CanMoveThere()'],['../class_chess_1_1_king.html#ad20d342976dcca769c72718a2a718af2',1,'Chess.King.CanMoveThere()']]],
+  ['closeconnection_70',['CloseConnection',['../class_chess_1_1_connect_to_d_b.html#a4fcc9ac406552ec262f2448a3dd76cdc',1,'Chess::ConnectToDB']]]
+];

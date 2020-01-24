@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Chess
 {
-    public class VoidCase : Piece
+    public class VoidCase : Piece //Empty case
     {
         public VoidCase(string color, int x, int y) : base("void",x,y)
         {
@@ -27,7 +27,7 @@ namespace Chess
 
         }
         /// <summary>
-        /// the pawn deplacement
+        /// Resolve Pawn moves
         /// </summary>
         /// <param name="x">position X</param>
         /// <param name="y">position Y</param>
@@ -73,7 +73,7 @@ namespace Chess
 
         }
         /// <summary>
-        /// the knight deplacement 
+        /// Resolve Knight moves
         /// </summary>
         /// <param name="x">position X</param>
         /// <param name="y">position Y</param>
@@ -107,7 +107,7 @@ namespace Chess
 
         }
         /// <summary>
-        /// the rook deplacement 
+        /// Resolve Rook moves
         /// </summary>
         /// <param name="x">position X</param>
         /// <param name="y">position Y</param>
@@ -154,7 +154,7 @@ namespace Chess
 
         }
         /// <summary>
-        /// the bishop deplacement
+        /// Resolve Bishop moves
         /// </summary>
         /// <param name="x">position X</param>
         /// <param name="y">position Y</param>
@@ -201,7 +201,7 @@ namespace Chess
 
         }
         /// <summary>
-        /// the queen deplacement
+        /// Resolve Queen moves
         /// </summary>
         /// <param name="x">position X</param>
         /// <param name="y">position Y</param>
@@ -256,7 +256,7 @@ namespace Chess
         {
         }
         /// <summary>
-        /// the king deplacement 
+        /// Resolve King moves
         /// </summary>
         /// <param name="x">position X</param>
         /// <param name="y">position Y</param>
@@ -292,7 +292,7 @@ namespace Chess
             }
         }
         /// <summary>
-        /// Check if the king is checked
+        /// Return true if a King is checked
         /// </summary>
         /// <param name="board">in the game</param>
         /// <returns></returns>
@@ -311,7 +311,7 @@ namespace Chess
             return false;
         }
         /// <summary>
-        /// check if the king is check mated
+        /// Return true if the King in (x,y) is check-mated
         /// </summary>
         /// <param name="x">king position</param>
         /// <param name="y">king position</param>

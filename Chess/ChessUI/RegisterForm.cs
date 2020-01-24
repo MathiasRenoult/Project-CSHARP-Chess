@@ -147,14 +147,12 @@ namespace Chess
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             cryptatePassword(false);
-            txtPassword.Focus();
             txtPassword.SelectionStart = txtPassword.Text.Length;
         }
    
         private void txtComfirmPassword_TextChanged(object sender, EventArgs e)
         {
             cryptateComfirmPassword(false);
-            txtComfirmPassword.Focus();
             txtComfirmPassword.SelectionStart = txtComfirmPassword.Text.Length;
         }
 

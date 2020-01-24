@@ -145,7 +145,6 @@ namespace Chess
                 txtPassword.Text = tempString;
             }
             txtPassword.Tag = realPassword;
-            txtPassword.Focus();
             txtPassword.SelectionStart = txtPassword.Text.Length;
         }
 
@@ -167,6 +166,13 @@ namespace Chess
             this.Hide();
             ChangeDBConfigForm newRegisterForm = new ChangeDBConfigForm();
             newRegisterForm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            GameForm newGameForm = new GameForm("offline mode");
+            newGameForm.ShowDialog();
         }
     }
 }

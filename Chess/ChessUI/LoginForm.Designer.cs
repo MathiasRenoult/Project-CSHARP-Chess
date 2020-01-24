@@ -37,6 +37,7 @@
             this.btnCreateAccount = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
             this.btnChangeDBConfig = new System.Windows.Forms.Button();
+            this.btnOfflineMode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPassword
@@ -129,11 +130,22 @@
             this.btnChangeDBConfig.UseVisualStyleBackColor = true;
             this.btnChangeDBConfig.Click += new System.EventHandler(this.btnChangeDBConfig_Click);
             // 
+            // btnOfflineMode
+            // 
+            this.btnOfflineMode.Location = new System.Drawing.Point(383, 197);
+            this.btnOfflineMode.Name = "btnOfflineMode";
+            this.btnOfflineMode.Size = new System.Drawing.Size(75, 23);
+            this.btnOfflineMode.TabIndex = 24;
+            this.btnOfflineMode.Text = "Offline mode";
+            this.btnOfflineMode.UseVisualStyleBackColor = true;
+            this.btnOfflineMode.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 232);
+            this.Controls.Add(this.btnOfflineMode);
             this.Controls.Add(this.btnChangeDBConfig);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCreateAccount);
@@ -165,6 +177,7 @@
         private System.Windows.Forms.Button btnCreateAccount;
         private System.Windows.Forms.Label lblError;
         private System.Windows.Forms.Button btnChangeDBConfig;
+        private System.Windows.Forms.Button btnOfflineMode;
     }
 }
 

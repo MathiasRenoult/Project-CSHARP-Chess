@@ -37,20 +37,6 @@ namespace Chess
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                ConnectToDB connDB = new ConnectToDB();
-                connDB.OpenConnection();
-
-                //close connection
-                connDB.CloseConnection();
-            }
-            catch
-            {
-                //we display the error message.
-                MessageBox.Show("Connection with database lost");
-                lblLogged.Text = "Logged as: no connection";
-            }
         }
 
         public void DrawGrid(Board board)

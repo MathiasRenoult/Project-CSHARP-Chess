@@ -143,3 +143,5 @@ C:\Users\Mathias.RENOULT\Documents\GitKraken\Project-CSHARP-Chess\Chess\ChessUI\
 C:\Users\Mathias.RENOULT\Documents\GitKraken\Project-CSHARP-Chess\Chess\ChessUI\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\Mathias.RENOULT\Documents\GitKraken\Project-CSHARP-Chess\Chess\ChessUI\bin\Debug\netstandard.dll
 C:\Users\Mathias.RENOULT\Documents\GitKraken\Project-CSHARP-Chess\Chess\ChessUI\obj\Debug\ChessUI.csproj.CoreCompileInputs.cache
+C:\Users\Mathias.RENOULT\Documents\GitKraken\Project-CSHARP-Chess\Chess\ChessUI\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+C:\Users\Mathias.RENOULT\Documents\GitKraken\Project-CSHARP-Chess\Chess\ChessUI\bin\Debug\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
